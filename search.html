@@ -1,36 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="Lib\sha1.js"></script>
+<script src="storeStops.js"></script>
+<script type="text/javascript" src="search.js" charset="UTF-8"></script>
+<title>搜尋</title>
 </head>
 <body>
-    
-    
-<div class="wrap">
-  <div class="header">
-        <a href="index.html">
-           <img class="back" src="image/back.png" alt="back"></a>
+
+    <div class="wrap">
+        <div class="header">
+            <a href="index.html">
+                <img class="back" src="image/back.png" alt="back"></a>
+              
+            <p>站牌查詢</p>    
+        </div>
+        <div class="main">
+            <div class="pic">
+                <img src="image/bus.png" alt="bus">
+            </div>
+        <div class="search">
+            <input type="text" class="keyword" name="keyword" placeholder="請輸入站牌" >
+
+            <button type="submit" class="sub" onclick='search_stop()'>
+                搜尋
+            </button>
+        </div>
         
-        <p>站牌查詢</p>
-       
-  </div>
-  <div class="main">
-      <div class="pic">
-        <img src="image/bus.png" alt="bus">
+
+        
+        <table  class='route-arrived'>
+
+        </table>
     </div>
-      <div class="search">
-        <input type="text" class="" name="keyword" placeholder="請輸入站牌" >
-        <button type="submit" class="sub">
-             搜尋
-             </button>
-    </div>
-  </div>
-  
-  
-</div>
+        
+
+
 </body>
 </html>

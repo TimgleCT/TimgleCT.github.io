@@ -1,8 +1,8 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
-   License: none (public domain)
+   License: none (public domain)route-list
 */
-
+route-list
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -54,7 +54,7 @@ body{
 
 .wrap{
  margin:0 auto;
- width: 1000px;
+ width: 1013px;
   height: 637px;
   background-color:	#DCDCDC;
    font-family:Microsoft JhengHei;
@@ -95,8 +95,8 @@ body{
   color:white;
   text-align:center;
   position: relative;
-  float:right;
-  right:91%;
+  float: left;
+  
   padding:10px;
 
 }
@@ -116,10 +116,13 @@ body{
   top:20px;
   left: 36%;
 }
+.overflow{
+  overflow:auto;
+  overflow-x:hidden;
+}
 .main{
   height: 597px;
- overflow:auto;
-  overflow-x:hidden;
+ 
   
 }
 .in-main{
@@ -144,7 +147,7 @@ body{
   padding:5px;
   position: relative;
   top:-35px;
-  left:90%;
+  left:85%;
   color:#5555FF;
   border-radius:10px;
 }
@@ -176,19 +179,7 @@ input{
   
   float:left;
 }
-.bs-reload {
-  background-color:#5555FF;
- 
-   border:1px solid #5555FF;
-  width:34px;
-  height: 30px;
-  position: relative;
-  top: 5px;
-  left: 83%;
- }
-.bs-reload img{
-  width: 24px;
-}
+
 .route{
   
   margin-top:25px;
@@ -226,6 +217,18 @@ input{
   
    margin-bottom:10px;
  }
+ .searchre{
+  position: relative;
+  top: 30px;
+ height: 239px;
+ overflow:auto;
+  overflow-x:hidden;
+}
+.searchre-name{
+ padding:10px;
+ width: 925px;
+height: 40px;
+}
 .likeroutepic {
   width:90px;
   
@@ -266,10 +269,7 @@ input{
   height: 597px;
   float:left;
 }
-/* .route-choose td{
-   width: 64px;
-  height: 40px; 
-} */
+
 #btnred{
   color:red; 
 }
@@ -279,10 +279,10 @@ input{
 #btnye{
  color:yellow; 
 }
-#btnoth{
- width: 130px;
-}
 #btncl{
+  width: 195px;
+}
+#btn0{
   width: 130px;
 }
 .btn{
@@ -313,28 +313,43 @@ text-align:center;
    width:908px;
   height: 30px;
 }
-.route-arrived tr{
+.route-arrived li{
   width: 1000px;
   height: 60px;
   background-color: white;
   border-top:1px solid grey;
 }
-.route-arrived .time{
-  border-radius:10px;
-  background-color: grey;
-  font-size:13pt;
-  color: white;
-  padding:7px;
-  margin:7px;
-  position: relative;
-  top:8px;
- 
-
+.route-arrived tr{
+  width: 1013px;
+  height: 40px;
+  background-color: white;
+  border-top:1px solid grey;
 }
+.go_list tr{
+  width: 1013px;
+  height: 60px;
+  background-color: white;
+  border-top:1px solid grey;
+}
+
+.back_list tr{
+  width: 1013px;
+  height: 60px;
+  background-color: white;
+  border-top:1px solid grey;
+}
+.route-arrived p{
+  background-color: 	#9999FF;
+  height: 20px;
+  color: white;
+  text-align:center;
+  padding-top:2px;
+}
+
 
 .arrived-name{
   padding-top:10px;
-   width: 925px;
+   width: 970px;
   height: 50px;
 }
 .arrived-name p{
@@ -376,7 +391,7 @@ text-align:center;
 
 .stopname{
   padding-top:12px;
-   width: 866px;
+   width: 926px;
   height: 35px;
 }
 .route-stop img{
@@ -433,7 +448,7 @@ a{
 
 
 
-@media(max-width:375px){
+@media(max-width:395px){
 
   
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -528,12 +543,19 @@ table {
   font-size:15pt;
   color:white;
   text-align:center;
-  position: relative;
-  float:right;
-  right:230px;
+ 
+  width:215px; 
+  position: absolute;
+  
+  left: 15%;
   padding:10px;
 
 }
+.ellipsis {
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  }
 .backroad{
   width: 34px;
   
@@ -617,10 +639,13 @@ table {
  overflow:auto;
   overflow-x:hidden;
 }
+.overflow{
+  overflow:auto;
+  overflow-x:hidden;
+}
 .main{
   height: 430px;
- overflow:auto;
-  overflow-x:hidden;
+ 
 }
 input{
   width: 316px;
@@ -676,6 +701,18 @@ input{
   
    margin-bottom:10px;
  }
+ .searchre{
+  position: relative;
+  top: 10px;
+ height: 259px;
+ overflow:auto;
+  overflow-x:hidden;
+}
+.searchre-name{
+ padding:10px;
+ width: 236px;
+height: 40px;
+}
 .likeroutepic {
   width: 100%;
   
@@ -725,7 +762,7 @@ input{
 
 .stopname{
   padding-top:12px;
-   width: 190px;
+   width: 260px;
   height: 35px;
 }
 
@@ -737,11 +774,7 @@ input{
   border:1px solid grey;
   height: 190px;
 }
-.route-choose td{
-  /* width: 64px;
-  height: 40px; */
- 
-}
+
 .route-arrived tr{
   width: 320px;
   height: 60px;
@@ -761,7 +794,7 @@ input{
 
 .arrived-name{
   padding-top:10px;
-   width: 248px;
+   width: 276px;
   height: 50px;
 }
 .arrived-name p{
@@ -808,11 +841,11 @@ input{
 #btnye{
  color:yellow; 
 }
-#btnoth{
- width: 126px;
-}
 #btncl{
-  width: 126px;
+  width: 191px;
+}
+#btn0{
+  width: 127px;
 }
 .btn{
  text-align:center;
