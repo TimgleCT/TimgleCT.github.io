@@ -9,7 +9,7 @@ console.log("初始化")
 function getStop() {
     var stopname = document.querySelector('.stop').value;
     var xhr = new XMLHttpRequest();
-    xhr.open("get", "http://ptx.transportdata.tw/MOTC/v2/Bus/Stop/City/Kaohsiung?$format=json", true);
+    xhr.open("get", "https://ptx.transportdata.tw/MOTC/v2/Bus/Stop/City/Kaohsiung?$format=json", true);
     xhr.send();
 
     xhr.onload = function () {

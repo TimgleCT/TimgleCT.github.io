@@ -11,7 +11,7 @@ function getRouteStep(){
     //back_step.length = 0;
     var get = new XMLHttpRequest();
     var header = GetAuthorizationHeader();
-    get.open('get',"http://ptx.transportdata.tw/MOTC/v2/Bus/StopOfRoute/City/Kaohsiung?$format=JSON",true);
+    get.open('get',"https://ptx.transportdata.tw/MOTC/v2/Bus/StopOfRoute/City/Kaohsiung?$format=JSON",true);
     get.setRequestHeader('Authorization', header['Authorization']);
     get.setRequestHeader('X-Date', header['X-Date']);
    
@@ -34,7 +34,7 @@ function getRouteStep(){
 function getAPI(){
     var get = new XMLHttpRequest();
     var header = GetAuthorizationHeader();
-    get.open('get',"http://ptx.transportdata.tw/MOTC/v2/Bus/EstimatedTimeOfArrival/City/Kaohsiung?$format=JSON",true);
+    get.open('get',"https://ptx.transportdata.tw/MOTC/v2/Bus/EstimatedTimeOfArrival/City/Kaohsiung?$format=JSON",true);
     get.setRequestHeader('Authorization', header['Authorization']);
     get.setRequestHeader('X-Date', header['X-Date']);
    

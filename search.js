@@ -5,7 +5,7 @@ var data;
 function search_stop(){
     var get = new XMLHttpRequest();
     var header = GetAuthorizationHeader();
-    get.open('get',"http://ptx.transportdata.tw/MOTC/v2/Bus/Stop/City/Kaohsiung?$top=30&$format=JSON",true);
+    get.open('get',"https://ptx.transportdata.tw/MOTC/v2/Bus/Stop/City/Kaohsiung?$top=30&$format=JSON",true);
     get.setRequestHeader('Authorization', header['Authorization']);
     get.setRequestHeader('X-Date', header['X-Date']);
    

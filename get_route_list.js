@@ -3,7 +3,7 @@ var data;
 function get_routlistAPI(){
     var get = new XMLHttpRequest();
     var header = GetAuthorizationHeader();
-    get.open('get',"http://ptx.transportdata.tw/MOTC/v2/Bus/Route/City/Kaohsiung?$format=json",true);
+    get.open('get',"https://ptx.transportdata.tw/MOTC/v2/Bus/Route/City/Kaohsiung?$format=json",true);
     get.setRequestHeader('Authorization', header['Authorization']);
     get.setRequestHeader('X-Date', header['X-Date']);
    
