@@ -196,7 +196,7 @@ $(document).ready(function(){
                     ，而收藏功能使用 local storage 實作。高雄公車通也已將服務放在 GitHub Pages上。</p>\
                     <p>&nbsp&nbsp&nbsp&nbsp在此專案中，我負責路線查詢的部分。向開放資料 API 取得路線、站牌、即時動態資料，\
                     並使其能夠隨著使用者的輸入，動態篩選出使用者欲查的路線；以及定時更新頁面以顯示最新資訊。</p>\
-                    <p>高雄老司機網址：<a href = 'https://timglect.github.io/'>https://timglect.github.io/</a></p>\
+                    <p>高雄老司機網址：<a href = 'https://timglect.github.io/BusApp'>https://timglect.github.io/BusApp</a></p>\
                     ";
 
           setModalElement();
