@@ -158,6 +158,7 @@
         width: 100%;
         height: 135vw;
         max-height: 460px;
+        min-height: 428px;
         margin: 15px 1.5% 15px 1.5%;
     }
     .cardHead{
