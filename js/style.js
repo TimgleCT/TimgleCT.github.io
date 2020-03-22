@@ -43,6 +43,18 @@ $(document).ready(function(){
     showEventSlides(1, 1);
     showEventSlides(1, 2);
 
+    var clickAboutMeRead = 0;
+    $("#aboutMeText").click(function(){
+        if(clickAboutMeRead == 0){
+          $("#aboutMeText").html("Go Back");
+          clickAboutMeRead = 1;
+        }else{
+          $("#aboutMeText").html("Read More");
+          clickAboutMeRead = 0;
+        }
+        $("#more").slideToggle(500);
+    });
+    
     var clickUniformRead = 0;
     $("#uniformRead").click(function(){
         if(clickUniformRead == 0){
@@ -53,7 +65,27 @@ $(document).ready(function(){
           clickUniformRead = 0;
         }
         $("#uniformSlidesContainer").slideToggle(500);
+        $("#uniformHide").slideToggle(500);
     });
+
+    $("#menuBtn").click(function(){
+      $(".nav").css('z-index','4');
+      $(".nav").css('width','250px');
+      $(".coverPage").css('display','block');
+      $(".nav").slideToggle(300);
+    });
+
+    if(screen.width <= 768){
+      $(".pageLink").click(function(){
+          $(".coverPage").css('display','none');
+          $(".nav").slideToggle(300);
+        });
+    }
+    // $(".coverPage").click(function(){
+    //   $(".coverPage").css('display','none');
+    //   $(".nav").slideToggle(300);
+    // });
+
 
     var clickEcRead = 0;
     $("#ecRead").click(function(){
@@ -65,6 +97,7 @@ $(document).ready(function(){
         clickEcRead = 0;
       }
       $("#ecSlidesContainer").slideToggle(500);
+      $("#ecHide").slideToggle(500);
     });
 
     var clickDSRead = 0;
@@ -77,6 +110,7 @@ $(document).ready(function(){
         clickDSRead = 0;
       }
       $("#DSSlidesContainer").slideToggle(500);
+      $("#DSHide").slideToggle(500);
     });
 
       
@@ -324,7 +358,10 @@ $(document).ready(function(){
         
 });
 
-
+        function closeNav(){
+            $(".coverPage").css('display','none');
+            $(".nav").slideToggle(300);
+        }
 
 
         function plusEventSlides(n, no) {
