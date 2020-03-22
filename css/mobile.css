@@ -117,6 +117,10 @@
     .dropDownImg .head{
         font-size: 2.3vw;
     }
+    #more{
+        display: none;
+        margin-bottom: 5px;
+    }
 }
 
 
