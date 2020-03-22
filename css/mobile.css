@@ -183,6 +183,7 @@
         font-size: 3vw;
     }
     .contentBar{
+        width: 100%;
         margin: 2rem 0rem 1rem 0rem;;
     }
     .barIcon{
@@ -235,7 +236,7 @@
     }
       
     .text-circle {
-        font-size: 1.2vw;
+        font-size: 0.9rem;
     }
     .barItemHeader{
         text-align: center;
@@ -251,7 +252,7 @@
         width: 80%;
     }
     .barItemContext .meta {
-        font-size: 0.5rem;
+        font-size: 1.0rem;
         text-align: center;
         padding: 5px 50px;
     }
@@ -299,7 +300,7 @@
         padding: 0 0.5rem 0 1.5rem;
     }
     .timelineContent ul li{
-        font-size: 2.5vw;
+        font-size: 0.8rem;
     }
     .dropDownImg{
         width: 100%;
@@ -319,7 +320,7 @@
         font-size: 0.8rem;
     }
     .contactBox .meta {
-        font-size: 1px;
+        font-size: 0.6rem;
     }
     .contactBoxSet {
         margin: 6% auto;
@@ -340,6 +341,10 @@
     }
     iframe{
         height: auto;
+    }
+    #more{
+        display: none;
+        margin-bottom: 5px;
     }
 }
 @media only screen and (max-width: 375px) {

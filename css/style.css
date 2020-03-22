@@ -785,7 +785,7 @@ iframe{
 }
 .colorBoxContent div{
     display: inline-block;
-    font-size: 0.85vw;
+    font-size: 0.85rem;
     min-width: 3.5vw;
     border-radius: 10%;
     border: solid 2px white;
