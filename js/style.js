@@ -113,7 +113,95 @@ $(document).ready(function(){
       $("#DSHide").slideToggle(500);
     });
 
-      
+    $("#SPECAPIColorBox").click(function(){
+      modalHead = "SPEC文件推薦API";
+      slideImg1 = "img/SPECAPI-6.png";
+      slideImg2 = "img/SPECAPI-2.png";
+      slideImg3 = "img/SPECAPI-3.png";
+      slideImg4 = "img/SPECAPI-4.png";
+      slideImg5 = "img/SPECAPI-5.png";
+
+      imgAlt1 = "本專案執行結果";
+      imgAlt2 = "取出每篇SPEC使用的資料表與模組";
+      imgAlt3 = "去除停用詞、標點符號、換行符號等";
+      imgAlt4 = "貼標籤的規則";
+      imgAlt5 = "模型預測結果";
+
+      content = "<div class='ui header'>利用NLP的技術，快速的找到可參考的系統規格書</div>\
+                <p>&nbsp&nbsp&nbsp&nbsp本專案為SPEC文件推薦，為2020年暑假在國泰⼈壽壽險資訊部實習的實習專案，目的期望透過SPEC推薦系統使系統分析師在撰寫SPEC時若遇到不熟悉的領域或缺乏靈感時，\
+                能夠透過輸入寫到⼀半的SPEC⽂件至推薦系統，\
+                而推薦系統的推薦可使其快速的找到過去可參考的SPEC。</p>\
+                <p>&nbsp&nbsp&nbsp&nbsp在使用方面，使用者僅需上傳SPEC文件(docx檔案)，系統將推薦其他過去相關的SPEC檔名與相關的機率，\
+                並以JSON回傳推薦結果。但本專案目前的資料集內僅含AA理賠的主程式SPEC，\
+                若要擴充其推薦能力需要加新的SPEC檔案至dataset/spec資料夾內，並執行create_dataset.py以產出新的SPEC關聯資料集。</p>\
+                <p>&nbsp&nbsp&nbsp&nbsp本專案歷經了SPEC⽂件的前處理(jieba斷詞)、特徵⼯程(TFIDF、PCA)與分群(KMeans、階層演\
+                  算法)、驗證分群(COS相似度)、上標籤還有模型訓練(隨機森林、類神經網路)與評估，最後架設成\
+                  Flask API 與部門內的聊天機器⼈串接。專案結束後獲得部門主管肯定，在實習結束後給予預聘的offer。</p>\
+                <p>&nbsp&nbsp&nbsp&nbspGitHub連結：<a href='https://github.com/TimgleCT/SPEC_Recommendation_API'>https://github.com/TimgleCT/SPEC_Recommendation_API</a></p>";
+
+      setModalElement();
+      setSlideImgWidth("200vw");
+      setModalWidth("large");
+      showSlides(slideIndex);
+      $('#portfolioModal').modal('show');  
+    });
+
+    $("#LSTMStock").click(function(){
+      modalHead = "LSTM股價預測";
+      slideImg1 = "img/LSTMStock-1.png";
+      slideImg2 = "img/LSTMStock-2.png";
+      slideImg3 = "img/LSTMStock-3.png";
+      slideImg4 = "img/LSTMStock-4.png";
+      slideImg5 = "img/LSTMStock-5.png";
+
+      imgAlt1 = "TSMC美股股票資料集";
+      imgAlt2 = "簡易的LSTM模型";
+      imgAlt3 = "訓練過程的Loss";
+      imgAlt4 = "模型連續預測30天的預測結果";
+      imgAlt5 = "預測4/29的股價";
+
+      content = "<div class='ui header'>閒暇時的自我練習</div>\
+                <p>&nbsp&nbsp&nbsp&nbsp本專案為自己利用閒暇時間，為了複習資料分析與python所實作的自學專案。我從美國Yahoo股票網站下載台積電與台灣50 ETF股價歷史資訊(日期、開盤價、收盤價、最高價、最低價、成交量與調整後的收盤價)，\
+                將資料前處理後(標準化&將日期分為年、月、日、星期)。以30天的股票歷史資料去預測第31天的調整後收盤價，模型僅採用一層的LSTM，曾試圖增加層數或LSTM單元的結果並有明顯差異，甚至是結果更差。\
+                也有嘗試增加其他的特徵資料，例如道瓊指數、標準普爾500指數與納斯達克100指數，結果也未有顯著的變好。</p>\
+                <p>&nbsp&nbsp&nbsp&nbspColab連結：<a href='https://reurl.cc/kVxVzr'>https://reurl.cc/kVxVzr</a></p>";
+
+      setModalElement();
+      setSlideImgWidth("250vw");
+      setModalWidth("large");
+      showSlides(slideIndex);
+      $('#portfolioModal').modal('show');  
+    });
+
+    $("#DcardPopularArticle").click(function(){
+      modalHead = "預測Dcard熱門文章";
+      slideImg1 = "img/DcardPopularArticle-1.png";
+      slideImg2 = "img/DcardPopularArticle-2.png";
+      slideImg3 = "img/DcardPopularArticle-3.png";
+      slideImg4 = "img/DcardPopularArticle-4.png";
+      slideImg5 = "img/DcardPopularArticle-5.png";
+
+      imgAlt1 = "Liner SVM 預測結果";
+      imgAlt2 = "SVM 預測結果";
+      imgAlt3 = "隨機森林預測結果";
+      imgAlt4 = "1D-CNN模型預測結果";
+      imgAlt5 = "GRU模型預測結果";
+
+      content = "<div class='ui header'>應徵2020 Dcard資料工程師實習生作業</div>\
+                <p>&nbsp&nbsp&nbsp&nbsp本作品為2020年4月應徵Dcard資料工程師時，Dcard所指派之作業，目的是要透過文章發文後11小時內的收藏、留言、愛心、分享數，來預測其在36小時後是否會成為熱門文章(愛心數>=1000)。\
+                訓練資料集約有78萬筆資料，測試資料約有22萬筆資料。起初我期望以CNN深度學習來完成本作業，過程中有諸多挑戰與困難，\
+                例如：資料不平衡的問題(非熱門文章數>>熱門文章數)、資料前處理的時間耗時。在作業時間截止前雖有完成，但效能表現不到Dcard要求標準，故沒有順利晉級到下一階段。</p>\
+                <p>&nbsp&nbsp&nbsp&nbsp但在事後我有繼續完善本作業，在截止後的一週後優化完成，有解決交作業時資料前處理時間過長的問題，\
+                也有透過嘗試其他機器學習演算法來達到更好的預測效果。我總共用了五種方法來實作本作業，\
+                分別是CNN、GRU、SVM、Liner SVM、Random Forest，而在最終以機器學習的Random Forest表現最好，準確度達98%，F1值達0.57。</p>";
+
+      setModalElement();
+      setSlideImgWidth("250vw");
+      setModalWidth("large");
+      showSlides(slideIndex);
+      $('#portfolioModal').modal('show');  
+    });
+
       $("#timekeeperColorBox").click(function(){
           modalHead = "TimeKeeper 智慧鬧鐘";
           slideImg1 = "img/timekeeper-8.png";
@@ -307,6 +395,18 @@ $(document).ready(function(){
 
       
       showSlides(slideIndex);
+
+      var clickE = 0; 
+      $('#intern').click(function(){
+        $("#internBar").toggle(500);
+        if(clickE == 0){
+          $('#intern').children(".head").children("i").css('transform','rotate(180deg)');
+          clickE = 1;
+        }else{
+          $('#intern').children(".head").children("i").css('transform','rotate(0deg)');
+          clickE = 0;
+        }
+      });
 
       var clickA = 0; 
       $('#bookAward').click(function(){

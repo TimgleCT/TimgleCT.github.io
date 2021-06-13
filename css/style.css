@@ -559,6 +559,7 @@ h4.navHeader {
     border-bottom: 15px solid transparent;
     /* color: rgb(11, 88, 88); */
 }
+
 .timelineHeadColor-1{
     background-color: teal;
 }
@@ -597,6 +598,26 @@ h4.navHeader {
 }
 .timelineContentColor-4{
     background-color: rgb(241, 152, 78);
+}
+
+.timelineHeadColor-5{
+    background-color: rgb(145, 71, 11);
+}
+.timelineHeadColor-5::after{
+    color: rgb(88, 46, 11);
+}
+.timelineContentColor-5{
+    background-color: rgb(194, 104, 44);
+}
+
+.timelineHeadColor-6{
+    background-color: rgb(11, 145, 78);
+}
+.timelineHeadColor-6::after{
+    color: rgb(11, 88, 37);
+}
+.timelineContentColor-6{
+    background-color: rgb(37, 165, 90);
 }
 
 .timelineContent{
@@ -736,6 +757,27 @@ iframe{
 .colorBoxColor-6 .circleImg{
     background-color: rgb(164, 182, 202);
 }
+.colorBoxColor-7{
+    background-color: rgb(199, 114, 161);
+    color: white;
+}
+.colorBoxColor-7 .circleImg{
+    background-color: rgb(199, 114, 161);
+}
+.colorBoxColor-8{
+    background-color: rgb(111, 113, 172);
+    color: white;
+}
+.colorBoxColor-8 .circleImg{
+    background-color: rgb(111, 113, 172);
+}
+.colorBoxColor-9{
+    background-color: rgb(147, 189, 189);
+    color: white;
+}
+.colorBoxColor-9 .circleImg{
+    background-color: rgb(147, 189, 189);
+}
 
 .colorBox{
     width: 23vw;
@@ -850,6 +892,13 @@ iframe{
     opacity: 75%;
 }
 
+.dropDownImgColor-0{
+    border: 5px solid #eed3b1;
+    background-color: rgb(235, 215, 190);
+}
+.dropDownImgColor-0 .head{
+    background-color: #eed3b1;
+}
 .dropDownImgColor-1{
     border: 5px solid #D8B484;
     background-color: rgb(231, 201, 161);
