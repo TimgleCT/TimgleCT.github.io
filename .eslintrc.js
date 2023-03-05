@@ -26,5 +26,9 @@ module.exports = {
         'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
         'no-global-assign': ['error', { exceptions: ['vm'] }],
     },
-    ignorePatterns: ['js/jquery-2.1.4.min.js'],
+    ignorePatterns: ['js/jquery-2.1.4.min.js', 'js/mail.js', 'js/style.js', 'js/lib/*'],
+    globals: {
+        Vue: true,
+        VueLoader: true,
+    },
 };

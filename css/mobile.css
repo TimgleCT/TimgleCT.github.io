@@ -40,14 +40,6 @@
         margin-left: 0!important;
         margin-right: 0!important;
     }
-    .mobileNav{
-        display: block;
-        position: fixed;
-        z-index: 2;
-    }
-    .nav{
-        display: none;
-    }
 
     .cardBlock{
         width: 220px;
