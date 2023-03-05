@@ -37,8 +37,8 @@ const { ref } = Vue;
 export default {
     name: 'UserNav',
     components: {
-        DropDown: Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/_vue-components/DropDown.vue')),
-        NavLink: Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/_vue-components/NavLink.vue')),
+        DropDown: Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/DropDown.vue')),
+        NavLink: Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/NavLink.vue')),
     },
     props: {
         user: {
