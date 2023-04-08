@@ -1,10 +1,12 @@
 <template>
-    <div :style="divHeight" class="paragraphDiv">
-        <div class="paragraph" v-for="(content, index) in contentList" :key="index" :ref="(el)=>{ paragraphs[index] = el }">
-            <p v-html="content"></p>
+    <div class="inline_block">
+        <div :style="divHeight" class="paragraphDiv">
+            <div class="paragraph" v-for="(content, index) in contentList" :key="index" :ref="(el)=>{ paragraphs[index] = el }">
+                <p v-html="content"></p>
+            </div>
         </div>
+        <div v-if="showReadMoreBtn()" @click="toggleShowMore" class="readMore floatRight">{{showMoreText}}</div>
     </div>
-    <div v-if="showReadMoreBtn()" @click="toggleShowMore" class="readMore floatRight">{{showMoreText}}</div>
 </template>
 
 <script>
@@ -99,7 +101,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+    .inline_block{
+        display: inline-block;
+    }
 
     .paragraphDiv {
         transition: max-height 1s;

@@ -30,5 +30,7 @@ module.exports = {
     globals: {
         Vue: true,
         VueLoader: true,
+        arrayHelper: true,
+        mathHelper: true,
     },
 };

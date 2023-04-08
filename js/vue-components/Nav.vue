@@ -174,12 +174,6 @@ export default {
         line-height: 1.5;
     }
 
-    .navContainer{
-        width: 100%;
-        margin-bottom: 40px;
-        padding-top: 40px;
-    }
-
     .pageLink {
         width: 100%;
         display: block;
@@ -198,7 +192,6 @@ export default {
         width: 100%;
         margin-bottom: 40px;
         padding-top: 40px;
-        min-width: 250px;
     }
 
     .barBlock {
@@ -219,7 +212,15 @@ export default {
         white-space: pre;
     }
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1024px) {
+        .nav{
+            width: 225px;
+            /* padding: 0;
+            margin: 0; */
+        }
+    }
+
+    @media only screen and (max-width: 820px) {
         .mobileNav{
             display: block;
             position: fixed;

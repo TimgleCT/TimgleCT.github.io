@@ -24,6 +24,8 @@
     <script src = "js/jquery-2.1.4.min.js"></script>
     <script src = "Semantic-UI-CSS-master/semantic.min.js"></script>
     <script src = "js/helper/processHelper.js"></script>
+    <script src = "js/helper/arrayHelper.js"></script>
+    <script src = "js/helper/mathHelper.js"></script>
     <script src = "js/style.js"></script>
     <script src = "js/mail.js"></script>
 </head>
@@ -36,14 +38,17 @@
             <template v-for="(content, index) in webStructure" :key="index">
                  <unit-content :unit-title="content.title" id="aboutMePage" :is-header="true">
                     <content-paragraph v-if="content.contentType == 'paragraph'"
-                        :content-list="content.content"
-                        height="300px"
-                        :collapse-mode="true"
+                    :content-list="content.content"
+                    height="300px"
+                    :collapse-mode="true"
                     ></content-paragraph>
+                    <img-block
+                        :imgs-list="content.imgs"
+                    ></img-block>
                 </unit-content>
             </template>
 
-            <div class = "unit group">
+            <!-- <div class = "unit group">
                 <div class = "imgBlock">
                     <img class = "middleImg" src = "img/A1.jpg">
                     <img class = "middleImg" src = "img/A2.jpg">
@@ -54,7 +59,7 @@
                     <img class = "middleImg" src = "img/A5.jpg">
                     <img class = "middleImg" src = "img/A6.jpeg">
                 </div>
-            </div>
+            </div> -->
             
             <div class = "unit group" id = "educationPage">
                 <h1 class = "title">學歷 － <span class = "noLetterSpace">Education<span></span></h1>
