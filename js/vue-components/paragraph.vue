@@ -136,4 +136,12 @@ export default {
         font-size: 1.2rem;
         line-height: 30px;
     }
+
+    @media only screen and (max-width: 992px) {
+        p {
+            letter-spacing: 1px;
+            font-size: 1.0rem;
+            line-height: 25px;
+        }
+    }
 </style>
