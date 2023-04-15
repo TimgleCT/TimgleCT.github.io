@@ -86,7 +86,7 @@ export default {
                 break;
 
             case 'computer':
-                viewShape = 3;
+                viewShape = 2;
                 break;
 
             case 'large screen':
