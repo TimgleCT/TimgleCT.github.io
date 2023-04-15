@@ -160,8 +160,13 @@ export default {
         top: 0;
     }
 
+    .childrenMargin{
+        margin-left: 2rem;
+    }
+
     .nav{
-        width: 280px;
+        width: 20vw;
+        max-width: 280px;
         height: 100%;
         font-weight: bold;
         color: #fff;
@@ -192,10 +197,11 @@ export default {
         width: 100%;
         margin-bottom: 40px;
         padding-top: 40px;
+        min-width: calc(min(250px, 20vw, 100%));
     }
 
     .barBlock {
-        min-width: 250px;
+        min-width: calc(min(250px calc(20vw - 32px)));
     }
 
     .navHeader {
@@ -206,17 +212,36 @@ export default {
         margin: 5px 0px 0px 0px;
     }
 
+    h3.navHeader {
+        font-size: 2.5rem;
+        margin-top: 1.5rem;
+    }
+
     h4.navHeader {
+        font-size: 2.0rem;
         padding-top: 0px;
         margin: 0px;
         white-space: pre;
     }
 
+    @media only screen and (max-width: 1440px) {
+        h3.navHeader {
+            font-size: 2.0rem;
+        }
+        h4.navHeader {
+            font-size: 1.5rem;
+        }
+    }
+
     @media only screen and (max-width: 1024px) {
         .nav{
-            width: 225px;
-            /* padding: 0;
-            margin: 0; */
+            font-size: 0.8rem;
+        }
+        h3.navHeader {
+            font-size: 1.5rem;
+        }
+        h4.navHeader {
+            font-size: 1.25rem;
         }
     }
 
@@ -236,7 +261,15 @@ export default {
         }
         .open{
             z-index: 4;
-            width: 250px;
+            width: calc(min(250px, 50vw));
+        }
+
+        .navContainer {
+            min-width: calc(min(250px, 50vw));
+        }
+
+        .barBlock {
+            min-width: calc(min(250px, 50vw));
         }
     }
 </style>
