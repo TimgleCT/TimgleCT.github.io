@@ -36,160 +36,36 @@
         
         <div class = "mainContent">
             <template v-for="(content, index) in webStructure" :key="index">
-                 <unit-content :unit-title="content.title" id="aboutMePage" :is-header="true">
-                    <content-paragraph v-if="content.contentType == 'paragraph'"
-                    :content-list="content.content"
-                    height="300px"
-                    :collapse-mode="true"
-                    ></content-paragraph>
-                    <img-block
-                        :imgs-list="content.imgs"
-                    ></img-block>
+                 <unit-content :unit-title="content.title" :id="content.domId" :is-header="content.isHeader">
+                    <template v-if="content.contentType ==='paragraph image'">
+                        <content-paragraph
+                            :content-list="content.content"
+                            height="300px"
+                            :collapse-mode="true"
+                        ></content-paragraph>
+                        <img-block
+                            :imgs-list="content.imgs"
+                        ></img-block>
+                    </template>
+                    <template v-if="content.contentType ==='rotateCard'">
+                        <rotate-card
+                            v-for="(card, cardIndex) in content.rotateCard"
+                            :key="cardIndex"
+                            :big-title="card.bigTitle"
+                            :medium-title="card.mediumTitle"
+                            :small-title="card.smallTitle"
+                            :tag="card.tag"
+                            :color-style="card.colorStyle"
+                            :background-img="card.backgroundImg"
+                            :logo-img="card.middleLogoImg"
+                            :rotate-img="card.rotateContent.img"
+                            :rotate-title="card.rotateContent.title"
+                            :rotate-sub-title="card.rotateContent.subTitle"
+                            :rotate-content-list=card.rotateContent.descriptionList
+                        ></rotate-card>
+                    </template>
                 </unit-content>
             </template>
-
-            <!-- <div class = "unit group">
-                <div class = "imgBlock">
-                    <img class = "middleImg" src = "img/A1.jpg">
-                    <img class = "middleImg" src = "img/A2.jpg">
-                    <img class = "middleImg" src = "img/A3.jpeg">
-                </div>
-                <div class = "imgBlock">
-                    <img class = "middleImg" src = "img/A4.jpg">
-                    <img class = "middleImg" src = "img/A5.jpg">
-                    <img class = "middleImg" src = "img/A6.jpeg">
-                </div>
-            </div> -->
-            
-            <div class = "unit group" id = "educationPage">
-                <h1 class = "title">學歷 － <span class = "noLetterSpace">Education<span></span></h1>
-                <hr class = "line">
-                <div class = "cardBlock group">
-                    <div class="ui yellow right ribbon label">校排第七</div>
-                    <div class = "cardFront">
-                        <div id = "highSchool" class="opacityBackground"></div>
-                        <h3 class = "cardHead">高中</h3>
-                        <img class = "cardImg" src = "img/school-1.png">
-                        <h4 class="cardH4">私立普台高級中學</h4>
-                        <h4 class="cardH4">自然組</h4>
-                    </div>
-                    
-                    <div class = "cardBack cardColorOrange-1">
-                        <img class = "cardImgBack" src = "img/school1-1.JPG">
-                        <h4 class = "cardBackHeader">人格特質的養成</h4>
-                        <div class="meta">
-                            盡守本份、處事理性、待人和善、樂於助人
-                        </div>
-                        <div class = "cardBackContent">
-                            <div class = "listItem listItemColor-1 group">
-                                <img class="floatLeftImg" src="img/schoolicon.png">
-                                <div class = "floatLeft">
-                                    <div class = "listHeader">住宿生活</div>
-                                    <div class = "listP">練習溝通與獨立生活</div>
-                                </div>
-                            </div>
-                            <div class = "listItem listItemColor-1 group">
-                                <img class="floatLeftImg" src="img/papericon.png">
-                                <div class = "floatLeft">
-                                    <div class = "listHeader">自主管理</div>
-                                    <div class = "listP">事先規劃今日作業目標</div>
-                                </div>
-                            </div>
-                            <div class = "listItem listItemColor-1 group">
-                                <img class="floatLeftImg" src="img/helpicon.png">
-                                <div class = "floatLeft">
-                                    <div class = "listHeader">做事態度</div>
-                                    <div class = "listP">參與志工與班級幹部</div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class = "cardBlock">
-                    <div class="ui orange right ribbon label">系排第二</div>
-                    <div class = "cardFront">
-                        <div id = "college" class="opacityBackground"></div>
-                        <h3 class = "cardHead">大學</h3>
-                        <img class = "cardImg" src = "img/school2.png">
-                        <h4 class="cardH4">國立高雄大學</h4>
-                        <h4 class="cardH4">資訊管理學系</h4>
-                    </div>
-                    <div class = "cardBack cardColorOrange-2">
-                        <img class = "cardImgBack" src = "img/school2-1.jpg">
-                        <h4 class = "cardBackHeader">社會力的建立</h4>
-                        <div class="meta">
-                            團隊合作、專業基礎、領導能力、危機處理
-                        </div>
-                        <div class = "cardBackContent">
-                            <div class = "listItem listItemColor-2">
-                                <img class="floatLeftImg" src="img/code.png">
-                                <div class = "floatLeft">
-                                    <div class = "listHeader">專業養成</div>
-                                    <div class = "listP">資訊與管理均衡發展</div>
-                                </div>
-                            </div>
-                            <div class = "listItem listItemColor-2">
-                                <img class="floatLeftImg" src="img/team.png">
-                                <div class = "floatLeft">
-                                    <div class = "listHeader">領導團隊</div>
-                                    <div class = "listP">系學會與營隊的磨練</div>
-                                </div>
-                            </div>
-                            <div class = "listItem listItemColor-2">
-                                <img class="floatLeftImg" src="img/medal.png">
-                                <div class = "floatLeft">
-                                    <div class = "listHeader">合作競賽</div>
-                                    <div class = "listP">與團隊共獲殊榮</div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class = "cardBlock">
-                    <div class="ui red right ribbon label">努力中</div>
-                    <div class = "cardFront">
-                        <div id = "college-2" class="opacityBackground"></div>
-                        <h3 class = "cardHead">研究所</h3>
-                        <img class = "cardImg" src = "img/school3.png">
-                        <h4 class="cardH4">國立中央大學</h4>
-                        <h4 class="cardH4">資訊管理學系碩士班</h4>
-                    </div>
-                    <div class = "cardBack cardColorOrange-3">
-                        <img class = "cardImgBack" src = "img/school3-1.jpg">
-                        <h4 class = "cardBackHeader">鑽研出專業專精</h4>
-                        <div class="meta">
-                            邏輯思考、問題解決、細心細膩、栽培自我
-                        </div>
-                        <div class = "cardBackContent">
-                            <div class = "listItem listItemColor-3">
-                                <img class="floatLeftImg" src="img/graduation-hat.png">
-                                <div class = "floatLeft">
-                                    <div class = "listHeader">研讀資管領域</div>
-                                    <div class = "listP">進入管理組並研究相關</div>
-                                </div>
-                            </div>
-                            <div class = "listItem listItemColor-3">
-                                <img class="floatLeftImg" src="img/think.png">
-                                <div class = "floatLeft">
-                                    <div class = "listHeader">嚴謹思考以解決問題</div>
-                                    <div class = "listP">撰寫論文的訓練過程</div>
-                                </div>
-                            </div>
-                            <div class = "listItem listItemColor-3">
-                                <img class="floatLeftImg" src="img/workteam.png">
-                                <div class = "floatLeft">
-                                    <div class = "listHeader">為進入社會而準備</div>
-                                    <div class = "listP">加學生團隊與企導計畫</div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            
-            </div>
 
             <div class = "unit group" id = "skills">
                 <h1 class = "title">能力自評 － <span class = "noLetterSpace">Skills<span></span></h1>

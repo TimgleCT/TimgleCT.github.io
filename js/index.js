@@ -5,15 +5,18 @@ const App = {
         'unit-content': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/unit.vue')),
         'content-paragraph': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/paragraph.vue')),
         'img-block': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/imgBlock.vue')),
+        'rotate-card': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/rotateCard.vue')),
     },
     setup() {
         const webStructure = ref([
             {
+                domId: 'aboutMePage',
+                isHeader: true,
                 title: {
                     En: 'Tim Chuang',
                     Zh: '關於我',
                 },
-                contentType: 'paragraph',
+                contentType: 'paragraph image',
                 content: [
                     '&nbsp&nbsp&nbsp&nbsp嗨~我是Tim，目前就讀於中央資管碩二。主要接觸資料科學與網頁程式設計的相關領域。曾在國泰暑期實習期間完成NLP的專案，開發SPEC⽂件推薦的API；⼤學畢業專題是智慧鬧鐘的Android APP，'
                     + '以CNN來幫助系統判斷使用者是否賴床；有時候也會上網找資料集來練習，例如前些陣子用台積電的歷史股價資料來練習LSTM。網頁程式設計的部分則有將前端串接Django的經驗，也有利用 Github Page 開發自己的RWD個⼈網頁，'
@@ -54,9 +57,113 @@ const App = {
                     },
                     {
                         imgUrl: 'img/AUOSmartManufacture.jpg',
-                        title: '友達人生',
+                        title: '友達起點',
                         desc: '友達光電是我職涯中的第一個工作機會，也是我擔任前端工程師的起點。除了專注於前端開發外，我還涉足了自動化測試、軟體加密部署和客戶接觸等領域。'
                         + '我負責的產品不僅為公司帶來千萬的收益，也成為公司主力產品之一。也感謝公司讓我有機會與耐心親切的主管和活潑有趣的同仁一起合作，讓我在這份工作上有相當好的體驗。',
+                    },
+                ],
+            },
+            {
+                domId: 'educationPage',
+                isHeader: false,
+                title: {
+                    En: 'Education',
+                    Zh: '學歷',
+                },
+                contentType: 'rotateCard',
+                rotateCard: [
+                    {
+                        colorStyle: 'yellow',
+                        backgroundImg: 'img/highschool.jpg',
+                        middleLogoImg: 'img/school-1.png',
+                        bigTitle: '高中',
+                        mediumTitle: '私立普台高級中學',
+                        smallTitle: '自然組',
+                        tag: '校排第七',
+                        rotateContent: {
+                            title: '人格特質的養成',
+                            subTitle: '盡守本份、處事理性、待人和善、樂於助人',
+                            img: 'img/school1-1.JPG',
+                            descriptionList: [
+                                {
+                                    icon: 'img/schoolicon.png',
+                                    title: '住宿生活',
+                                    desc: '練習溝通與獨立生活',
+                                },
+                                {
+                                    icon: 'img/papericon.png',
+                                    title: '自主管理',
+                                    desc: '事先規劃今日作業目標',
+                                },
+                                {
+                                    icon: 'img/helpicon.png',
+                                    title: '做事態度',
+                                    desc: '參與志工與班級幹部',
+                                },
+                            ],
+                        },
+                    },
+                    {
+                        colorStyle: 'orange',
+                        backgroundImg: 'img/college.jpg',
+                        middleLogoImg: 'img/school2.png',
+                        bigTitle: '大學',
+                        mediumTitle: '國立高雄大學',
+                        smallTitle: '資訊管理學系',
+                        tag: '系排第二',
+                        rotateContent: {
+                            title: '社會力的建立',
+                            subTitle: '團隊合作、專業基礎、領導能力、危機處理',
+                            img: 'img/school2-1.jpg',
+                            descriptionList: [
+                                {
+                                    icon: 'img/code.png',
+                                    title: '專業養成',
+                                    desc: '資訊與管理均衡發展',
+                                },
+                                {
+                                    icon: 'img/team.png',
+                                    title: '領導團隊',
+                                    desc: '系學會與營隊的磨練',
+                                },
+                                {
+                                    icon: 'img/medal.png',
+                                    title: '合作競賽',
+                                    desc: '與團隊共獲殊榮',
+                                },
+                            ],
+                        },
+                    },
+                    {
+                        colorStyle: 'red',
+                        backgroundImg: 'img/college-2.jpg',
+                        middleLogoImg: 'img/school3.png',
+                        bigTitle: '研究所',
+                        mediumTitle: '國立中央大學',
+                        smallTitle: '資訊管理學系碩士班',
+                        tag: '獲最佳論文獎',
+                        rotateContent: {
+                            title: '鑽研出專業專精',
+                            subTitle: '邏輯思考、問題解決、細心細膩、栽培自我',
+                            img: 'img/school3-1.jpg',
+                            descriptionList: [
+                                {
+                                    icon: 'img/think.png',
+                                    title: '嚴謹思考以解決問題',
+                                    desc: '撰寫論文的訓練過程',
+                                },
+                                {
+                                    icon: 'img/graduation-hat.png',
+                                    title: '充實自身軟硬實力',
+                                    desc: '加學生團隊與企導計畫',
+                                },
+                                {
+                                    icon: 'img/workteam.png',
+                                    title: '為進入社會而準備',
+                                    desc: '參與國泰CIP實習計畫',
+                                },
+                            ],
+                        },
                     },
                 ],
             },

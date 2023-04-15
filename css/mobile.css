@@ -1,16 +1,6 @@
 @media only screen and (max-width: 1024px) {
     .mainContent{
-        margin-left: 245px;
-        padding: 0;
-    }
-    .cardBackContent {
-        padding: 1em 0em 0px 0em;
-    }
-    .listItem{
-        margin: 0.8em 0px 0.8em 0px;
-    }
-    .cardBlock{
-        height: 43vw;;
+        padding: 0 20px;
     }
     .contentBar{
         width: 95%;
@@ -40,33 +30,14 @@
         margin-left: 0!important;
         margin-right: 0!important;
     }
-
-    .cardBlock{
-        width: 220px;
-        height: 135vw;
-        max-height: 460px;
-        margin: 15px 0.5% 15px 0.5%;
-    }
     h4{
         font-size: 1.2rem;
     }
     .meta{
         font-size: 1.5vw;
     }
-    .cardBackContent {
-        padding: 1em 0em 0px 0em;
-    }
-    .listItem{
-        margin: 0.8em 4px 0.8em 4px;
-    }
     .timelineHead h4 {
         width: 70%;
-    }
-    .listHeader{
-        font-size: 1.0vw;
-    }
-    .listP{
-        font-size: 0.5vw;
     }
     .barItemContext {
         padding: 0.5vh 15px 2vh 30px;
@@ -120,9 +91,6 @@
     h1{
         font-size: 2.0rem;
     }
-    /* h4{
-        font-size: 1.2rem;
-    } */
     p{
         font-size: 1.1rem;
     }
@@ -131,7 +99,7 @@
     }
     .mainContent{
         width: 100%;
-        padding: 2% 7% 2% 4%;
+        padding: 2% 4% 2% 4%;
         margin-top: 70px;
         margin-left: 0!important;
         margin-right: 0!important;
@@ -146,38 +114,8 @@
         width: 98%;
         margin-bottom: 20px;
     }
-    .cardBlock{
-        width: 100%;
-        height: 135vw;
-        max-height: 460px;
-        min-height: 428px;
-        margin: 15px 1.5% 15px 1.5%;
-    }
-    .cardHead{
-        margin-bottom: 2rem;
-        font-size: 1.8rem;
-        font-weight: 600;
-    }
-    .cardImg{
-        margin-bottom: 3rem;
-    }
-    .cardH4{
-        font-size: 1.3rem;
-    }
     .meta{
         font-size: 2.8vw;
-    }
-    .cardBackHeader{
-        margin-top: 3vw;
-    }
-    .cardBackContent{
-        padding: 0.5vw 1vw 0px 1vw;
-    }
-    .listHeader{
-        font-size: 3.5vw;
-    }
-    .listP{
-        font-size: 3vw;
     }
     .contentBar{
         width: 100%;
@@ -351,7 +289,7 @@
 }
 @media only screen and (max-width: 320px) {
     .mainContent{
-        padding: 2% 7% 2% 3%;
+        padding: 2% 3% 2% 3%;
     }
     .colorBoxSet{
         max-width: 80vw;
