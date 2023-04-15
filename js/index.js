@@ -149,17 +149,17 @@ const App = {
                             descriptionList: [
                                 {
                                     icon: 'img/think.png',
-                                    title: '嚴謹思考以解決問題',
+                                    title: '思考訓練',
                                     desc: '撰寫論文的訓練過程',
                                 },
                                 {
                                     icon: 'img/graduation-hat.png',
-                                    title: '充實自身軟硬實力',
-                                    desc: '加學生團隊與企導計畫',
+                                    title: '充實實力',
+                                    desc: '參與學生團隊與企導計畫',
                                 },
                                 {
                                     icon: 'img/workteam.png',
-                                    title: '為進入社會而準備',
+                                    title: '初入職場',
                                     desc: '參與國泰CIP實習計畫',
                                 },
                             ],

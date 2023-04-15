@@ -139,16 +139,20 @@ export default {
             };
         }
 
-        function setCardHeight(cardFrontHeight, cardBackHeight) {
-            const higherHeight = (cardFrontHeight > cardBackHeight) ? cardFrontHeight : cardBackHeight;
-            return {
-                height: `${higherHeight}px`,
-            };
+        function setCardHeight() {
+            const cardFrontHeight = cardFront.value.clientHeight;
+            const cardBackHeight = cardBack.value.clientHeight;
+            if (imgsNum.value === 0) {
+                const higherHeight = (cardFrontHeight > cardBackHeight) ? cardFrontHeight : cardBackHeight;
+                cardHeight.value = {
+                    height: `${higherHeight}px`,
+                };
+            }
         }
 
         watchEffect(() => {
-            if (cardFront.value && cardBack.value && imgsNum.value === 0) {
-                cardHeight.value = setCardHeight(cardFront.value.clientHeight, cardBack.value.clientHeight);
+            if (cardFront.value && cardBack.value) {
+                setCardHeight();
             }
         });
 
@@ -173,7 +177,7 @@ export default {
     }
     .cardHead{
         font-size: 2.5em;
-        margin-bottom: 1.7em;
+        margin-bottom: 1.7rem;
         letter-spacing: 2px;
         text-align: center;
     }
@@ -183,9 +187,8 @@ export default {
     }
     .cardImg{
         width: 40%;
-        margin-bottom: 2em ;
         display: block;
-        margin: auto;
+        margin: auto auto 3rem auto;
     }
     .cardImgBack{
         width: 100%;
@@ -204,7 +207,7 @@ export default {
     }
     .cardFront{
         width: 100%;
-        padding: 15% 0px 25% 0px;
+        padding: 15% 0px 15% 0px;
         border: 2px solid rgb(241, 51, 26);
         border-radius: 16px;
         backface-visibility: hidden;
@@ -260,20 +263,19 @@ export default {
         color: rgba(255, 255, 255, 0.644);
     }
     .listIcon{
-        width: 2.5rem;
-        height: 2.5rem;
-        /* height: 10%; */
-        margin-right: 1rem;
+        width: calc(min(11.5%, 2.5rem));
+        height: calc(min(11.5%, 2.5rem));
+        margin-right: calc(min(5%, 1rem));
     }
     .cardBackContent{
-        padding: 1rem 1.0rem 0px 1.0rem;
+        padding: calc(min(2.5%, 1rem)) calc(min(2.5%, 1rem)) 0px calc(min(2.5%, 1rem));
     }
     .listHeader{
         font-size: 1rem;
         font-weight: 500;
     }
     .listP{
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         font-weight: 300;
     }
     .listItem{
@@ -308,34 +310,40 @@ export default {
         opacity: 0.2;
     }
     @media only screen and (max-width: 1024px) {
+        .cardHead{
+            font-size: 1.75rem;
+        }
+        .cardH4{
+            font-size: 1.25rem;
+        }
         .cardBackContent{
-            padding: 0.8rem 0.8rem 0px 0.8rem;
+            padding: calc(min(2.5%, 0.8rem)) calc(min(2.5%, 0.8rem)) 0px calc(min(2.5%, 0.8rem));
         }
         .meta{
             padding: 0px 10px 0px 30px;
-            font-size: 0.45rem;
+            font-size: 0.75rem;
         }
         .listItem{
             margin: 0.8rem 0px 0.8rem 0px;
         }
         .listHeader{
-            font-size: 0.5rem;
+            font-size: 0.9rem;
             font-weight: 500;
         }
         .listP{
-            font-size: 0.3rem;
+            font-size: 0.7rem;
             font-weight: 300;
         }
         .listIcon{
-            width: 1.5rem;
-            height: 1.5rem;
-            margin-right: 0.5rem;
+            width: calc(min(11.5%, 1.5rem));
+            height: calc(min(11.5%, 1.5rem));
+            margin-right: calc(min(5%, 0.5rem));
         }
     }
 
-    @media only screen and (max-width: 425px) {
+    @media only screen and (max-width: 750px) {
         .cardBlock{
-            width: 92.5%;
+            width: 95%;
             margin: 15px 1.5% 15px 1.5%;
         }
         .cardHead{
@@ -349,7 +357,7 @@ export default {
             font-size: 1.3rem;
         }
         .meta{
-            font-size: 0.6rem;
+            font-size: 0.75rem;
         }
         .cardBackHeader{
             margin-top: 1rem;
@@ -363,7 +371,7 @@ export default {
             font-weight: bold;
         }
         .listP{
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: normal;
         }
         .listIcon{
