@@ -64,6 +64,22 @@
                             :rotate-content-list=card.rotateContent.descriptionList
                         ></rotate-card>
                     </template>
+                    <template v-if="content.contentType ==='listBlock'">
+                        <list-block 
+                            v-for="(block, blockIndex) in content.content"
+                            :title="block.title"
+                            :icon_url="block.iconUrl"
+                            :style="block.style"
+                            >
+                            <list-block-list
+                                :list="block.listItems"
+                            ></list-block-list>
+                            <!-- <list-item v-for="item in block.listItems"
+                                :title="item.title"
+                                :content="item.content"
+                            ></list-item> -->
+                        </list-block>
+                    </template>
                 </unit-content>
             </template>
 

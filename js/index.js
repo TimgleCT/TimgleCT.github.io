@@ -6,6 +6,9 @@ const App = {
         'content-paragraph': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/paragraph.vue')),
         'img-block': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/imgBlock.vue')),
         'rotate-card': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/rotateCard.vue')),
+        'list-block': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/listBlock.vue')),
+        'list-item': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/listItem.vue')),
+        'list-block-list': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/list.vue')),
     },
     setup() {
         const webStructure = ref([
@@ -164,6 +167,44 @@ const App = {
                                 },
                             ],
                         },
+                    },
+                ],
+            },
+            {
+                domId: 'skills',
+                isHeader: false,
+                title: {
+                    En: 'Skills',
+                    Zh: '能力自評',
+                },
+                contentType: 'listBlock',
+                content: [
+                    {
+                        title: '技術能力',
+                        iconUrl: 'img/coding.png',
+                        style: 'red',
+                        listItems: [
+                            {
+                                title: '網頁前端',
+                                content: 'Vue.js、Echarts、ESLint、RWD Web、Bootstrap、Element UI、Semantic UI、HTML、CSS、JavaScript、JQuery',
+                            },
+                            {
+                                title: '後端應用',
+                                content: 'Django、Android Studio、.NET Core Website Deploy',
+                            },
+                            {
+                                title: '版本控制',
+                                content: 'GitHub、GitLab、Tortoise Git',
+                            },
+                            {
+                                title: '自動化測試',
+                                content: 'Cypress',
+                            },
+                            {
+                                title: '資料科學',
+                                content: 'Python、NLP、Keras',
+                            },
+                        ],
                     },
                 ],
             },
