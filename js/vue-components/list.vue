@@ -1,14 +1,22 @@
 <template>
     <div class="ui grid">
-        <div v-for="(item,index) in list"
-            :key="item"
+        <div v-for="(item, index) in list"
+            :key="index"
             :ref="(el)=>{ listItems[index] = el }"
-            class="list sixteen wide mobile sixteen wide tablet eight sixteen computer eight wide widescreen column">
+            class="list sixteen wide mobile sixteen wide tablet sixteen wide computer eight wide large screen five wide widescreen column">
             <list-item
                 :title="item.title"
                 :content="item.content"
-                @mounted="fixListItemsHeight()"
-            ></list-item>
+                @mounted="fixListItemsHeight()">
+                <template v-slot:image>
+                    <percent-chart
+                        :numerator="item.score"
+                        :denominator="item.maxScore"
+                        :showTooltip="false"
+                        :showLegend="false">
+                    </percent-chart>
+                </template>
+            </list-item>
         </div>
     </div>
 </template>
@@ -23,6 +31,7 @@ export default {
     name: 'list-block-list',
     components: {
         listItem: Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/listItem.vue')),
+        percentChart: Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/percentChart.vue')),
     },
     props: {
         list: {
@@ -49,7 +58,7 @@ export default {
                 maxHeight = Math.max(maxHeight, items[index].clientHeight);
             }
             for (let index = 0; index < items.length; index++) {
-                items[index].style.height = `${maxHeight}px`;
+                items[index].children[0].style.height = `${maxHeight}px`;
             }
             return 1;
         }

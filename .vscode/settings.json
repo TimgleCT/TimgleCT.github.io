@@ -13,6 +13,7 @@
     "eslint.validate": ["javascript", "vue"],
     "vetur.validation.template": false,
     "cSpell.words": [
+        "echarts",
         "linebreak",
         "plusplus"
     ]

@@ -6,7 +6,7 @@
                 <span>{{title}}</span>
             </div>
         </div>
-        <div class = "listBlockItemList" :class="listItemsStyle" ref="slotDiv">
+        <div class = "listBlockItemList" :class="listItemsStyle">
             <slot></slot>
         </div>
     </div>
@@ -25,7 +25,7 @@ export default {
             type: String,
             default: 'imgUrl',
         },
-        style: {
+        block_style: {
             type: String,
             default: 'red',
         },
@@ -33,7 +33,7 @@ export default {
 
     setup(props) {
         function setListStyle() {
-            switch (props.style) {
+            switch (props.block_style) {
             case 'red':
                 return ['listIconColor-red', 'listItemListColor-red'];
 
@@ -63,7 +63,7 @@ export default {
     flex-flow:row wrap;
 }
 .listBlockIcon{
-    width: 30%;
+    width: 15%;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     display: flex;
@@ -94,9 +94,9 @@ export default {
     display: block;
 }
 .listBlockItemList{
-    width: 70%;
+    width: 85%;
     float: left;
-    padding: 1.5em;
+    padding: 2.5rem 1.5em;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
 }
@@ -107,7 +107,30 @@ export default {
     background-color: rgba(158, 82, 145, 0.815);
 }
 
+@media only screen and (max-width: 1400px) {
+    .listBlockIcon{
+        width: 22.5%;
+    }
+    .listBlockItemList{
+        width: 77.5%;
+    }
+    .listBlockIcon{
+        align-items: flex-start;
+        padding-top: 2.0rem;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+}
+
 @media only screen and (max-width: 1024px) {
+    .listBlockIcon{
+        width: 30%;
+    }
+    .listBlockItemList{
+        width: 70%;
+    }
     .listBlockIcon .iconBlock{
         margin: 5%;
     }
@@ -124,6 +147,7 @@ export default {
 @media only screen and (max-width: 425px) {
     .listBlockIcon{
         width: 100%;
+        padding-top: 0rem;
         border-top-right-radius: 15px;
         border-bottom-left-radius: 0;
     }

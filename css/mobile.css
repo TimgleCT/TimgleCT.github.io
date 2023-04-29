@@ -2,12 +2,6 @@
     .mainContent{
         padding: 0 20px;
     }
-    .contentBar{
-        width: 95%;
-    }
-    .barItemList{
-        padding-top: 0;
-    }
     .colorBoxSet{
         max-width: 87.5vw;
     }
@@ -39,35 +33,6 @@
     .timelineHead h4 {
         width: 70%;
     }
-    .barItemContext {
-        padding: 0.5vh 15px 2vh 30px;
-    }
-    .con{
-        top: 15px;
-        height: 6vw;
-        width: 6vw;
-    }
-    .percent-circle-left {
-        width: 3vw;
-        border-radius: 3vw 0 0 3vw/3vw 0 0 3vw;
-    }
-    .percent-circle-right {
-        width:3vw;
-        border-radius: 0 3vw 3vw 0/0 3vw 3vw 0;
-    }
-      
-    .percent-circle-right .right-content{
-        border-radius: 0 3vw 3vw 0/0 3vw 3vw 0;
-    }
-      
-    .percent-circle-left {
-        width:3vw;
-        border-radius: 3vw 0 0 3vw/3vw 0 0 3vw;
-    }
-      
-    .percent-circle-left .left-content {
-        border-radius: 3vw 0 0 3vw/3vw 0 0 3vw;
-    }
     .timelineHead::after {
         display: none;
     }
@@ -80,10 +45,6 @@
     .dropDownImg .head{
         font-size: 2.3vw;
     }
-    /* #more{
-        display: none;
-        margin-bottom: 5px;
-    } */
 }
 
 
@@ -110,86 +71,8 @@
     .header{
         margin-top: 0px;
     }
-    .imgBlock{
-        width: 98%;
-        margin-bottom: 20px;
-    }
     .meta{
         font-size: 2.8vw;
-    }
-    .contentBar{
-        width: 100%;
-        margin: 2rem 0rem 1rem 0rem;;
-    }
-    .barIcon{
-        width: 100%;
-        border-top-right-radius: 15px;
-        border-bottom-left-radius: 0;
-        padding: 7% 1.5em 1.5em 1.5em;
-    }
-    .barIcon h4{
-        font-size: 1.5rem;
-        margin-top: 10px;
-    }
-    .barIcon img{
-        width: 16.33%;
-    }
-    .barItemList{
-        width: 100%;
-        border-top-right-radius: 0;
-        border-bottom-left-radius: 15px;
-        padding: 1rem 0rem 1rem 0;
-    }
-    .barItem{
-        width: 100%;
-        height: auto;
-        margin: 0.4rem 0px;
-    }
-    .con {
-        top:0px;
-        height:4rem;
-        width:4rem;
-        margin: auto;
-        float: none;
-    }
-    .percent-circle-right {
-        width:2rem;
-        border-radius: 0 2rem 2rem 0/0 2rem 2rem 0;
-    }
-      
-    .percent-circle-right .right-content{
-        border-radius: 0 2rem 2rem 0/0 2rem 2rem 0;
-    }
-      
-    .percent-circle-left {
-        width:2rem;
-        border-radius: 2rem 0 0 2rem/2rem 0 0 2rem;
-    }
-      
-    .percent-circle-left .left-content {
-        border-radius: 2rem 0 0 2rem/2rem 0 0 2rem;
-    }
-      
-    .text-circle {
-        font-size: 0.9rem;
-    }
-    .barItemHeader{
-        text-align: center;
-        font-size: 1.3rem;
-    }
-    .barItemContext{
-        width: 100%;
-        height: auto;
-        padding: 2vh 0px;
-        margin: auto;
-    }
-    .barItemContext hr{
-        width: 80%;
-    }
-    .barItemContext .meta {
-        font-size: 1.0rem;
-        text-align: center;
-        padding: 5px 50px;
     }
     .timeline{
         margin-bottom: 15vw;

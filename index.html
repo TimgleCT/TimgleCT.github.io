@@ -19,6 +19,7 @@
 
         gtag('config', 'UA-161578161-1');
     </script>
+    <script src = "js/lib/echarts.js"></script>
     <script src = "js/lib/vue@3.2.36.js"></script>
     <script src = "js/lib/vue3-sfc-loader.js"></script>
     <script src = "js/jquery-2.1.4.min.js"></script>
@@ -69,169 +70,15 @@
                             v-for="(block, blockIndex) in content.content"
                             :title="block.title"
                             :icon_url="block.iconUrl"
-                            :style="block.style"
+                            :block_style="block.style"
                             >
                             <list-block-list
                                 :list="block.listItems"
                             ></list-block-list>
-                            <!-- <list-item v-for="item in block.listItems"
-                                :title="item.title"
-                                :content="item.content"
-                            ></list-item> -->
                         </list-block>
                     </template>
                 </unit-content>
             </template>
-
-            <div class = "unit group" id = "skills">
-                <h1 class = "title">能力自評 － <span class = "noLetterSpace">Skills<span></span></h1>
-                <hr class = "line">
-                <div class = "contentBar group">
-                    <div class = "barIcon floatLeft barIconColor-1">
-                        <img src = "img/coding.png">
-                        <h4>技術能力</h3>
-                    </div>
-                    <div class = "barItemList barItemListColor-1">
-                        <div class = "barItem ">
-                            <div class="con">
-                                <div class="percent-circle percent-circle-left">
-                                <div id = "frontEndleft" class="left-content"></div>
-                                </div>
-                                <div class="percent-circle percent-circle-right">
-                                <div class="right-content"></div>
-                                </div>
-                                <div class="text-circle">80%</div>
-                            </div>
-                            <div class = "barItemContext">
-                                <h4 class="barItemHeader">網頁前端</h4>
-                                <hr>
-                                <div class = "meta">Html、CSS、Javascript、Django、Kendo、JQuery</div>
-                            </div>
-                        </div>
-                        <div class = "barItem">
-                            <div class="con">
-                                <div class="percent-circle percent-circle-left">
-                                <div id = "app" class="left-content"></div>
-                                </div>
-                                <div class="percent-circle percent-circle-right">
-                                <div class="right-content"></div>
-                                </div>
-                                <div class="text-circle">70%</div>
-                            </div>
-                            <div class = "barItemContext">
-                                <h4 class="barItemHeader">應用程式</h4>
-                                <hr>
-                                <div class = "meta">Android Studio</div>
-                            </div>
-                        </div>
-                        <div class = "barItem">
-                            <div class="con">
-                                <div class="percent-circle percent-circle-left">
-                                <div id = "dataScienceleft" class="left-content"></div>
-                                </div>
-                                <div class="percent-circle percent-circle-right">
-                                <div class="right-content"></div>
-                                </div>
-                                <div class="text-circle">85%</div>
-                            </div>
-                            <div class = "barItemContext">
-                                <h4 class="barItemHeader">資料科學</h4>
-                                <hr>
-                                <div class = "meta">Python、NLP、Keras、Web Crawler</div>
-                            </div>
-                        </div>
-                        <div class = "barItem">
-                            <div class="con">
-                                <div class="percent-circle percent-circle-left">
-                                <div id = "versionControlleft" class="left-content"></div>
-                                </div>
-                                <div class="percent-circle percent-circle-right">
-                                <div class="right-content"></div>
-                                </div>
-                                <div class="text-circle">60%</div>
-                            </div>
-                            <div class = "barItemContext">
-                                <h4 class="barItemHeader">版本控制</h4>
-                                <hr>
-                                <div class = "meta">Github</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class = "contentBar group">
-                    <div class = "barIcon floatRight barIconColor-2">
-                        <img src = "img/management.png">
-                        <h4>管理能力</h3>
-                    </div>
-                    <div class = "barItemList floatRight barItemListColor-2">
-                        <div class = "barItem">
-                            <div class="con">
-                                <div class="percent-circle percent-circle-left">
-                                <div id = "software" class="left-content"></div>
-                                </div>
-                                <div class="percent-circle percent-circle-right">
-                                <div class="right-content"></div>
-                                </div>
-                                <div class="text-circle">90%</div>
-                            </div>
-                            <div class = "barItemContext">
-                                <h4 class="barItemHeader">軟體應用</h4>
-                                <hr>
-                                <div class = "meta">Word、PowerPoint、Drow.io</div>
-                            </div>
-                        </div>
-                        <div class = "barItem">
-                            <div class="con">
-                                <div class="percent-circle percent-circle-left">
-                                <div id = "campaign" class="left-content"></div>
-                                </div>
-                                <div class="percent-circle percent-circle-right">
-                                <div class="right-content"></div>
-                                </div>
-                                <div class="text-circle">85%</div>
-                            </div>
-                            <div class = "barItemContext">
-                                <h4 class="barItemHeader">活動策畫</h4>
-                                <hr>
-                                <div class = "meta">活動規畫、撰寫企劃書、廠商簽約、活動執行、執行後檢討</div>
-                            </div>
-                        </div>
-                        <div class = "barItem">
-                            <div class="con">
-                                <div class="percent-circle percent-circle-left">
-                                <div id = "management" class="left-content"></div>
-                                </div>
-                                <div class="percent-circle percent-circle-right">
-                                <div class="right-content"></div>
-                                </div>
-                                <div class="text-circle">80%</div>
-                            </div>
-                            <div class = "barItemContext">
-                                <h4 class="barItemHeader">領導團隊</h4>
-                                <hr>
-                                <div class = "meta">團隊溝通、向心力培養、制度建立、會議主持</div>
-                            </div>
-                        </div>
-                        <div class = "barItem">
-                            <div class="con">
-                                <div class="percent-circle percent-circle-left">
-                                <div id = "socialmedia" class="left-content"></div>
-                                </div>
-                                <div class="percent-circle percent-circle-right">
-                                <div class="right-content"></div>
-                                </div>
-                                <div class="text-circle">75%</div>
-                            </div>
-                            <div class = "barItemContext">
-                                <h4 class="barItemHeader">社群公關</h4>
-                                <hr>
-                                <div class = "meta">社群小編、文案撰寫、Dcard 廣告文</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class = "unit group" id = "experiencePage">
 

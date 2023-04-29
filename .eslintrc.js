@@ -32,5 +32,6 @@ module.exports = {
         VueLoader: true,
         arrayHelper: true,
         mathHelper: true,
+        echarts: true,
     },
 };

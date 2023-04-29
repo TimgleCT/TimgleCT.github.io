@@ -185,24 +185,65 @@ const App = {
                         style: 'red',
                         listItems: [
                             {
+                                score: 80,
+                                maxScore: 100,
                                 title: '網頁前端',
                                 content: 'Vue.js、Echarts、ESLint、RWD Web、Bootstrap、Element UI、Semantic UI、HTML、CSS、JavaScript、JQuery',
                             },
                             {
+                                score: 30,
+                                maxScore: 100,
                                 title: '後端應用',
                                 content: 'Django、Android Studio、.NET Core Website Deploy',
                             },
                             {
+                                score: 60,
+                                maxScore: 100,
                                 title: '版本控制',
                                 content: 'GitHub、GitLab、Tortoise Git',
                             },
                             {
-                                title: '自動化測試',
-                                content: 'Cypress',
+                                score: 30,
+                                maxScore: 100,
+                                title: '軟體測試',
+                                content: '制定測試個案、JMeter、Cypress',
                             },
                             {
+                                score: 40,
+                                maxScore: 100,
                                 title: '資料科學',
                                 content: 'Python、NLP、Keras',
+                            },
+                        ],
+                    },
+                    {
+                        title: '管理能力',
+                        iconUrl: 'img/management.png',
+                        style: 'purple',
+                        listItems: [
+                            {
+                                score: 90,
+                                maxScore: 100,
+                                title: '軟體應用',
+                                content: 'Word、PowerPoint、Draw.io',
+                            },
+                            {
+                                score: 85,
+                                maxScore: 100,
+                                title: '活動策畫',
+                                content: '活動規畫、撰寫企劃書、廠商簽約、活動執行、執行後檢討',
+                            },
+                            {
+                                score: 80,
+                                maxScore: 100,
+                                title: '領導團隊',
+                                content: '團隊溝通、向心力培養、制度建立、會議主持',
+                            },
+                            {
+                                score: 75,
+                                maxScore: 100,
+                                title: '社群公關',
+                                content: '社群小編、文案撰寫、Dcard 廣告文',
                             },
                         ],
                     },

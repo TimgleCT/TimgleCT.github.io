@@ -1,16 +1,7 @@
 <template>
     <div class = "listItem">
-        <!-- <slot name="icon"></slot> -->
-        <div class="con">
-            <div class="percent-circle percent-circle-left">
-            <div id = "frontEndleft" class="left-content"></div>
-            </div>
-            <div class="percent-circle percent-circle-right">
-            <div class="right-content"></div>
-            </div>
-            <div class="text-circle">80%</div>
-        </div>
-        <div class = "listItemContext">
+        <div class="listItemImage"><slot name="image"></slot></div>
+        <div class="listItemContext">
             <h4 class="listItemHeader">{{title}}</h4>
             <hr>
             <div class="content">{{content}}</div>
@@ -49,18 +40,12 @@ export default {
 </script>
 
 <style scoped>
-.con {
-    position:relative;
-    float: left;
-    top:30px;
-    height:5vw;
-    width:5vw;
-}
 
 .listItem{
-    float: left;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     width: 100%;
+    display: flex;
+    align-content: center;
 }
 
 .listItem hr{
@@ -68,41 +53,70 @@ export default {
     border-radius: 4px;
 }
 
+.listItemImage{
+    width: 25%;
+}
+
 .listItemContext{
     float: left;
     width: 75%;
-    padding: 1.5rem 1rem 1.5rem 2rem;
+    padding: 0.5rem 1rem 0.5rem 2rem;
 }
 
 .listItemHeader{
-    font-size: 2vw;
+    font-size: 2.0rem;
     color: white;
     font-weight: 500;
 }
 
 .listItemContext .content{
-    font-size: 1em;
+    font-size: 0.8rem;
     padding: 5px ;
     color: white;
     font-weight: lighter;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1200px) {
     .listItemContext {
-        padding: 0.5vh 15px 2vh 30px;
+        width: 85%;
+    }
+    .listItemImage{
+        width: 15%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .listItemHeader{
+        font-size: 1.5rem;
+    }
+    .listItemImage{
+        width: 20%;
+    }
+    .listItemContext {
+        width: 80%;
+        padding: 0.5rem 15px 0.5rem 30px;
     }
 }
 
 @media only screen and (max-width: 425px) {
+    .listItem{
+        display: block;
+    }
     .listItemHeader{
         text-align: center;
         font-size: 1.3rem;
     }
+    .listItemImage{
+        width: 85px;
+        margin: auto;
+        margin-top: 0.5rem;
+    }
     .listItemContext{
         width: 100%;
         height: auto;
-        padding: 2vh 0px;
+        padding: 0.5rem 0rem;
         margin: auto;
+        margin-bottom: 0.5rem;
     }
     .listItemContext hr{
         width: 80%;
@@ -110,7 +124,7 @@ export default {
     .listItemContext .content {
         font-size: 1.0rem;
         text-align: center;
-        padding: 5px 50px;
+        padding: 5px 1rem;
     }
 }
 </style>
