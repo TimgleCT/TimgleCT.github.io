@@ -1,6 +1,6 @@
 <template>
     <div class="dropDown" @mouseover="hoverDropDownState(true)" @mouseleave="hoverDropDownState(false)">
-        <a href="#" class="pageLink">
+        <a :href="domId" class="pageLink">
             {{ mainTitle }}
         </a>
         <div :class="{ 'slide': dropDownState }" class="dropDownContent">
@@ -16,6 +16,10 @@ const { ref } = Vue;
 export default {
     name: 'DropDown',
     props: {
+        domId: {
+            type: String,
+            default: '#',
+        },
         mainTitle: {
             type: String,
             default: '關於我',

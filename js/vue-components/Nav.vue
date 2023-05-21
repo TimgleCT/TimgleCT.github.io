@@ -8,7 +8,7 @@
         <div class="barBlock">
             <template v-for="(rout, index) in routers" :key="index">
                 <template v-if="hasChildren(rout)">
-                    <DropDown :mainTitle="rout.title">
+                    <DropDown :mainTitle="rout.title" :domId="rout.link">
                         <template v-for="(child, index) in rout.children" :key="index">
                             <NavLink :url="child.link" :title="child.title" @clickAction="closeNavInMobileMode"></NavLink>
                         </template>
@@ -70,9 +70,10 @@ export default {
                     },
                     {
                         title: '相關經驗',
-                        link: '#experience',
+                        link: '#workExperience',
                         children: [
-                            { title: '社團與工作經驗', link: '#clubExperience' },
+                            { title: '工作經驗', link: '#workExperience' },
+                            { title: '社團經驗', link: '#clubExperience' },
                             { title: '競賽經驗', link: '#competitionExperience' },
                             { title: '志工服務經驗', link: '#volunteerExperience' },
                         ],

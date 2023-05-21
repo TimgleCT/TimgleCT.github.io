@@ -9,6 +9,7 @@ const App = {
         'list-block': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/listBlock.vue')),
         'list-item': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/listItem.vue')),
         'list-block-list': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/list.vue')),
+        'time-line-block': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/timeLineBlock.vue')),
     },
     setup() {
         const webStructure = ref([
@@ -246,6 +247,226 @@ const App = {
                                 content: '社群小編、文案撰寫、Dcard 廣告文',
                             },
                         ],
+                    },
+                ],
+            },
+            {
+                domId: 'workExperience',
+                isHeader: false,
+                title: {
+                    En: 'Work',
+                    Zh: '工作經驗',
+                },
+                contentType: 'timeLine',
+                content: [
+                    {
+                        title: '友達光電 智慧製造發展處 前端工程師',
+                        date: '2021.08',
+                        contentList: [
+                            '負責對外產品－No Code 戰情室系統切版與前端程式開發。',
+                            '負責對內專案－人才發展系統切版與前端程式開發。',
+                            '使用Vue.js、ECharts、Bootstrap',
+                            '為單位引進Cypress，以進行E2E自動化測試。',
+                            '同步接觸軟體測試、產品加密、產品部屬、客戶服務。',
+                            '撰寫系統使用說明文件。',
+                            '多人協作開發的版控經驗。',
+                        ],
+                        img: '',
+                        style: 'DeepCocoa',
+                    },
+                    {
+                        title: '國泰人壽 壽險資訊部 CIP暑期實習生',
+                        date: '2020.07',
+                        contentList: [
+                            '研究與實作GPT-2和BERT兩種自然語言處理的模型，並撰寫範例⽂件。',
+                            '為了優化部門內聊天機器⼈的功能，開發SPEC⽂件推薦的API。',
+                            '開發過程歷經資料清洗、前處理、貼標籤、模型選擇、調整參數的⼯作。',
+                            '撰寫該API如何使用與原理的⽂件。',
+                            '實習結束後獲得主管肯定獲得預聘機會。',
+                        ],
+                        img: 'img/CIP_Intern.jpg',
+                        style: 'DeepCocoa',
+                    },
+                ],
+            },
+            {
+                domId: 'clubExperience',
+                isHeader: false,
+                title: {
+                    En: 'Club',
+                    Zh: '社團經驗',
+                },
+                contentType: 'timeLine',
+                content: [
+                    {
+                        title: '中大EMBA 企業導師計畫',
+                        date: '2019.10',
+                        contentList: [
+                            '與另外兩位同學一同為互動創新股份有限公司創辦人 張中星先生的導生。',
+                            '不定期聚餐分享煩惱與聆聽企業導師的建議。',
+                            '期末分享該學年的收穫。',
+                        ],
+                        img: 'img/EMBA_enterprise_Teacher.jpg',
+                        style: 'CherryBlossom',
+                    },
+                    {
+                        title: 'Python 學生團隊 組員',
+                        date: '2019.10',
+                        contentList: [
+                            '學習利用Python進行數據分析。EX: 資料前處理、視覺化、建立機器或深度學習模型。',
+                            '舉辦暑期營給外部認識參加，擔任營隊課堂助教。',
+                            '第二年擔任網頁程式設計講師傳承知識給學弟妹。',
+                        ],
+                        img: 'img/python_team.jpg',
+                        style: 'CherryBlossom',
+                    },
+                    {
+                        title: '高大選委會 委員',
+                        date: '2018.04',
+                        contentList: [
+                            '擔任文書組組員，進行海報文宣製作。',
+                            '負責系上同學參選三合一選舉相關事宜。',
+                        ],
+                        img: 'img/election.png',
+                        style: 'CherryBlossom',
+                    },
+                    {
+                        title: '高大資管營 副營長',
+                        date: '2017.10',
+                        contentList: [
+                            '協助營長處理問題與加強各部門溝通。',
+                            '幹部會議與檢討會時擔任紀錄。',
+                        ],
+                        img: 'img/7camp.jpg',
+                        style: 'CherryBlossom',
+                    },
+                    {
+                        title: '系學會 會長',
+                        date: '2017.07',
+                        contentList: [
+                            '首創系學會財務透明化，公布雙月財報，與落實財務使用宣導，使系費繳交率超越上屆。',
+                            '重新整頓系上學生空間，提供學生整齊、有規劃的環境。',
+                            '活化系學會粉絲專頁，使新生入學與活動時， 容易取得資訊與協助。',
+                            '開設課輔部門，定時舉辦讀書會交流課業內容。',
+                        ],
+                        img: 'img/departmentSociety.jpg',
+                        style: 'CherryBlossom',
+                    },
+                    {
+                        title: '台灣互聯網高峰會 高大學生代表',
+                        date: '2017.06',
+                        contentList: [
+                            '帶領系學會成員代表高雄大學前往台北大學參與多校校際活動。',
+                            '電商界企業主經驗分享，包含 Dcard、雲豹科技、瘋狂賣客、愛評網等企業。',
+                        ],
+                        img: 'img/internetMeeting.jpg',
+                        style: 'CherryBlossom',
+                    },
+                    {
+                        title: '高大資管營 課務長',
+                        date: '2016.10',
+                        contentList: [
+                            '各項課程活動組織管理，追蹤進度與內容規劃。',
+                            '首創整合性課程，以駭客松形式統整營期間課程收穫。',
+                            '成功凝聚了部員的向心力，讓部員認同課務部並產生歸屬感。',
+                        ],
+                        img: 'img/6camp.jpg',
+                        style: 'CherryBlossom',
+                    },
+                    {
+                        title: '全球普台制服日創辦人',
+                        date: '2016.09',
+                        contentList: [
+                            '2016年首度舉辦母校高中制服日，成功連結畢業校友懷念母校。',
+                            '以粉絲專頁宣傳推動，利用各校校友倒數貼文與留言分享的抽獎活動，增加校友共鳴與參與。',
+                        ],
+                        img: 'img/uniformDay.jpg',
+                        style: 'CherryBlossom',
+                    },
+                    {
+                        title: '迎新宿營 機動長',
+                        date: '2016.09',
+                        contentList: [
+                            '負責迎新宿營籌備與營期期間的場地、器材、 人力支援等規劃。',
+                        ],
+                        img: '',
+                        style: 'CherryBlossom',
+                    },
+                ],
+            },
+            {
+                domId: 'competitionExperience',
+                isHeader: false,
+                title: {
+                    En: 'Competition',
+                    Zh: '競賽經驗',
+                },
+                contentType: 'timeLine',
+                content: [
+                    {
+                        title: '碩士論文計畫發表會 Session L 最佳論文獎',
+                        date: '2021.04',
+                        contentList: [
+                            '於Session L的六篇論⽂中脫穎⽽出。',
+                            '論⽂題目靈感取⾃於在國泰實習時的⼼得。',
+                            '題⽬為：資訊科技能力與組織信任對組織的警覺留神和企業流程能力的影響。',
+                        ],
+                        img: 'img/proposal.jpg',
+                        style: 'DeepCarmine',
+                    },
+                    {
+                        title: '畢業專題競賽 第三名',
+                        date: '2018.12',
+                        contentList: [
+                            '利⽤Keras來實現CNN類神經網路模型開發智慧型鬧鐘軟體，名為Timekeeper的Android應用程式。',
+                            '藉由⼿機內建的加速度感測器、麥克風與螢幕使⽤狀態來了解使⽤者關閉鬧鐘後的⼿機使⽤⾏為，並以CNN類神經網路模型來判斷使⽤者是否起床，進而決定是否幫其⾃動增設貪睡鬧鐘，解決⼈們關閉鬧鐘後不⼩⼼睡著的問題。',
+                            '本專題獲得科技部⼤專⽣研究計畫的補助，也在第六屆激發學⽣創意競賽中獲得佳作。',
+                        ],
+                        img: 'img/graduateChampion.jpg',
+                        style: 'DeepCarmine',
+                    },
+                    {
+                        title: '106 年度招生影片創作暨主題式微電影競賽 宣傳片 參獎',
+                        date: '2017.09',
+                        contentList: [
+                            '擔任組長，負責影片創意發想、追蹤拍攝與剪輯的進度、主持小組討論。',
+                            '小組成員為管理學院四系的系學會會長，為首次整合四系系學會資源完成的作品，以管理學院招生宣傳片榮獲宣傳片參獎。',
+                        ],
+                        img: '',
+                        style: 'DeepCarmine',
+                    },
+                    {
+                        title: '2017 ECIC 全國大專院校電子商務競賽 數位行銷 優等獎',
+                        date: '2017.06',
+                        contentList: [
+                            '擔任組員，負責產品社群行銷。',
+                            '與NPO Channel合作，設立品牌"限時凍態"於Yahoo電商平台上販售鮮奶動捲。',
+                            '利用 Dcard 美食版的寫文，成為當時美食版第一熱門文章並成功打開陌生市場與知名度。',
+                            'Facebook 粉絲專頁網址：https://reurl.cc/M7q7WK',
+                        ],
+                        img: 'img/ecChampain.jpg',
+                        style: 'DeepCarmine',
+                    },
+                ],
+            },
+            {
+                domId: 'volunteerExperience',
+                isHeader: false,
+                title: {
+                    En: 'Volunteer',
+                    Zh: '志工經驗',
+                },
+                contentType: 'timeLine',
+                content: [
+                    {
+                        title: 'IM Pioneer 資訊服務隊',
+                        date: '2017.02',
+                        contentList: [
+                            '前往學校周邊鄰里開設銀髮族手機使用課程。',
+                            '教學範圍包跨手機基本操作、社群軟體(如Facebook、Line)與網路購物(蝦皮)的使用。',
+                        ],
+                        img: 'img/IMP.jpg',
+                        style: 'DeepOrchid',
                     },
                 ],
             },
