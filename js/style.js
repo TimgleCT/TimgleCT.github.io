@@ -1,6 +1,4 @@
 var slideIndex = 1;
-var EventslideIndex = [1,1,1];
-var slideId = ["uniformSlides", "ecSlides","DSSlides"]
 
 $(document).ready(function(){
 
@@ -37,11 +35,6 @@ $(document).ready(function(){
             $("#expList").toggle(500);
           }
         });
-
-    
-    showEventSlides(1, 0);
-    showEventSlides(1, 1);
-    showEventSlides(1, 2);
 
     var clickAboutMeRead = 0;
     $("#aboutMeText").click(function(){
@@ -438,31 +431,6 @@ $(document).ready(function(){
       });
         
 });
-
-        // function closeNav(){
-        //     $(".coverPage").css('display','none');
-        //     $(".nav").slideToggle(300);
-        // }
-
-
-        function plusEventSlides(n, no) {
-          showEventSlides(EventslideIndex[no] += n, no);
-        }
-
-        function showEventSlides(n, no) {
-          var i;
-          var x = document.getElementsByClassName(slideId[no]);
-          if (n > x.length) {EventslideIndex[no] = 1}    
-          if (n < 1) {EventslideIndex[no] = x.length}
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";  
-          }
-          x[EventslideIndex[no]-1].style.display = "block";  
-        }
-
-
-        
-
 
 
         function setSlideImgWidth(width){

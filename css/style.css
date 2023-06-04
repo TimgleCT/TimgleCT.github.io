@@ -72,42 +72,6 @@ h4{
     float: right;
 }
 
-.imgBox{
-    width: 95%;
-    max-width: 80rem;
-    padding: 1rem 0.5rem;
-    margin: 1rem auto 3rem auto;
-    box-shadow: 0 0 10px #373a3a;
-}
-
-.imgBoxImg{
-    width: 20%;
-    max-width: 20rem;
-    border-radius: 50%;
-    margin: 3% 4% ;
-}
-.hide{
-    display: none;
-}
-.imgBox .imgBoxContent{
-    padding: 2rem 1rem 2rem 3%;
-}
-.imgBox p{
-    line-height: 30px;
-}
-.readMore{
-    background-color: rgb(16, 143, 175);
-    border-radius: 5%;
-    margin: 0.5% 3rem;
-    padding: 0.8rem;
-    width: 8rem;
-    color: white;
-    text-align: center;
-    cursor: pointer;
-}
-.readMore:hover{
-    background-color: rgb(57, 168, 196);
-}
 .colorBoxSet{
     width:100%;
     max-width: 73vw;
@@ -410,28 +374,6 @@ h4{
 .ui.button:hover{
     background-color: rgb(248, 161, 161);
     color: white;
-}
-
-
-
-
-
-
-
-.uniformSlides , .ecSlides , .DSSlides{
-    display: none;
-}
-.ecSlides img, .uniformSlides img, .DSSlides img{
-    max-height: 34rem;
-    width: 100%;
-    display: block;
-    margin: auto;
-}
-.slideshow-container {
-    max-width: 60rem;
-    position: relative;
-    margin: 2rem auto 2rem auto;
-    display: none;
 }
 
 img {

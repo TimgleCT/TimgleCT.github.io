@@ -10,6 +10,7 @@ const App = {
         'list-item': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/listItem.vue')),
         'list-block-list': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/list.vue')),
         'time-line-block': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/timeLineBlock.vue')),
+        'paragraph-images-card': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/paragraphImagesCard.vue')),
     },
     setup() {
         const webStructure = ref([
@@ -467,6 +468,86 @@ const App = {
                         ],
                         img: 'img/IMP.jpg',
                         style: 'DeepOrchid',
+                    },
+                ],
+            },
+            {
+                domId: 'importantEvent',
+                isHeader: false,
+                title: {
+                    En: 'Important Events',
+                    Zh: '重要事件',
+                },
+                contentType: 'paragraphImagesCard',
+                content: [
+                    {
+                        title: '2016 11/11 第一屆 全球普台制服日',
+                        contentList: [
+                            '&nbsp&nbsp&nbsp&nbsp在大二期間，時不時看到大學身邊同學參與其母校高中的制服日活動，與母校產生連結外，也與畢業的同學們一同懷念過去高中的時光。'
+                            + '當時的我，除了心生羨慕外，也認為這是一個很值得舉辦的活動，便向志同道合的朋友們提議，並主導籌辦這次的制服日。',
+                            '&nbsp&nbsp&nbsp&nbsp我們參考了其他學校的制服日活動後，先是訂定制服日日期、創建了粉專、設計Logo、與同學們討論如何吸引校友參加、粉專要有什麼內容與活動等等，'
+                            + '之後與各校校友代表一同努力宣傳，成功使制服日當日的 Instagram 與 Facebook 充滿校友們穿起制服回憶高中的貼文，'
+                            + '捲起一股懷念風潮，也驚動了母校高中長官們的注意，鼓勵此活動的永續發展。',
+                        ],
+                        headShot: 'img/uniformDayProfile.jpg',
+                        headShotDirection: 'left',
+                        imgList: [
+                            'img/uniform-1.png',
+                            'img/uniform-2.jpg',
+                            'img/uniform-3.jpg',
+                            'img/uniform-4.jpg',
+                            'img/uniform-5.jpg',
+                            'img/uniform-6.png',
+                            'img/uniform-7.jpg',
+                        ],
+                    },
+                    {
+                        title: '2017 ECIC 全國大專院校電子商務競賽',
+                        contentList: [
+                            '&nbsp&nbsp&nbsp&nbsp本小組與 NPO Channel 合作，幫助其透過網路通路販售鮮奶凍捲。我們透過對該產品的特性、市場、優勢以及 NPO Channel 社會企業的了解，'
+                            + '針對品牌進行設計，創立了"限時凍態"的品牌。',
+                            '&nbsp&nbsp&nbsp&nbsp目標為希望打出了原料天然、健康無毒、公益活潑、限時配送的品牌形象。以 Facebook 粉絲團為行銷的主要平台，透過貼文、節慶、遊戲、吉祥物「牛牛」的打造與活動的操作，'
+                            + '來推廣產品。此外也在其他平台如蝦皮、Yahoo、Instagram、Dcard 平台推廣，將各平台的使用者導回 Facebook 社群之中。最後在比賽中，榮獲數位行銷優等獎的成績，兩個月創造81條奶凍捲，45,000元的業績。',
+                        ],
+                        headShot: 'img/ec.jpg',
+                        headShotDirection: 'right',
+                        imgList: [
+                            'img/ec-11.jpg',
+                            'img/ec-7.jpg',
+                            'img/uniform-3.jpg',
+                            'img/ec-3.jpg',
+                            'img/ec-6.jpg',
+                            'img/ec-1.jpg',
+                            'img/ec-2.png',
+                            'img/ec-8.jpg',
+                            'img/ec-2.png',
+                            'img/ec-4.jpg',
+                            'img/ec-5.jpg',
+                            'img/ec-10.jpg',
+                        ],
+                    },
+                    {
+                        title: '高大資管第十六屆系學會 會長',
+                        contentList: [
+                            '&nbsp&nbsp&nbsp&nbsp為了實現過去對自己的期許與有個希望回饋系上的心，在大家的支持下當選了第十六屆系學會會長，更是考驗著政策執行力、部門溝通力與危機處理能力。',
+                            '內首度推動系學會財務透明化、落實系費使用宣導，增加學生對系學會財務使用的信心，成功使系費繳交率超越上屆達到九成。也首創設立課輔部門，定時舉辦讀書會交流課業內容，推動系上讀書會風氣。'
+                            + '也推動與外校單位交流，帶領系學會成員參與台北大學舉辦之台灣互聯網高峰會，不但聽取電商界企業主的經驗分享，也與各校學生自治代表經驗交流。且最後交接給下一屆學弟妹時，完成完整的交接文件並交付，使過去經驗不中斷於離開的我們。',
+                            '&nbsp&nbsp&nbsp&nbsp擔任會長同樣的也有諸多不順遂的地方，例如系服購買制度與活動虧損責任議題。遇到危機便與幹部、師長共同討論如何解決，開會並訂定完整的制度，補足原本的不足，並在第一時間處理， 將錯誤的損失降成最低。在其中學著危機處理與承擔責任。'
+                            + '直到現在，仍非常感謝那年陪伴學生完成系學會任務的幹部與老師們。',
+                        ],
+                        headShot: 'img/IM_Logo.jpg',
+                        headShotDirection: 'left',
+                        imgList: [
+                            'img/DS-1.jpg',
+                            'img/DS-2.jpg',
+                            'img/DS-3.jpg',
+                            'img/DS-4.jpg',
+                            'img/DS-5.jpg',
+                            'img/DS-6.jpg',
+                            'img/DS-7.jpg',
+                            'img/DS-8.jpg',
+                            'img/DS-9.jpg',
+                        ],
                     },
                 ],
             },

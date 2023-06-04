@@ -4,15 +4,18 @@
             <div class="paragraph" v-for="(content, index) in contentList" :key="index" :ref="(el)=>{ paragraphs[index] = el }">
                 <p v-html="content"></p>
             </div>
+            <div ref="slotContainer">
+                <slot></slot>
+            </div>
         </div>
-        <div v-if="showReadMoreBtn()" @click="toggleShowMore" class="readMore floatRight">{{showMoreText}}</div>
+        <div v-if="showReadMoreBtn()" @click="toggleShowMore" class="readMore" :class="setReadMoreBtnFloat()">{{showMoreText}}</div>
     </div>
 </template>
 
 <script>
 
 const {
-    ref, computed, onBeforeUpdate, onMounted, watch,
+    ref, computed, onBeforeUpdate, onMounted, watch, nextTick,
 } = Vue;
 
 export default {
@@ -28,20 +31,27 @@ export default {
             type: String,
             default: null,
         },
-
         collapseMode: {
             type: Boolean,
             default: true,
+        },
+        readMoreBtnDirection: {
+            type: String,
+            default: 'right',
         },
     },
 
     setup(props) {
         const paragraphs = ref([]);
         const paragraphsHeight = ref(0);
-        onMounted(() => {
+        const slotContainer = ref(null);
+        onMounted(async () => {
+            await nextTick();
             for (let i = 0; i < paragraphs.value.length; i++) {
-                const paragraphStyle = window.getComputedStyle(paragraphs.value[i]);
-                paragraphsHeight.value += (paragraphs.value[i].clientHeight + parseFloat(paragraphStyle.marginTop) + parseFloat(paragraphStyle.marginBottom));
+                paragraphsHeight.value += paragraphs.value[i].clientHeight;
+            }
+            if (slotContainer.value.clientHeight !== 0) {
+                paragraphsHeight.value += slotContainer.value.clientHeight;
             }
         });
 
@@ -93,8 +103,15 @@ export default {
             return false;
         }
 
+        function setReadMoreBtnFloat() {
+            if (props.readMoreBtnDirection === 'left') {
+                return 'floatLeft';
+            }
+            return 'floatRight';
+        }
+
         return {
-            isLastParagraph, divHeight, toggleShowMore, showMoreText, paragraphs, paragraphsHeight, isShowMore, showReadMoreBtn,
+            isLastParagraph, divHeight, toggleShowMore, showMoreText, paragraphs, paragraphsHeight, isShowMore, showReadMoreBtn, setReadMoreBtnFloat, slotContainer,
         };
     },
 
@@ -114,7 +131,7 @@ export default {
     .readMore{
         background-color: rgb(16, 143, 175);
         border-radius: 5%;
-        margin: 1rem 3rem;
+        margin: 2rem 3rem;
         padding: 0.8rem;
         width: 8rem;
         color: white;
@@ -127,7 +144,7 @@ export default {
     }
 
     .paragraph{
-        margin: 0.8rem 0rem;
+        padding: 1rem 0rem;
     }
 
     p {
