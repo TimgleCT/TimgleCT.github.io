@@ -182,7 +182,6 @@ li .circle{
     padding: 1em ;
     float: left;
     color: white;
-    font-size: 1.1rem;
     font-weight: 300;
 }
 .timelineContent ul{
