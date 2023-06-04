@@ -22,7 +22,7 @@
     </div>
 
     <header class="mobileNav" @click="openNav">
-        <a href="#" class = "ui button" id ="menuBtn">☰</a>
+        <a href="#" class="ui button navBtn">☰</a>
         <span>{{user.name.En}}</span>
     </header>
 
@@ -155,7 +155,7 @@ export default {
         background-color:#f44336;
         color: #fff;
         padding: 8px 16px;
-        font-size: 24px !important;
+        font-size: 1.25rem !important;
         position: fixed;
         width: 100%;
         top: 0;
@@ -248,9 +248,13 @@ export default {
 
     @media only screen and (max-width: 820px) {
         .mobileNav{
-            display: block;
+            display: flex;
+            align-items: center;
             position: fixed;
             z-index: 2;
+        }
+        .mobileNav span{
+            margin-left: 1.0rem;
         }
         .nav{
             width: 0;
@@ -271,6 +275,16 @@ export default {
 
         .barBlock {
             min-width: calc(min(250px, 50vw));
+        }
+
+        .navBtn {
+            background-color: rgba(255, 122, 122, 0.856) !important;
+            color: white !important;
+            font-size: 1.0rem !important;
+        }
+        .navBtn:hover{
+            background-color: rgb(248, 161, 161) !important;
+            color: white !important;
         }
     }
 </style>

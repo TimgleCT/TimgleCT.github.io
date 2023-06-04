@@ -366,14 +366,14 @@ h4{
     font-weight: 500 !important; 
     margin-bottom: 10px !important;
 }
-.ui.button{
-    background-color: rgba(255, 122, 122, 0.856);
-    color: white;
-    font-size: 1.4rem;
+.sendMailBtn{
+    background-color: rgba(255, 122, 122, 0.856) !important;
+    color: white !important;
+    font-size: 1.4rem !important;
 }
-.ui.button:hover{
-    background-color: rgb(248, 161, 161);
-    color: white;
+.sendMailBtn:hover{
+    background-color: rgb(248, 161, 161) !important;
+    color: white !important;
 }
 
 img {

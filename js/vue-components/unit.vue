@@ -47,7 +47,7 @@ export default {
         overflow: hidden;
     }
     .header {
-        margin-top: 40px;
+        margin-top: 0.8rem;
         margin-bottom: 30px;
     }
 
