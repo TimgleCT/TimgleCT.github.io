@@ -35,6 +35,15 @@ export default {
     },
 
     setup(props, { emit }) {
+        function fixSemanticUIScrollingBug() {
+            EventTarget.prototype.addEventListenerBase = EventTarget.prototype.addEventListener;
+            EventTarget.prototype.addEventListener = function (type, listener) {
+                if (this !== document.querySelector('body') || type !== 'touchmove') {
+                    this.addEventListenerBase(type, listener);
+                }
+            };
+        }
+
         function openModal() {
             $(`#${props.modalId}`).modal({ closable: false }).modal('show');
         }
@@ -51,6 +60,8 @@ export default {
                 closeModal();
             }
         });
+
+        fixSemanticUIScrollingBug();
 
         return { closeModal };
     },
