@@ -72,172 +72,19 @@ h4{
     float: right;
 }
 
-.colorBoxSet{
-    width:100%;
-    max-width: 73vw;
-    margin: 2rem auto;
-}
-.colorBoxColor-1{
-    background-color: rgb(48, 123, 197);
-    color: white;
-}
-.colorBoxColor-1 .circleImg{
-    background-color: #0359AE;
-}
-.colorBoxColor-2{
-    background-color: rgb(71, 192, 176);
-    color: white;
-}
-.colorBoxColor-2 .circleImg{
-    background-color: #14B09B;
-}
-.colorBoxColor-3{
-    background-color: rgb(204, 196, 179);
-    color: white;
-}
-.colorBoxColor-3 .circleImg{
-    background-color: rgb(211, 193, 156);
-}
-.colorBoxColor-4{
-    background-color: rgb(241, 169, 170);
-    color: white;
-}
-.colorBoxColor-4 .circleImg{
-    background-color: #EB8F90;
-}
-.colorBoxColor-5{
-    background-color: rgb(255, 195, 143);
-    color: white;
-}
-.colorBoxColor-5 .circleImg{
-    background-color: #FFB471;
-}
-.colorBoxColor-6{
-    background-color: rgb(172, 193, 216);
-    color: white;
-}
-.colorBoxColor-6 .circleImg{
-    background-color: rgb(164, 182, 202);
-}
-.colorBoxColor-7{
-    background-color: rgb(199, 114, 161);
-    color: white;
-}
-.colorBoxColor-7 .circleImg{
-    background-color: rgb(199, 114, 161);
-}
-.colorBoxColor-8{
-    background-color: rgb(111, 113, 172);
-    color: white;
-}
-.colorBoxColor-8 .circleImg{
-    background-color: rgb(111, 113, 172);
-}
-.colorBoxColor-9{
-    background-color: rgb(147, 189, 189);
-    color: white;
-}
-.colorBoxColor-9 .circleImg{
-    background-color: rgb(147, 189, 189);
+.colorBoxContent div{
+    padding: 0.4vw;
 }
 
-.colorBox{
-    width: 23vw;
-    height: 26vw;
-    min-width: 21rem;
-    min-height: 23rem;
-    padding: 1% 2% 1% 2%;
-    float: left;
-    position: relative;
-
-    transition: all 250ms cubic-bezier(0.02,0.01,0.47,1);
-    box-shadow: 0 4px 16px rgba(48,55,66,0.15);
-}
-.colorBox:hover{
-    box-shadow: 0 16px 32px rgba(48, 55, 66, 0.76);
-    transform: translate(0,-5px);
-    transition-delay: 0s !important;
-    z-index: 1;
-    cursor: pointer;
-}
-
-.circleImg{
-    width: 8vw;
-    height: 8vw;
-    min-width: 8rem;
-    min-height: 8rem;
-    padding-top: 6.5%;
-    border: solid 2px white;
-    border-radius: 50%;
-    margin: 7% auto 11% auto;
-}
-.circleImg img{
-    display: block;
-    margin: auto;
-    width: 60%;
-}
 .colorBoxContent{
     margin-top: .5vw;
     text-align: center;
     margin-bottom: 1.2vw;
 }
-.colorBoxContent h4{
-    text-align: center;
-    font-size: 1.7rem;
-    font-weight: 500;
-    margin-bottom: 9%;
-}
-.colorBoxContent div{
-    display: inline-block;
-    font-size: 0.85rem;
-    min-width: 3.5vw;
-    border-radius: 10%;
-    border: solid 2px white;
-    margin-right:0.3vw;
-    margin-top: 0.3vw;
-    margin-bottom: 0.3vw;
-    padding: 0.4vw;
-}
-
-#slideImgDiv{
-    width: 42vw;
-}
-.ui.header{
-    font-size: 1.5rem;
-    font-family: inherit;
-}
-
-.description img{
-    display: block;
-    margin: 1vw auto;
-    width: 80%;
-}
-
-.ui.modal .close.icon{
-    top:0.8vw;
-    right: 1vw;
-    color:rgba(0, 0, 0, 0.61);
-    font-size: 1.5vw;
-}
-
-.modalHead{
-    font-size: 2vw;
-    font-weight: 600;
-    padding: 1vw 1.5vw;
-    margin: 1vw 1vw 0 1vw;
-    border-bottom: solid 2px rgba(62, 73, 73, 0.493);
-}
-
-.subHeader{
-    margin: 1.2vw 3vw;
-    font-size: 1.3rem;
-    font-weight: 400;
-}
 
 .dropDownImg{
     width: 95%;
     margin: 0 auto 1vw auto;
-    /* line-height: 1.3vw; */
     color: white;
     border-radius: 10px;
     cursor: pointer;
@@ -382,32 +229,9 @@ img {
 .container {
     position: relative;
 }
-.mySlides {
-    display: none;
-}
 .cursor {
     cursor: pointer;
 }
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 60%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  background-color: rgba(95, 91, 91, 0.432);
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
   
   /* On hover, add a black background color with a little bit see-through */
   .prev:hover,

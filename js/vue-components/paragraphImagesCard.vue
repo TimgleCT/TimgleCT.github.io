@@ -19,15 +19,13 @@
                 height="100px"
                 :collapse-mode="true"
                 :readMoreBtnDirection="setReadMoreBtnFloat()"
+                ref="paragraph"
                 >
-                 <div class="imgs-slideshow">
-                    <template v-for="(img, index) in imgList" :key="index">
-                        <div v-if="showImgs(index)">
-                            <img :src="img">
-                        </div>
-                    </template>
-                    <a class="prev" @click="moveImgsSlides('back')">&#10094;</a>
-                    <a class="next" @click="moveImgsSlides('go')">&#10095;</a>
+                <div>
+                    <imgs-slides
+                        :img-list="imgList"
+                        @loaded="setParagraphHeight"
+                    ></imgs-slides>
                 </div>
             </paragraph>
         </div>
@@ -44,6 +42,7 @@ export default {
     name: 'paragraph-images-card',
     components: {
         paragraph: Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/paragraph.vue')),
+        imgsSlides: Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/imgSlides.vue')),
     },
     props: {
         contentList: {
@@ -73,7 +72,7 @@ export default {
     },
 
     setup(props) {
-        const currentImgIndex = ref(0);
+        const paragraph = ref(null);
         const viewConfigs = {
             headShotDirection: 'right',
             readMoreBtnDirection: 'right',
@@ -139,27 +138,14 @@ export default {
             return viewConfigs.readMoreBtnDirection;
         }
 
-        function moveImgsSlides(moveAction = 'go') {
-            const step = (moveAction === 'go') ? 1 : -1;
-            if (currentImgIndex.value + step < 0) {
-                currentImgIndex.value = props.imgList.length - 1;
-                return;
-            }
-            if (currentImgIndex.value + step > props.imgList.length - 1) {
-                currentImgIndex.value = 0;
-                return;
-            }
-            currentImgIndex.value += step;
-        }
-
-        function showImgs(index) {
-            return index === currentImgIndex.value;
+        function setParagraphHeight() {
+            paragraph.value.setMaxHeight();
         }
 
         setViewConfig();
 
         return {
-            setHeadShotFloat, setReadMoreBtnFloat, moveImgsSlides, showImgs, isMobile, setContentPadding,
+            setHeadShotFloat, setReadMoreBtnFloat, isMobile, setContentPadding, paragraph, setParagraphHeight,
         };
     },
 };
@@ -191,50 +177,9 @@ export default {
 .imgBox p{
     line-height: 30px;
 }
-.imgs-slideshow{
-    position: relative;
-    padding: 2rem 0;
-    height: max-content;
-}
-.imgs-slideshow > div{
-    width: 100%;
-    height: 400px;
-    display: flex;
-    align-items: center;
-}
-.imgs-slideshow img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
 
 .imgBoxContent > div{
     display: block;
-}
-.prev,
-.next {
-    cursor: pointer;
-    position: absolute;
-    top: 60%;
-    width: auto;
-    padding: 16px;
-    margin-top: -50px;
-    color: white;
-    background-color: rgba(95, 91, 91, 0.432);
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 0 8px 8px 0;
-    user-select: none;
-    -webkit-user-select: none;
-}
-.next {
-    right: 0;
-    border-radius: 8px 0 0 8px;
-}
-.prev:hover,
-.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: orange;
 }
 
 .imgBox .ui.grid > div{
@@ -253,9 +198,6 @@ export default {
     .imgBoxImg{
         width: 100%;
     }
-    .imgs-slideshow{
-        padding: 0;
-    }
     .floatLeft, .floatRight {
         float: initial;
     }
@@ -270,10 +212,6 @@ export default {
 
     .ui.grid .wide.column {
         padding: 0 0.5rem;
-    }
-
-    .imgs-slideshow > div{
-        height: 250px;
     }
 }
 </style>

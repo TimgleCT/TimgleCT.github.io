@@ -2,9 +2,6 @@
     .mainContent{
         padding: 0 20px;
     }
-    .colorBoxSet{
-        max-width: 87.5vw;
-    }
     .contactBox{
         width: 25%;
     }
@@ -23,9 +20,6 @@
     }
     .meta{
         font-size: 1.5vw;
-    }
-    .colorBoxSet{
-        max-width: 87.5vw;
     }
     .contactBox{
         width: 25%;
@@ -85,36 +79,14 @@
     .contactBoxSet {
         margin: 6% auto;
     }
-    .modalHead{
-        font-size: 5vw;
-        padding: 3vw 4.5vw
-    }
-    .ui.modal .content>.image{
-        text-align: inherit !important;
-    }
-    .colorBoxSet {
-        max-width: 73vw;
-    }
     #more{
         display: none;
         margin-bottom: 5px;
     }
 }
-@media only screen and (max-width: 375px) {
-    .colorBoxSet{
-        max-width: 80vw;
-    }
-}
 @media only screen and (max-width: 320px) {
     .mainContent{
         padding: 2% 3% 2% 3%;
-    }
-    .colorBoxSet{
-        max-width: 80vw;
-    }
-    .colorBox{
-        min-width: 19.5rem;
-        min-height: 22rem;
     }
     .contactBox {
         width: 45%;

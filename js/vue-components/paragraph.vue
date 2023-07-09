@@ -45,14 +45,18 @@ export default {
         const paragraphs = ref([]);
         const paragraphsHeight = ref(0);
         const slotContainer = ref(null);
-        onMounted(async () => {
-            await nextTick();
+
+        function setMaxHeight() {
             for (let i = 0; i < paragraphs.value.length; i++) {
                 paragraphsHeight.value += paragraphs.value[i].clientHeight;
             }
             if (slotContainer.value.clientHeight !== 0) {
                 paragraphsHeight.value += slotContainer.value.clientHeight;
             }
+        }
+        onMounted(async () => {
+            await nextTick();
+            setMaxHeight();
         });
 
         onBeforeUpdate(() => {
@@ -111,7 +115,7 @@ export default {
         }
 
         return {
-            isLastParagraph, divHeight, toggleShowMore, showMoreText, paragraphs, paragraphsHeight, isShowMore, showReadMoreBtn, setReadMoreBtnFloat, slotContainer,
+            isLastParagraph, divHeight, toggleShowMore, showMoreText, paragraphs, paragraphsHeight, isShowMore, showReadMoreBtn, setReadMoreBtnFloat, slotContainer, setMaxHeight,
         };
     },
 

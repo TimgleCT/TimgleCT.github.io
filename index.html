@@ -92,212 +92,24 @@
                             :img-list="card.imgList"
                         ></paragraph-images-card>
                     </template>
+                    <template v-if="content.contentType === 'colorBoxBlock'">
+                        <color-box-block
+                            :color-box-list="content.content"
+                        ></color-box-block>
+                    </template>
                 </unit-content>
             </template>
 
-            <div class = "unit group" id = "portfolio">
-                <h1 class = "title" >作品集 － <span class = "noLetterSpace">Portfolio<span></span></h1>
-                <hr class = "line">
-
-                <div class = "ui longer large modal" id = "portfolioModal">
-                    <i class="close icon"></i>
-                    <div class = "modalHead" id = "modalHead">TimeKeeper 智慧鬧鐘</div>
-                    <div class = "scrolling image content">
-                        <div class="ui image group" id = "slideImgDiv">
-                            <div class = "container">
-
-                                <div class="mySlides">
-                                    <div class="numbertext">1 / 5</div>
-                                    <img  id = "slideImg-1" src="img/timekeeper-8.png" style="width:100%">
-                                </div>
-
-                                <div class="mySlides">
-                                    <div class="numbertext">2 / 5</div>
-                                    <img id = "slideImg-2" src="img/timekeeper-1.png" style="width:100%">
-                                </div>
-                            
-                                <div class="mySlides">
-                                    <div class="numbertext">3 / 5</div>
-                                    <img id = "slideImg-3" src="img/timekeeper-2.png" style="width:100%">
-                                </div>
-                            
-                                <div class="mySlides">
-                                    <div class="numbertext">4 / 5</div>
-                                    <img id = "slideImg-4" src="img/timekeeper-3.png" style="width:100%">
-                                </div>
-                                
-                                <div class="mySlides">
-                                    <div class="numbertext">5 / 5</div>
-                                    <img id = "slideImg-5" src="img/timekeeper-4.png" style="width:100%">
-                                </div>
-                                
-                                <a class="prev" onclick="plusSlides(-1)">❮</a>
-                                <a class="next" onclick="plusSlides(1)">❯</a>
-                            
-                                <div class="caption-container">
-                                    <p id="caption"></p>
-                                </div>
-                            
-                                <div class="row">
-                                    <div class="column">
-                                        <img class="demo cursor" id = "columImg-1" src="img/timekeeper-8.png" style="width:100%" onclick="currentSlide(1)" alt="三種模式可供選擇">
-                                    </div>
-                                    <div class="column">
-                                        <img class="demo cursor" id = "columImg-2" src="img/timekeeper-1.png" style="width:100%" onclick="currentSlide(2)" alt="系統首頁">
-                                    </div>
-                                    <div class="column">
-                                        <img class="demo cursor" id = "columImg-3" src="img/timekeeper-2.png" style="width:100%" onclick="currentSlide(3)" alt="好友頁面">
-                                    </div>
-                                    <div class="column">
-                                        <img class="demo cursor" id = "columImg-4" src="img/timekeeper-3.png" style="width:100%" onclick="currentSlide(4)" alt="加入好友頁面">
-                                    </div>
-                                    <div class="column">
-                                        <img class="demo cursor" id = "columImg-5" src="img/timekeeper-4.png" style="width:100%" onclick="currentSlide(5)" alt="個人資料頁面">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="description" id = "modalDescription">
-                            <div class="ui header" id = "descriptionHead">結合AI、社群、Open Data的時間管家</div>
-                        </div>
-                    </div>
-                    <div class="actions">
-                        <div class="ui black deny button">
-                        關閉
-                        </div>
-                    </div>
-                </div>
-
-                <div class = "colorBoxSet group">
-                    
-                    <div class = "colorBox colorBoxColor-1" id = "SPECAPIColorBox">
-                        <div class = "ui violet right ribbon label">2020</div>
-                        <div class = "circleImg">
-                            <img src = "img/document.png">
-                        </div>
-                        <div class = "colorBoxContent">
-                            <h4>SPEC 文件推薦API</h4>
-                            <div>Flask API</div>
-                            <div>Python</div>
-                            <div>NLP</div>
-                            <div>ML</div>
-                            <div>DL</div>
-                        </div>    
-                    </div>
-
-                    <div class = "colorBox colorBoxColor-2" id = "LSTMStock">
-                        <div class = "ui olive right ribbon label">2021</div>
-                        <div class = "circleImg">
-                            <img src = "img/stock.png">
-                        </div>
-                        <div class = "colorBoxContent">
-                            <h4>LSTM股價預測</h4>
-                            <div>Python</div>
-                            <div>DL</div>
-                            <div>LSTM</div>
-                        </div>    
-                    </div>
-
-                    <div class = "colorBox colorBoxColor-3" id = "DcardPopularArticle">
-                        <div class = "ui brown right ribbon label">2020</div>
-                        <div class = "circleImg">
-                            <img src = "img/dcardLogo.png">
-                        </div>
-                        <div class = "colorBoxContent">
-                            <h4>預測Dcard熱門文章</h4>
-                            <div>Python</div>
-                            <div>ML</div>
-                            <div>DL</div>
-                        </div>    
-                    </div>
-
-                    <div class = "colorBox colorBoxColor-4" id = "ncuGroceryShoppingManColorBox">
-                        <div class = "ui pink right ribbon label">2020</div>
-                        <div class = "circleImg">
-                            <img src = "img/vegetable.png">
-                        </div>
-                        <div class = "colorBoxContent">
-                            <h4>中央買菜郎</h4>
-                            <div>Django</div>
-                            <div>Html</div>
-                            <div>CSS</div>
-                            <div>Kendo UI</div>
-                            <div>Open Data</div>
-                            <div>Heroku</div>
-                        </div>    
-                    </div>
-
-                    <div class = "colorBox colorBoxColor-5" id = "timekeeperColorBox">
-                        <div class = "ui orange right ribbon label">2018</div>
-                        <div class = "circleImg">
-                            <img src = "img/alarmclock.png">
-                        </div>
-                        <div class = "colorBoxContent">
-                            <h4>TimeKeeper 智慧鬧鐘</h4>
-                            <div>Android</div>
-                            <div>Keras</div>
-                            <div>DL</div>
-                            <div>MySQL</div>
-                            <div>PHP</div>
-                        </div>    
-                    </div>
-
-                    <div class = "colorBox colorBoxColor-6" id = "lxmlDcardColorBox">
-                        <div class = "ui grey right ribbon label">2019</div>
-                        <div class = "circleImg">
-                            <img src = "img/web-crawler.png">
-                        </div>
-                        <div class = "colorBoxContent">
-                            <h4>Dcard 文章關鍵字熱度爬蟲</h4>
-                            <div>Python</div>
-                            <div>lxml</div>
-                            <div>Web Crawler</div>
-                        </div>    
-                    </div>
-
-                    <div class = "colorBox colorBoxColor-7" id = "busColorBox">
-                        <div class = "ui pink right ribbon label">2018</div>
-                        <div class = "circleImg">
-                            <img src = "img/bus.png">
-                        </div>
-                        <div class = "colorBoxContent">
-                            <h4>高雄老司機</h4>
-                            <div>Html</div>
-                            <div>CSS</div>
-                            <div>Javascript</div>
-                            <div>Open data</div>
-                        </div>    
-                    </div>
-
-                    <div class = "colorBox colorBoxColor-8" id = "chineseNumColorBox">
-                        <div class = "ui purple right ribbon label">2018</div>
-                        <div class = "circleImg">
-                            <img src = "img/artificial-intelligence.png">
-                        </div>
-                        <div class = "colorBoxContent">
-                            <h4>中文數字手寫辨識</h4>
-                            <div>AI</div>
-                            <div>Keras</div>
-                            <div>CNN</div>
-                        </div>    
-                    </div>
-
-                    <div class = "colorBox colorBoxColor-9" id = "timerColorBox">
-                        <div class = "ui teal right ribbon label">2017</div>
-                        <div class = "circleImg">
-                            <img src = "img/pin.png">
-                        </div>
-                        <div class = "colorBoxContent">
-                            <h4>Timer</h4>
-                            <div>Node.js</div>
-                            <div>Open data</div>
-                            <div>Heroku</div>
-                        </div>    
-                    </div>
-                    
-                    
-                </div>
-            </div>
+            <img-slide-desc-modal
+                :modal-header="imgSlideDescModal.modalHeader"
+                :img-list="imgSlideDescModal.imgList"
+                :img-description-list="imgSlideDescModal.imgDescriptionList"
+                :content-header="imgSlideDescModal.contentHeader"
+                :content-list="imgSlideDescModal.contentList"
+                :show="imgSlideDescModal.show"
+                :img-desc-ratio-diff="imgSlideDescModal.imgDescRatioDiff"
+                @close-modal="closeImgSlideDescModal()"
+            ></img-slide-desc-modal>
 
             <div class = "unit group" id = "certificate">
                 <h1 class = "title" >其他證明文件 － <span class = "noLetterSpace">Certificate<span></span></h1>

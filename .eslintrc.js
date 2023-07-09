@@ -33,5 +33,6 @@ module.exports = {
         arrayHelper: true,
         mathHelper: true,
         echarts: true,
+        $: true,
     },
 };
