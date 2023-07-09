@@ -92,7 +92,7 @@ export default {
         }
 
         function setImageObjectFit() {
-            if (window.innerWidth < 1200 && props.imgDescRatioDiff === 'small') {
+            if (props.imgDescRatioDiff === 'small') {
                 objectFit.value = 'contain';
             } else {
                 objectFit.value = 'fill';
