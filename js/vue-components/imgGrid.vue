@@ -22,7 +22,6 @@ export default {
                 return [{
                     src: 'img/A1.jpg',
                     label: '圖片敘述',
-                    direction: 'horizontal',
                 }];
             },
         },
