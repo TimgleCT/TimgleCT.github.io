@@ -97,6 +97,17 @@
                             :color-box-list="content.content"
                         ></color-box-block>
                     </template>
+                    <template v-if="content.contentType === 'accordionImgs'">
+                        <accordion-block
+                            v-for="(accordion, index) in content.content"
+                            :title="accordion.title"
+                            :accordion-style="accordion.style"
+                        >
+                            <img-grid
+                                :img-list="accordion.imgList"
+                            ></img-grid>
+                        </accordion-block>
+                    </template>
                 </unit-content>
             </template>
 
@@ -110,152 +121,6 @@
                 :img-desc-ratio-diff="imgSlideDescModal.imgDescRatioDiff"
                 @close-modal="closeImgSlideDescModal()"
             ></img-slide-desc-modal>
-
-            <div class = "unit group" id = "certificate">
-                <h1 class = "title" >其他證明文件 － <span class = "noLetterSpace">Certificate<span></span></h1>
-                <hr class = "line">
-
-                <div class = "dropDownImg dropDownImgColor-0 group" id = "intern">
-                    <div class = "head">
-                        實習證明
-                        <i class = "chevron down icon"></i>
-                    </div>
-                    <div class = "bar group" id = "internBar">
-                        <div class = "highMinHeight">
-                            <img src = "img/CatheyIntern.jpg">
-                            國泰人壽 壽程科 實習證明
-                        </div>
-                        <div class = "highMinHeight">
-                            <img src = "img/CatheyPreoffer.jpg">
-                            國泰人壽 預聘書
-                        </div>
-                    </div>
-                </div>
-                
-                <div class = "dropDownImg dropDownImgColor-1 group" id = "bookAward">
-                    <div class = "head">
-                        書卷獎
-                        <i class = "chevron down icon"></i>
-                    </div>
-                    <div class = "bar group" id = "bookAwardBar">
-                        <div class = "highMinHeight">
-                            <img src = "img/bookAward-1.jpg">
-                            大一上 第二名 書卷獎
-                        </div>
-                        <div class = "highMinHeight">
-                            <img src = "img/bookAward-2.jpg">
-                            大一下 第一名 書卷獎
-                        </div>
-                        <div class = "highMinHeight">
-                            <img src = "img/bookAward-3.jpg">
-                            大二下 第二名 書卷獎
-                        </div>
-                        <div class = "highMinHeight">
-                            <img src = "img/bookAward-4.jpg">
-                            碩一上 第二名 書卷獎
-                        </div>
-                    </div>
-                </div>
-
-                <div class = "dropDownImg dropDownImgColor-2 group" id = "competitionAward">
-                    <div class = "head">
-                        其他競賽獎狀
-                        <i class = "chevron down icon"></i>
-                    </div>
-                    <div class = "bar group" id = "competitionAwardBar">
-                        <div class = "highMinHeight">
-                            <img src = "img/competition-8.jpg">
-                            碩士論文計畫發表會 Session L 最佳論文獎
-                        </div>
-                        <div class = "highMinHeight">
-                            <img src = "img/competition-1.jpg">
-                            畢業專題 第三名
-                        </div>
-                        <div class = "highMinHeight">
-                            <img src = "img/competition-2.jpg">
-                            第六屆 激發學生創意競賽 佳作
-                        </div>
-                        <div class = "highMinHeight">
-                            <img src = "img/competition-3.jpg">
-                            2017 ECIC 全國大專院校電子商務競賽 數位行銷 優等獎
-                        </div>
-                        <div class = "highMinHeight">
-                            <img src = "img/competition-4.jpg">
-                            106年 招生影片創作暨主題式微電影競賽 入圍(管理學院)
-                        </div>
-                        <div class = "highMinHeight">
-                            <img src = "img/competition-7.jpg">
-                            106年 招生影片創作暨主題式微電影競賽 參獎(管理學院)
-                        </div>
-                        <div class = "highMinHeight">
-                            <img src = "img/competition-5.jpg">
-                            106年 招生影片創作暨主題式微電影競賽 入圍(資管系)
-                        </div>
-                        <div class = "highMinHeight">
-                            <img src = "img/competition-6.jpg">
-                            2018 倫理個案分析暨微電影競賽 個案組 佳作
-                        </div>
-                    </div>
-                </div>
-
-                <div class = "dropDownImg dropDownImgColor-3 group" id = "leaderAward">
-                    <div class = "head">
-                        幹部與活動證明
-                        <i class = "chevron down icon"></i>
-                    </div>
-                    <div class = "bar group" id = "leaderAwardBar">
-                        <div class = "lowMinHeight">
-                            <img src = "img/leader-1.jpg">
-                            第十六屆 系學會 會長
-                        </div>
-                        <div class = "lowMinHeight">
-                            <img src = "img/leader-2.jpg">
-                            第七屆 高大資管營 副召
-                        </div>
-                        <div class = "lowMinHeight">
-                            <img src = "img/leader-3.jpg">
-                            第六屆 高大資管營 課務部 部長
-                        </div>
-                        <div class = "lowMinHeight">
-                            <img src = "img/EMBAEnterpriseTeacherProgram.jpg">
-                            中央大學EMBA 企業導師計畫 參加證書
-                        </div>
-                        <div class = "lowMinHeight">
-                            <img src = "img/PythonSummerCampTA.jpg">
-                            Python 學生團隊 暑期營 助教證書
-                        </div>
-                        <div class = "lowMinHeight">
-                            <img src = "img/PythonTeam.jpg">
-                            Python 學生團隊 技能核定書
-                        </div>
-                        <div class = "lowMinHeight">
-                            <img src = "img/leader-4.jpg">
-                            2016 資管週 財務長
-                        </div>
-                        <div class = "lowMinHeight">
-                            <img src = "img/leader-5.jpg">
-                            109級 迎新宿營 機動長
-                        </div>
-                    </div>
-                </div>
-
-                <div class = "dropDownImg dropDownImgColor-4 group" id = "volunteerAward">
-                    <div class = "head">
-                        志工感謝狀
-                        <i class = "chevron down icon"></i>
-                    </div>
-                    <div class = "bar group" id = "volunteerAwardBar">
-                        <div class = "highMinHeight">
-                            <img src = "img/volunteer-1.jpg">
-                            105年 IM Pioneer 翠屏里服務感謝狀
-                        </div>
-                        <div class = "lowMinHeight">
-                            <img src = "img/volunteer-2.jpg">
-                            106年 IM Pioneer 翠屏里服務感謝狀
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div class = "unit group" id = "contact">
                 <h1 class = "title" >聯絡資訊 － <span class = "noLetterSpace">Contact Me<span></span></h1>

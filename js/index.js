@@ -13,6 +13,8 @@ const App = {
         'paragraph-images-card': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/paragraphImagesCard.vue')),
         'color-box-block': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/colorBoxBlock.vue')),
         'img-slide-desc-modal': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/imgSlideDescModal.vue')),
+        'accordion-block': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/accordionBlock.vue')),
+        'img-grid': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/imgGrid.vue')),
     },
     setup() {
         const imgSlideDescModal = ref({
@@ -976,6 +978,167 @@ const App = {
                                 'small',
                             );
                         },
+                    },
+                ],
+            },
+            {
+                domId: 'certificate',
+                isHeader: false,
+                title: {
+                    En: 'Certificate',
+                    Zh: '其他證明文件',
+                },
+                contentType: 'accordionImgs',
+                content: [
+                    {
+                        title: '實習證明',
+                        style: 'beige',
+                        imgList: [
+                            {
+                                src: 'img/CatheyIntern.jpg',
+                                label: '國泰人壽 壽程科 實習證明',
+                                direction: 'straight',
+                            },
+                            {
+                                src: 'img/CatheyPreoffer.jpg',
+                                label: '國泰人壽 預聘書',
+                                direction: 'straight',
+                            },
+                        ],
+                    },
+                    {
+                        title: '書卷獎',
+                        style: 'brown',
+                        imgList: [
+                            {
+                                src: 'img/bookAward-1.jpg',
+                                label: '大一上 第二名 書卷獎',
+                                direction: 'straight',
+                            },
+                            {
+                                src: 'img/bookAward-2.jpg',
+                                label: '大一下 第一名 書卷獎',
+                                direction: 'straight',
+                            },
+                            {
+                                src: 'img/bookAward-3.jpg',
+                                label: '大二下 第二名 書卷獎',
+                                direction: 'straight',
+                            },
+                            {
+                                src: 'img/bookAward-4.jpg',
+                                label: '碩一上 第二名 書卷獎',
+                                direction: 'straight',
+                            },
+                        ],
+                    },
+                    {
+                        title: '其他競賽獎狀',
+                        style: 'rust',
+                        imgList: [
+                            {
+                                src: 'img/competition-8.jpg',
+                                label: '碩士論文計畫發表會 Session L 最佳論文獎',
+                                direction: 'straight',
+                            },
+                            {
+                                src: 'img/competition-1.jpg',
+                                label: '畢業專題 第三名',
+                                direction: 'straight',
+                            },
+                            {
+                                src: 'img/competition-2.jpg',
+                                label: '第六屆 激發學生創意競賽 佳作',
+                                direction: 'straight',
+                            },
+                            {
+                                src: 'img/competition-3.jpg',
+                                label: '2017 ECIC 全國大專院校電子商務競賽 數位行銷 優等獎',
+                                direction: 'straight',
+                            },
+                            {
+                                src: 'img/competition-4.jpg',
+                                label: '106年 招生影片創作暨主題式微電影競賽 入圍(管理學院)',
+                                direction: 'straight',
+                            },
+                            {
+                                src: 'img/competition-7.jpg',
+                                label: '106年 招生影片創作暨主題式微電影競賽 參獎(管理學院)',
+                                direction: 'straight',
+                            },
+                            {
+                                src: 'img/competition-5.jpg',
+                                label: '106年 招生影片創作暨主題式微電影競賽 入圍(資管系)',
+                                direction: 'straight',
+                            },
+                            {
+                                src: 'img/competition-6.jpg',
+                                label: '2018 倫理個案分析暨微電影競賽 個案組 佳作',
+                                direction: 'straight',
+                            },
+                        ],
+                    },
+                    {
+                        title: '幹部與活動證明',
+                        style: 'copper',
+                        imgList: [
+                            {
+                                src: 'img/leader-1.jpg',
+                                label: '第十六屆 系學會 會長',
+                                direction: 'horizontal',
+                            },
+                            {
+                                src: 'img/leader-2.jpg',
+                                label: '第七屆 高大資管營 副召',
+                                direction: 'horizontal',
+                            },
+                            {
+                                src: 'img/leader-3.jpg',
+                                label: '第六屆 高大資管營 課務部 部長',
+                                direction: 'horizontal',
+                            },
+                            {
+                                src: 'img/EMBAEnterpriseTeacherProgram.jpg',
+                                label: '中央大學EMBA 企業導師計畫 參加證書',
+                                direction: 'horizontal',
+                            },
+                            {
+                                src: 'img/PythonSummerCampTA.jpg',
+                                label: 'Python 學生團隊 暑期營 助教證書',
+                                direction: 'horizontal',
+                            },
+                            {
+                                src: 'img/PythonTeam.jpg',
+                                label: 'Python 學生團隊 技能核定書',
+                                direction: 'horizontal',
+                            },
+                            {
+                                src: 'img/leader-4.jpg',
+                                label: '2016 資管週 財務長',
+                                direction: 'horizontal',
+                            },
+                            {
+                                src: 'img/leader-5.jpg',
+                                label: '109級 迎新宿營 機動長',
+                                direction: 'horizontal',
+                            },
+                        ],
+                    },
+                    {
+                        title: '志工感謝狀',
+                        style: 'maroon',
+                        imgList: [
+                            {
+                                src: 'img/volunteer-1.jpg',
+                                label: '105年 IM Pioneer 翠屏里服務感謝狀',
+                                direction: 'straight',
+                            },
+                            {
+                                src: 'img/volunteer-2.jpg',
+                                label: '106年 IM Pioneer 翠屏里服務感謝狀',
+                                direction: 'straight',
+                            },
+                        ],
                     },
                 ],
             },
