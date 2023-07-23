@@ -1,7 +1,7 @@
 <template>
     <div class="nav" :class="{'open': coverPageState}">
         <div class="navContainer">
-            <img id="myProfile" :src="user.img.url" :alt="user.name.Zh" />
+            <img class='photoSticker' :src="user.img.url" :alt="user.name.Zh" />
             <h3 class="navHeader">{{user.name.Zh}}</h3>
             <h4 class="navHeader">{{user.name.En}}</h4>
         </div>
@@ -165,6 +165,14 @@ export default {
         margin-left: 2rem;
     }
 
+    .photoSticker{
+        width: 55%;
+        display: block;
+        margin: auto;
+        border-radius: 50%;
+        border: 1px solid rgb(253, 253, 253);
+    }
+
     .nav{
         width: 20vw;
         max-width: 280px;
@@ -216,6 +224,7 @@ export default {
     h3.navHeader {
         font-size: 2.5rem;
         margin-top: 1.5rem;
+        letter-spacing: 10px;
     }
 
     h4.navHeader {

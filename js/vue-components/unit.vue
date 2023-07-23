@@ -42,13 +42,16 @@ export default {
 <style>
     .unit {
         width: 100%;
-        margin-top: 1.5vw;
-        margin-bottom: 3vw;
+        margin-top: 1.5rem;
+        margin-bottom: 3rem;
         overflow: hidden;
     }
     .header {
         margin-top: 0.8rem;
         margin-bottom: 30px;
+    }
+    .title{
+        font-size: 50px;
     }
 
     .line {

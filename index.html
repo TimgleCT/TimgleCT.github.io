@@ -20,6 +20,7 @@
         gtag('config', 'UA-161578161-1');
     </script>
     <script src = "js/lib/echarts.js"></script>
+    <script src = "js/lib/emailjs.js"></script>
     <script src = "js/lib/vue@3.2.36.js"></script>
     <script src = "js/lib/vue3-sfc-loader.js"></script>
     <script src = "js/jquery-2.1.4.min.js"></script>
@@ -27,6 +28,7 @@
     <script src = "js/helper/processHelper.js"></script>
     <script src = "js/helper/arrayHelper.js"></script>
     <script src = "js/helper/mathHelper.js"></script>
+    <script src = "js/helper/mailService.js"></script>
     <script src = "js/style.js"></script>
     <script src = "js/mail.js"></script>
 </head>
@@ -108,6 +110,16 @@
                             ></img-grid>
                         </accordion-block>
                     </template>
+                    <template v-if="content.contentType ==='contactInfo'">
+                        <content-paragraph
+                            :content-list="content.content.content"
+                            :collapse-mode="false"
+                        ></content-paragraph>
+                        <mail-form></mail-form>
+                        <contact-info-box-list
+                            :contact-list="content.content.contactInfo"
+                        ></contact-info-box-list>
+                    </template>
                 </unit-content>
             </template>
 
@@ -121,115 +133,6 @@
                 :img-desc-ratio-diff="imgSlideDescModal.imgDescRatioDiff"
                 @close-modal="closeImgSlideDescModal()"
             ></img-slide-desc-modal>
-
-            <div class = "unit group" id = "contact">
-                <h1 class = "title" >聯絡資訊 － <span class = "noLetterSpace">Contact Me<span></span></h1>
-                <hr class = "line">
-                <p>&nbsp&nbsp&nbsp&nbsp如果您想對我有更細一步的了解，或是您覺得這個個人網站還有哪邊可以改進的意見，
-                    還是只是想認識認識交個朋友交流交流，都可以透過下方的連絡方式與我聯絡。我很高興可以認識大家，都很歡迎。
-                </p>
-
-                <div class = "sendMail">
-                    <a id = "mailTo"></a>
-                        <form  id = "mailForm" class = "ui form" accept-charset="utf-8">
-                        <div class = field>
-                            <label>姓名：</label>
-                            <input type="text" name = "Name" placeholder="姓名">
-                        </div>
-                        <div class = field>
-                            <label>Email：</label>
-                            <input type="email" name = "Email" placeholder="Email">
-                        </div>
-                        <div class = field>
-                            <label>主旨：</label>
-                            <input type="text" name = "Subject" placeholder="主旨">
-                        </div>
-                        <div class = field>
-                            <label>你想說什麼(字數限制於210字以內)：</label>
-                            <textarea name = "content" cols="50" maxlength="210"></textarea>
-                        </div>
-                        <div class="ui success message" id = "seccessMessage">
-                            <div class="header">信件成功寄出囉!</div>
-                            <p>謝謝你的回覆，我看到後會盡快回復的XD</p>
-                        </div>
-                        <div class="ui error message" id = "errorMessage">
-                            <div class="header">可能有些忘記填或輸入錯誤喔!</div>
-                            <p></p>
-                        </div>
-                        <div class = field>
-                            <button class = "fluid ui button sendMailBtn" type="button" onclick='validation()'>Send</button>
-                        </div>
-                    </form>  
-                </div>
-
-                <div class = "contactBoxSet group">
-                    <a href = "https://www.facebook.com/profile.php?id=100002342939054">
-                        <div class = "contactBox">
-                            <div class = "contactBoxImg">
-                                <img src = "img/facebook.png">
-                            </div>
-                            <div class = "colorBoxContent">
-                                <h4>Facebook</h4>
-                                <div class = "meta">莊于霆</div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="https://www.linkedin.com/in/%E8%8E%8A-%E4%BA%8E%E9%9C%86-7a7b39198/">
-                        <div class = "contactBox">
-                            <div class = "contactBoxImg">
-                                <img src = "img/linkedin.png">
-                            </div>
-                            <div class = "colorBoxContent">
-                                <h4>LinkedIn</h4>
-                                <div class = "meta">莊于霆</div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href = "https://www.instagram.com/timgle_ct/?hl=zh-tw">
-                        <div class = "contactBox">
-                            <div class = "contactBoxImg">
-                                <img src = "img/instagram.png">
-                            </div>
-                            <div class = "colorBoxContent">
-                                <h4>Instagram</h4>
-                                <div class = "meta">timgle_ct</div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href = "https://github.com/TimgleCT">
-                        <div class = "contactBox">
-                            <div class = "contactBoxImg">
-                                <img src = "img/github.png">
-                            </div>
-                            <div class = "colorBoxContent">
-                                <h4>Github</h4>
-                                <div class = "meta">TimgleCT</div>
-                            </div>
-                        </div>
-                    </a>
-                    <div class = "contactBox">
-                        <div class = "contactBoxImg">
-                            <img src = "img/gmail.png">
-                        </div>
-                        <div class = "colorBoxContent">
-                            <h4>Gmail</h4>
-                            <div class = "meta">ct25283115</div>
-                        </div>
-                    </div>
-                    <div class = "contactBox">
-                        <div class = "contactBoxImg">
-                            <img src = "img/telephone.png">
-                        </div>
-                        <div class = "colorBoxContent">
-                            <h4>Phone</h4>
-                            <div class = "meta">0973079448</div>
-                        </div>
-                    </div>
-                </div>
-
-                
-                
-            </div>
         </div>
     </div>
 

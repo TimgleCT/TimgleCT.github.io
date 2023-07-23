@@ -31,8 +31,10 @@ module.exports = {
         Vue: true,
         VueLoader: true,
         arrayHelper: true,
+        MailService: true,
         mathHelper: true,
         echarts: true,
+        emailjs: true,
         $: true,
     },
 };

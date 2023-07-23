@@ -15,6 +15,8 @@ const App = {
         'img-slide-desc-modal': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/imgSlideDescModal.vue')),
         'accordion-block': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/accordionBlock.vue')),
         'img-grid': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/imgGrid.vue')),
+        'mail-form': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/mailForm.vue')),
+        'contact-info-box-list': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/contactInfoBoxList.vue')),
     },
     setup() {
         const imgSlideDescModal = ref({
@@ -1117,6 +1119,57 @@ const App = {
                         ],
                     },
                 ],
+            },
+            {
+                domId: 'contact',
+                isHeader: false,
+                title: {
+                    En: 'Contact Me',
+                    Zh: '聯絡資訊',
+                },
+                contentType: 'contactInfo',
+                content: {
+                    content: [`&nbsp&nbsp&nbsp&nbsp如果您想對我有更細一步的了解，或是您覺得這個個人網站還有哪邊可以改進的意見，
+                                還是只是想認識認識交個朋友交流交流，都可以透過下方的連絡方式與我聯絡。我很高興可以認識大家，都很歡迎。`],
+                    contactInfo: [
+                        {
+                            mediaName: 'Facebook',
+                            label: '莊于霆',
+                            mediaIconSrc: 'img/facebook.png',
+                            medialUrl: 'https://www.facebook.com/profile.php?id=100002342939054',
+                        },
+                        {
+                            mediaName: 'LinkedIn',
+                            label: '莊于霆',
+                            mediaIconSrc: 'img/linkedin.png',
+                            medialUrl: 'https://www.linkedin.com/in/%E8%8E%8A-%E4%BA%8E%E9%9C%86-7a7b39198/',
+                        },
+                        {
+                            mediaName: 'Instagram',
+                            label: 'timgle_ct',
+                            mediaIconSrc: 'img/instagram.png',
+                            medialUrl: 'https://www.instagram.com/timgle_ct/?hl=zh-tw',
+                        },
+                        {
+                            mediaName: 'Github',
+                            label: 'TimgleCT',
+                            mediaIconSrc: 'img/github.png',
+                            medialUrl: 'https://github.com/TimgleCT',
+                        },
+                        {
+                            mediaName: 'Gmail',
+                            label: 'ct25283115',
+                            mediaIconSrc: 'img/gmail.png',
+                            medialUrl: '',
+                        },
+                        {
+                            mediaName: 'Phone',
+                            label: '0973079448',
+                            mediaIconSrc: 'img/telephone.png',
+                            medialUrl: '',
+                        },
+                    ],
+                },
             },
         ]);
         // 在這裡撰寫組件的邏輯
