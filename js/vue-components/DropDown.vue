@@ -41,7 +41,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
     .pageLink {
         width: 100%;
         display: block;
@@ -49,6 +49,7 @@ export default {
         text-align: left;
         cursor: pointer;
         color: white;
+        font-size: 1.0rem;
     }
 
     .pageLink:hover {
@@ -62,13 +63,13 @@ export default {
         overflow: hidden;
     }
 
-    .dropDownContent a{
-        font-size: 13px;
+    .dropDownContent ::v-deep a{
+        font-size: 0.8rem;
         background-color: rgb(248, 96, 96);
         padding-left: 40px;
     }
 
-    .dropDownContent a:hover{
+    .dropDownContent ::v-deep a:hover{
         display: block;
         background-color: rgba(238, 157, 157, 0.89);
         color:rgb(255, 255, 255);

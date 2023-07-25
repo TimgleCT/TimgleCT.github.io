@@ -58,10 +58,12 @@ export default {
 }
 .contactBox h4{
     margin-bottom: 0;
+    font-size: 1.0rem;
 }
 .contactBox .meta{
     border: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    opacity: 0.75;
     color: rgba(255, 255, 255, 0.644);
 }
 .contactBox:hover{
@@ -78,9 +80,21 @@ export default {
     text-align: center;
 }
 
+@media only screen and (max-width: 1024px) {
+    .contactBox .colorBoxContent h4{
+        font-size: 1.0rem;
+    }
+    .contactBox .meta {
+        font-size: 0.8rem;
+    }
+}
+
 @media only screen and (max-width: 820px) {
-    .meta{
-        font-size: 0.5rem;
+    .contactBox .colorBoxContent h4{
+        font-size: 1.25rem;
+    }
+    .contactBox .meta {
+        font-size: 1.0rem;
     }
 }
 
@@ -89,13 +103,11 @@ export default {
         margin: 2% 1.0% 2% 2.5%;
     }
     .contactBox .colorBoxContent h4{
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
     .contactBox .meta {
-        font-size: 0.6rem;
-    }
-    .contactBoxSet {
-        margin: 6% auto;
+        font-size: 0.75rem;
+        opacity: 0.8;
     }
 }
 

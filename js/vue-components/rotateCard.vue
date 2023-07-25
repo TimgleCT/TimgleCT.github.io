@@ -177,13 +177,14 @@ export default {
     }
     .cardHead{
         font-size: 2.5em;
-        margin-bottom: 1.7rem;
+        margin-bottom: 1.75rem;
         letter-spacing: 2px;
         text-align: center;
     }
     .cardH4{
         text-align: center;
         font-weight: 500;
+        font-size: 1.25rem;
     }
     .cardImg{
         width: 40%;
@@ -254,12 +255,13 @@ export default {
         border: 2px solid rgb(228, 97, 10);
     }
     .cardBackHeader{
+        font-size: 1.25rem;
         padding: 0px 20px 0px 20px;
         margin-bottom: 2px;
     }
     .meta{
         padding: 0px 20px 0px 30px;
-        font-size: 0.9em;
+        font-size: 1.0rem;
         color: rgba(255, 255, 255, 0.644);
     }
     .listIcon{
@@ -276,6 +278,7 @@ export default {
     }
     .listP{
         font-size: 0.8rem;
+        opacity: 0.7;
         font-weight: 300;
     }
     .listItem{
@@ -308,6 +311,12 @@ export default {
         top: 0;
         z-index: -1;
         opacity: 0.2;
+    }
+    .floatLeft{
+        float: left;
+    }
+    .floatRight{
+        float: right;
     }
     @media only screen and (max-width: 1024px) {
         .cardHead{
@@ -378,6 +387,24 @@ export default {
             width: 2.5rem;
             height: 2.5rem;
             margin-right: 1rem;
+        }
+    }
+
+    @media only screen and (max-width: 450px) {
+        .cardHead{
+            font-size: 2.0rem;
+        }
+        .cardBackHeader{
+            margin-top: 1.25rem;
+        }
+        .meta{
+            font-size: 0.9rem;
+        }
+        .listHeader{
+            font-size: 1.0rem;
+        }
+        .listP{
+            font-size: 0.9rem;
         }
     }
 </style>

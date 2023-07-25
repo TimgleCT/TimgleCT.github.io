@@ -185,12 +185,13 @@ export default {
     padding: 0 1.5rem;
 }
 .desc .descContent .title{
-    font-size: 2.5rem;
-    margin: 1.5rem 0;
+    font-size: 2.0rem;
+    margin: 1.5rem 0 1.0rem 0;
 }
 .desc .descContent .content{
-    font-size: 1rem;
-    margin: 1.5rem 0;
+    font-size: 0.85rem;
+    line-height: 1.5rem;
+    margin: 1.5rem 0 1.0rem 0;
 }
 .imgBlockColumn img{
     width: 100%;
@@ -217,15 +218,27 @@ export default {
     display: none !important;
 }
 
-@media only screen and (max-width: 992px) {
-        .desc .descContent .title{
-            font-size: 1.75rem;
-            margin: 1.0rem 0;
-        }
-
-        .desc .descContent .content{
-            font-size: 0.75rem;
-            margin: 1.0rem 0;
-        }
+@media only screen and (max-width: 820px) {
+    .desc .descContent .title{
+        font-size: 1.75rem;
+        margin: 1.5rem 0 0.75rem 0;
     }
+
+    .desc .descContent .content{
+        font-size: 0.9rem;
+        margin: 1.5rem 0 0.75rem 0;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .desc .descContent .title{
+        font-size: 1.75rem;
+        margin: 1.0rem 0 0.75rem 0;
+    }
+
+    .desc .descContent .content{
+        font-size: 0.9rem;
+        margin: 1.0rem 0 0.75rem 0;
+    }
+}
 </style>

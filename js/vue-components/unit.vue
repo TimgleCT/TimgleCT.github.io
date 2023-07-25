@@ -40,24 +40,44 @@ export default {
 </script>
 
 <style>
+.unit {
+    width: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.noLetterSpace{
+    letter-spacing: 0px;
+}
+
+.title{
+    font-size: 2.5rem;
+}
+
+.line {
+    width: 120px;
+    border: 5px solid red;
+    border-radius: 4px;
+    margin: 1.2rem 1.2rem 1.0rem 1.2rem;
+}
+
+@media only screen and (max-width: 820px) {
     .unit {
-        width: 100%;
-        margin-top: 1.5rem;
-        margin-bottom: 3rem;
-        overflow: hidden;
-    }
-    .header {
-        margin-top: 0.8rem;
-        margin-bottom: 30px;
+        padding-bottom: 2rem;
     }
     .title{
-        font-size: 50px;
+        font-size: 2.0rem;
     }
-
     .line {
-        width: 120px;
-        border: 5px solid red;
-        border-radius: 4px;
-        margin: 20px 20px 1.5vw 20px;
+        margin: 1.2rem 1.2rem 0.5rem 1.2rem;
     }
+}
+
+@media only screen and (max-width: 425px) {
+    .unit {
+        padding-bottom: 1rem;
+    }
+}
 </style>

@@ -5,7 +5,7 @@
                 <div class="four wide column">
                     <img class="imgBoxImg" :class="setHeadShotFloat()" :src="headShot">
                 </div>
-                <div class="twelve wide column">
+                <div class="twelve wide column imgBoxContent">
                     <h4>{{title}}</h4>
                 </div>
             </div>
@@ -156,7 +156,7 @@ export default {
     width: 95%;
     max-width: 80rem;
     padding: 1rem 0.5rem;
-    margin: 2rem auto 3rem auto;
+    margin: 3rem auto 3rem auto;
     box-shadow: 0 0 10px #373a3a;
 }
 .imgBoxImg{
@@ -178,6 +178,10 @@ export default {
     line-height: 30px;
 }
 
+.imgBoxContent h4{
+    font-size: 1.5rem;
+}
+
 .imgBoxContent > div{
     display: block;
 }
@@ -191,7 +195,18 @@ export default {
     margin: 2rem 3rem 1rem 3rem;
 }
 
+.floatLeft{
+    float: left;
+}
+
+.floatRight{
+    float: right;
+}
+
 @media only screen and (max-width: 425px) {
+    .imgBoxContent h4{
+        font-size: 1.25rem;
+    }
     .imgBox .imgBoxContent{
         padding: 0 1rem 0.5rem 1rem;
     }

@@ -70,16 +70,15 @@ export default {
 
 <style scoped>
 .ui.modal .close.icon{
-    top:0.8vw;
-    right: 1vw;
+    top: calc(1.25rem - 0.625rem);
+    right: 1.5rem;
     color:rgba(0, 0, 0, 0.61);
-    font-size: 2.0rem;
+    font-size: 1.75rem;
 }
 .modalHead{
-    font-size: 2vw;
+    font-size: 1.75rem;
     font-weight: 600;
-    padding: 1vw 1.5vw;
-    margin: 1vw 1vw 0 1vw;
+    padding: 1.25rem 1.5rem;
     border-bottom: solid 2px rgba(62, 73, 73, 0.493);
 }
 @media only screen and (max-width: 1600px) {
@@ -88,15 +87,10 @@ export default {
     }
 }
 
-@media only screen and (max-width: 1024px) {
-    .ui.modal .close.icon{
-        font-size: 1.0rem;
-    }
-}
 @media only screen and (max-width: 425px) {
     .modalHead{
-        font-size: 5vw;
-        padding: 3vw 4.5vw
+        font-size: 1.5rem;
+        padding: 0.9rem 1rem;
     }
 }
 </style>

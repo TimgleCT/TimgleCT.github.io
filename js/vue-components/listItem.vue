@@ -64,7 +64,7 @@ export default {
 }
 
 .listItemHeader{
-    font-size: 2.0rem;
+    font-size: 1.5rem;
     color: white;
     font-weight: 500;
 }
@@ -82,6 +82,12 @@ export default {
     }
     .listItemImage{
         width: 15%;
+    }
+    .listItemHeader{
+        font-size: 1.75rem;
+    }
+    .listItemContext .content{
+        font-size: 1.0rem;
     }
 }
 
@@ -104,7 +110,7 @@ export default {
     }
     .listItemHeader{
         text-align: center;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
     .listItemImage{
         width: 85px;
@@ -121,10 +127,12 @@ export default {
     .listItemContext hr{
         width: 80%;
     }
+    .listItemHeader{
+        font-size: 1.5rem;
+    }
     .listItemContext .content {
         font-size: 1.0rem;
-        text-align: center;
-        padding: 5px 1rem;
+        font-weight: 300;
     }
 }
 </style>

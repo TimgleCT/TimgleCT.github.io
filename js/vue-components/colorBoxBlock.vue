@@ -35,22 +35,22 @@ export default {
 <style scoped>
 
 .colorBoxBlock{
-    margin: 1rem 3rem 1rem 3rem;
+    padding: 2rem 3rem 2rem 3rem;
 }
 .colorBoxBlock .box{
     padding: 0 !important;
 }
 
 @media only screen and (max-width: 1024px) {
-        .colorBoxBlock {
-            margin: 1rem 2rem 1rem 2rem;
-        }
+    .colorBoxBlock {
+        padding: 3rem 2rem 2rem 2rem;
     }
+}
 
-@media only screen and (max-width: 500px) {
-        .colorBoxBlock {
-            margin: 1rem 1rem 1rem 1rem;
-        }
+@media only screen and (max-width: 425px) {
+    .colorBoxBlock {
+        padding: 3rem 2rem 2rem 2rem;
     }
+}
 
 </style>

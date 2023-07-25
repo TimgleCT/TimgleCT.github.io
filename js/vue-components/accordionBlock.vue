@@ -83,7 +83,7 @@ export default {
 
 .dropDownImg{
     width: 95%;
-    margin: 0 auto 1vw auto;
+    margin: 2.0rem auto 0rem auto;
     color: white;
     border-radius: 10px;
     cursor: pointer;
@@ -91,13 +91,12 @@ export default {
 
 .dropDownImg .content{
     display: none;
-    padding: 0 2vw 2vw 2vw;
-    margin-top: 2vw;
+    padding: 1.0rem;
 }
 
 .dropDownImg .head{
-    padding: 2vw;
-    font-size: 1.5rem;
+    padding: 1.5rem;
+    font-size: 1.75rem;
 }
 
 .dropDownImg .head i{
@@ -119,9 +118,20 @@ export default {
 }
 
 @media only screen and (max-width: 1024px) {
+    .dropDownImg{
+        margin: 1.5rem auto 0rem auto;
     }
+}
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 425px) {
+    .dropDownImg{
+        margin: 1rem auto 0rem auto;
+        width: 100%;
     }
+    .dropDownImg .head{
+        padding: 0.75rem;
+        font-size: 1.25rem;
+    }
+}
 
 </style>

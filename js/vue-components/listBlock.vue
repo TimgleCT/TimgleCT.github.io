@@ -80,7 +80,7 @@ export default {
     margin: 10%;
 }
 .listBlockIcon span{
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 400;
     color: white;
     display: block;
@@ -96,7 +96,7 @@ export default {
 .listBlockItemList{
     width: 85%;
     float: left;
-    padding: 2.5rem 1.5em;
+    padding: 2.0rem 1.5em;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
 }

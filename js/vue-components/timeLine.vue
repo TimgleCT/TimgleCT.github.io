@@ -133,8 +133,8 @@ li div{
     vertical-align: top;
 }
 li .circle{
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     box-sizing: border-box;
     border-radius: 50%;
     background: rgb(202, 91, 91);
@@ -146,7 +146,7 @@ li .circle{
     margin-top: 1.5rem;
     margin-left: 1rem;
     margin-right: 4rem;
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     line-height: 2.2rem;
     font-weight: 500;
     text-align: center;
@@ -191,6 +191,7 @@ li .circle{
 .timelineContent ul li{
     margin: 0 0 1rem 0;
     line-height: 1.6rem;
+    font-size: 1.0rem;
 }
 .timelineContentColor{
     background-color: var(--color);
@@ -208,7 +209,7 @@ li .circle{
 }
 .timelineHead .title{
     color:white;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 400;
     display: flex;
     align-items: center;
@@ -240,7 +241,7 @@ li .circle{
         display: none;
     }
     .disc{
-        width: calc(100% - 180px);
+        width: calc(100% - 200px);
     }
     .date{
         font-size: 1.5rem;
@@ -294,9 +295,10 @@ li .circle{
         padding: 0 0 0 1.5rem;
     }
     .timelineContent ul li{
-        font-size: 0.9rem;
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
+        font-size: 0.75rem;
+        line-height: 1.75rem;
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
     }
 }
 

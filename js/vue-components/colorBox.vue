@@ -119,7 +119,7 @@ export default {
 <style scoped>
     .colorBox{
         width: 100%;
-        height: 500px;
+        height: 550px;
         padding: 0.5rem 2.5rem 0.5rem 2.5rem;
         position: relative;
         transition: all 250ms cubic-bezier(0.02,0.01,0.47,1);
@@ -161,7 +161,7 @@ export default {
     }
     .colorBoxContent h4{
         text-align: center;
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         font-weight: 500;
         margin-bottom: 9%;
     }
@@ -177,15 +177,21 @@ export default {
     .ui[class*="right ribbon"].label{
         padding: 0.5rem 0.8rem 0.5rem 0.8rem;
         position: absolute;
-        top:1rem;
-        left: calc(100% + 1.1rem);
+        top: 1rem;
+        left: calc(100% + 1rem);
         z-index: 1;
-        font-size: 1.1rem;
+        font-size: 0.85rem;
         font-weight: 400;
         backface-visibility: hidden;
         transition: 0.6s;
         transform-style: preserve-3d;
     }
+    @media only screen and (max-width: 1400px) {
+        .colorBox {
+            height: 450px;
+        }
+    }
+
     @media only screen and (max-width: 1024px) {
         .circleImg{
             width: 6rem;
@@ -209,7 +215,7 @@ export default {
             margin: 2.5rem auto 11% auto;
         }
         .colorBoxContent div{
-            font-size: 0.5rem;
+            font-size: 0.75rem;
             padding: 0.25rem;
             margin: 0.25rem;
         }
@@ -217,7 +223,6 @@ export default {
             font-size: 1.5rem;
         }
         .ui[class*="right ribbon"].label{
-            font-size: 0.75rem;
             left: calc(100% + 0.75rem);
         }
     }

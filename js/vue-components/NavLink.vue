@@ -29,7 +29,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
     .pageLink {
         width: 100%;
         display: block;
@@ -37,6 +37,7 @@ export default {
         text-align: left;
         cursor: pointer;
         color: white;
+        font-size: 1.0rem;
     }
 
     .pageLink:hover {

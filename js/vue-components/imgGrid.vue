@@ -43,4 +43,21 @@ img {
     font-size: 1.0rem;
     text-align: center;
 }
+@media only screen and (max-width: 1024px) {
+    .imageInfo{
+        padding: 1.0rem 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .imageInfo{
+        padding: 1.25rem 1.75rem;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .imageInfo{
+        padding: 1.25rem 0.25rem;
+    }
+}
 </style>

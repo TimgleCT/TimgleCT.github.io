@@ -11,8 +11,8 @@
         <div v-if="validDesc" class="imgDesc">
             <p>{{imgDescriptionList[currentImgIndex]}}</p>
         </div>
-        <div v-if="preview" class="row smallImgRow">
-            <div v-for="(img, index) in imgList" :key="index" class="column" @click="moveImgsSlidesToIndex(index)">
+        <div v-if="preview" class="smallImgRow">
+            <div v-for="(img, index) in imgList" :key="index" @click="moveImgsSlidesToIndex(index)">
                 <img class="smallImg" :src="img" :class="{'active': showImgs(index)}">
             </div>
         </div>
@@ -132,7 +132,7 @@ export default {
 .imgDesc {
     text-align: center;
     background-color: rgba(87, 85, 78, 0.658);
-    font-size: 1.5rem;
+    font-size: 1.0rem;
     font-weight: 200;
     padding: 0.75rem;
     color: white;
@@ -153,7 +153,7 @@ export default {
 .smallImgRow{
     display: flex;
     align-items: flex-start;
-    height: auto;
+    height: 150px;
     width: 100%;
 }
 
@@ -161,13 +161,18 @@ export default {
     opacity: 0.6;
     cursor: pointer;
     width: 100%;
-    height: 150px;
+    height: 100%;
     object-fit: cover;
 }
 
 .active,
 .smallImg:hover {
     opacity: 1;
+}
+
+.smallImgRow div{
+    height: 100%;
+    width: 20%;
 }
 
 @media only screen and (max-width: 425px) {
@@ -177,7 +182,7 @@ export default {
     .mainImgs{
         height: 200px;
     }
-    .smallImg{
+    .smallImgRow{
         height: 50px;
     }
     .imgDesc{

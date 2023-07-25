@@ -82,22 +82,34 @@ export default {
 }
 .field label{
     font-weight: 500 !important;
+    font-size: 1.0rem !important;
     margin-bottom: 10px !important;
 }
 .sendMail{
-    margin: 2.5% auto;
+    margin: 1.0rem auto;
     width: 95%;
     border: 3px solid rgba(177, 165, 165, 0.747);
     border-radius: 20px;
-    padding: 0 2rem ;
+    padding: 0 2rem;
 }
 .sendMailBtn{
     background-color: rgba(255, 122, 122, 0.856) !important;
     color: white !important;
-    font-size: 1.4rem !important;
+    font-size: 1.2rem !important;
 }
 .sendMailBtn:hover{
     background-color: rgb(248, 161, 161) !important;
     color: white !important;
+}
+@media only screen and (max-width: 425px) {
+    .field label{
+        font-size: 0.75rem !important;
+    }
+    .sendMail{
+        width: 100%;
+    }
+    .sendMailBtn{
+        font-size: 1.0rem !important;
+    }
 }
 </style>

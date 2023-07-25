@@ -175,17 +175,17 @@ export default {
 
     .nav{
         width: 20vw;
-        max-width: 280px;
+        max-width: 250px;
         height: 100%;
         font-weight: bold;
         color: #fff;
         background-color: #f44336;
         padding: 8px 16px;
-        font-size: 1.1rem;
+        font-size: 1.0rem;
         top: 0;
         position: fixed;
-        overflow: auto;
-        line-height: 1.5;
+        overflow: hidden;
+        line-height: 1.5rem;
     }
 
     .pageLink {
@@ -209,10 +209,6 @@ export default {
         min-width: calc(min(250px, 20vw, 100%));
     }
 
-    .barBlock {
-        min-width: calc(min(250px calc(20vw - 32px)));
-    }
-
     .navHeader {
         padding-top: 5px;
         padding-bottom: 0px;
@@ -222,19 +218,23 @@ export default {
     }
 
     h3.navHeader {
-        font-size: 2.5rem;
-        margin-top: 1.5rem;
+        font-size: 1.75rem;
+        margin-top: 1.0rem;
         letter-spacing: 10px;
     }
 
     h4.navHeader {
-        font-size: 2.0rem;
+        font-size: 1.5rem;
         padding-top: 0px;
         margin: 0px;
         white-space: pre;
     }
 
     @media only screen and (max-width: 1440px) {
+        .navContainer {
+            margin-bottom: 1.75rem;
+            padding-top: 1.75rem;
+        }
         h3.navHeader {
             font-size: 2.0rem;
         }

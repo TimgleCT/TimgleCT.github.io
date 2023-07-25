@@ -54,8 +54,15 @@ export default {
     background-color: #d14747;
     position: absolute;
     top: 0;
-    left: 2.8rem;
+    left: 2.6rem;
     z-index: -1;
+}
+
+@media only screen and (max-width: 1200px) {
+    .timeline{
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
 }
 
 @media only screen and (max-width: 425px) {

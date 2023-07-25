@@ -110,10 +110,17 @@ export default {
 
 <style scoped>
 .imgs-slideshow::v-deep{
-    padding: 0 0 1rem 0;
+    padding: 0;
+    height: 100%;
 }
 .imgs-slideshow::v-deep .mainImg{
     object-fit: var(--objectFit);
+}
+::v-deep .mainImgs{
+    height: calc((100% - 2.5rem) * 0.8);
+}
+::v-deep .smallImgRow{
+    height: calc((100% - 2.5rem) * 0.2);
 }
 .largeModalDesc{
     height: 100%;
@@ -121,6 +128,10 @@ export default {
 }
 .largeModalImg{
     height: 100%;
+}
+.largeModalDesc p{
+    font-size: 1.0rem;
+    line-height: 1.75rem;
 }
 .ui.header{
     font-size: 1.5rem;
@@ -130,11 +141,33 @@ export default {
     text-align: inherit !important;
 }
 @media only screen and (max-width: 1200px) {
+    .ui.header{
+        padding-top: 0.5rem;
+    }
     .largeModalImg{
         height: auto;
+        max-height: 50vh;
     }
     .largeModalDesc{
         height: auto;
+    }
+    .largeModalDesc p{
+        font-size: 1.15rem;
+        line-height: 1.85rem;
+    }
+}
+@media only screen and (max-width: 820px) {
+    .largeModalDesc p{
+        font-size: 1.05rem;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .ui.header{
+        font-size: 1.0rem;
+        padding-top: 0rem;
+    }
+    .largeModalDesc p{
+        font-size: 0.85rem;
     }
 }
 </style>

@@ -134,10 +134,10 @@ export default {
 
     .readMore{
         background-color: rgb(16, 143, 175);
-        border-radius: 5%;
+        border-radius: 4px;
         margin: 2rem 3rem;
-        padding: 0.8rem;
-        width: 8rem;
+        padding: 0.7rem;
+        font-size: 0.8rem;
         color: white;
         text-align: center;
         cursor: pointer;
@@ -154,15 +154,15 @@ export default {
     p {
         font-family: 'Noto Sans TC', sans-serif;
         letter-spacing: 2px;
-        font-size: 1.2rem;
-        line-height: 30px;
+        font-size: 1.0rem;
+        line-height: 1.75rem;
     }
 
-    @media only screen and (max-width: 992px) {
-        p {
-            letter-spacing: 1px;
-            font-size: 1.0rem;
-            line-height: 25px;
-        }
+    .floatLeft{
+        float: left;
+    }
+
+    .floatRight{
+        float: right;
     }
 </style>
