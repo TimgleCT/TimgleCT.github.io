@@ -1,6 +1,9 @@
 <template>
     <div @click="clickFunction" class="colorBox colorBoxColor" :style="{'--backgroundColor': backgroundColor, '--textColor': textColor }">
-        <div class = "ui right ribbon label" :class="labelStyle">{{label}}</div>
+        <div class="ui right ribbon label ribbonBackgroundColor ribbonFoldBorderColor"
+            :style="{'--ribbonBackgroundColor': ribbonBackgroundColor, '--ribbonFoldBorderColor': ribbonFoldBorderColor }">
+            {{label}}
+        </div>
         <div class = "circleImg" :style="{'--iconBackgroundColor': iconBackgroundColor }">
             <img :src="iconURL">
         </div>
@@ -44,59 +47,103 @@ export default {
 
     setup(props) {
         const colorGroups = {
-            blue: {
-                backgroundColor: 'rgb(48, 123, 197)',
+            paleMouse: {
+                backgroundColor: '#8593b5',
                 color: 'white',
-                iconBackgroundColor: '#0359AE',
-                labelStyle: 'violet',
+                iconBackgroundColor: '#6d7a99',
+                ribbonBackgroundColor: '#5b6785',
+                ribbonFoldBorderColor: '#555861',
             },
-            tiffanyGreen: {
-                backgroundColor: 'rgb(71, 192, 176)',
+            heliotrope: {
+                backgroundColor: '#e3a9a8',
                 color: 'white',
-                iconBackgroundColor: '#14B09B',
-                labelStyle: 'olive',
+                iconBackgroundColor: '#e7b7b5',
+                ribbonBackgroundColor: '#c59c9b',
+                ribbonFoldBorderColor: '#ab7170',
             },
-            brown: {
-                backgroundColor: 'rgb(204, 196, 179)',
+            lightVermilion: {
+                backgroundColor: '#F0908D',
                 color: 'white',
-                iconBackgroundColor: 'rgb(211, 193, 156)',
-                labelStyle: 'brown',
+                iconBackgroundColor: '#dd8d8c',
+                ribbonBackgroundColor: '#ff9a98',
+                ribbonFoldBorderColor: '#cfb3b3',
             },
-            pink: {
-                backgroundColor: 'rgb(241, 169, 170)',
+            plumGray: {
+                backgroundColor: '#9E7A7A',
                 color: 'white',
-                iconBackgroundColor: '#EB8F90',
-                labelStyle: 'pink',
+                iconBackgroundColor: '#917777',
+                ribbonBackgroundColor: '#8f4b4b',
+                ribbonFoldBorderColor: '#6d3838',
             },
-            orange: {
-                backgroundColor: 'rgb(255, 195, 143)',
+            irisQuartz: {
+                backgroundColor: '#A18594',
                 color: 'white',
-                iconBackgroundColor: '#FFB471',
-                labelStyle: 'orange',
+                iconBackgroundColor: '#917684',
+                ribbonBackgroundColor: '#bf94ab',
+                ribbonFoldBorderColor: '#735d69',
             },
-            grey: {
-                backgroundColor: 'rgb(172, 193, 216)',
+            paleCloudedGray: {
+                backgroundColor: '#B3ADA0',
                 color: 'white',
-                iconBackgroundColor: 'rgb(164, 182, 202)',
-                labelStyle: 'grey',
+                iconBackgroundColor: '#9f9b93',
+                ribbonBackgroundColor: '#979082',
+                ribbonFoldBorderColor: '#736649',
             },
-            pinkPurple: {
-                backgroundColor: 'rgb(199, 114, 161)',
+            paleSlateGray: {
+                backgroundColor: '#877F84',
                 color: 'white',
-                iconBackgroundColor: 'rgb(170 82 131)',
-                labelStyle: 'red',
+                iconBackgroundColor: '#757274',
+                ribbonBackgroundColor: '#71646c ',
+                ribbonFoldBorderColor: '#5f4c58',
             },
-            purple: {
-                backgroundColor: 'rgb(111, 113, 172)',
+            halfColonialWhite: {
+                backgroundColor: '#A69ABD',
                 color: 'white',
-                iconBackgroundColor: 'rgb(92 94 161)',
-                labelStyle: 'purple',
+                iconBackgroundColor: '#998fab',
+                ribbonBackgroundColor: '#7b6e95',
+                ribbonFoldBorderColor: '#3b3547',
             },
-            teal: {
-                backgroundColor: 'rgb(147, 189, 189)',
+            ceruleanBlue: {
+                backgroundColor: '#95A3B3',
                 color: 'white',
-                iconBackgroundColor: 'rgb(124 185 185)',
-                labelStyle: 'teal',
+                iconBackgroundColor: '#7e8d9f',
+                ribbonBackgroundColor: '#697d93',
+                ribbonFoldBorderColor: '#4e5761',
+            },
+            gainsboro: {
+                backgroundColor: '#B0C4DE',
+                color: 'white',
+                iconBackgroundColor: '#99aec9',
+                ribbonBackgroundColor: '#97a9c1',
+                ribbonFoldBorderColor: '#76879d',
+            },
+            paleBlossom: {
+                backgroundColor: '#C6C6C6',
+                color: 'white',
+                iconBackgroundColor: '#C6C6C6',
+                ribbonBackgroundColor: '#C6C6C6',
+                ribbonFoldBorderColor: '#C6C6C6',
+            },
+            palePeriwinkle: {
+                backgroundColor: '#BBC8E6',
+                color: 'white',
+                iconBackgroundColor: '#BBC8E6',
+                ribbonBackgroundColor: '#BBC8E6',
+                ribbonFoldBorderColor: '#BBC8E6',
+            },
+            wisteriaPurple: {
+                backgroundColor: '#81559B',
+                color: 'white',
+                iconBackgroundColor: '#81559B',
+                ribbonBackgroundColor: '#81559B',
+                ribbonFoldBorderColor: '#81559B',
+            },
+            mouseGray: {
+                backgroundColor: '#888C8D',
+                color: 'white',
+                iconBackgroundColor: '#888C8D',
+                ribbonBackgroundColor: '#888C8D',
+                ribbonFoldBorderColor: '#888C8D',
             },
         };
 
@@ -107,10 +154,11 @@ export default {
         const backgroundColor = computed(() => getColor(props.color, 'backgroundColor'));
         const textColor = computed(() => getColor(props.color, 'color'));
         const iconBackgroundColor = computed(() => getColor(props.color, 'iconBackgroundColor'));
-        const labelStyle = computed(() => getColor(props.color, 'labelStyle'));
+        const ribbonBackgroundColor = computed(() => getColor(props.color, 'ribbonBackgroundColor'));
+        const ribbonFoldBorderColor = computed(() => getColor(props.color, 'ribbonFoldBorderColor'));
 
         return {
-            getColor, backgroundColor, textColor, iconBackgroundColor, labelStyle,
+            getColor, backgroundColor, textColor, iconBackgroundColor, ribbonBackgroundColor, ribbonFoldBorderColor,
         };
     },
 };
@@ -135,6 +183,13 @@ export default {
     .colorBoxColor{
         background-color: var(--backgroundColor);
         color: var(--textColor);
+    }
+    .ribbonBackgroundColor{
+        background-color: var(--ribbonBackgroundColor) !important;
+        color:white;
+    }
+    .ribbonFoldBorderColor{
+        border-color: var(--ribbonFoldBorderColor) !important;
     }
     .circleImg{
         background-color: var(--iconBackgroundColor);

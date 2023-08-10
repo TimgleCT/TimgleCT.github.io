@@ -54,7 +54,7 @@ export default {
     background-color: #d14747;
     position: absolute;
     top: 0;
-    left: 2.6rem;
+    left: 2.4rem;
     z-index: -1;
 }
 

@@ -237,13 +237,19 @@ const App = {
                                 score: 30,
                                 maxScore: 100,
                                 title: '軟體測試',
-                                content: '制定測試個案、JMeter、Cypress',
+                                content: '制定測試個案、Jest、JMeter、Cypress',
                             },
                             {
                                 score: 40,
                                 maxScore: 100,
                                 title: '資料科學',
                                 content: 'Python、NLP、Keras',
+                            },
+                            {
+                                score: 30,
+                                maxScore: 100,
+                                title: '其它',
+                                content: 'Docker、Azure DevOps CI',
                             },
                         ],
                     },
@@ -293,15 +299,17 @@ const App = {
                         title: '友達光電 智慧製造發展處 前端工程師',
                         date: '2021.08',
                         contentList: [
-                            '負責對外產品－No Code 戰情室系統切版與前端程式開發。',
-                            '負責對內專案－人才發展系統切版與前端程式開發。',
-                            '使用Vue.js、ECharts、Bootstrap',
-                            '為單位引進Cypress，以進行E2E自動化測試。',
-                            '同步接觸軟體測試、產品加密、產品部屬、客戶服務。',
+                            '負責對外產品－Machine VIX戰情室系統前端程式開發。',
+                            '負責對內專案－人才發展系統前端程式開發。',
+                            '使用Vue.js、Element UI、ECharts、Bootstrap',
+                            '為單位引進Jest/Cypress，以進行前端單元測試與E2E自動化測試。',
+                            '串接 Azure DevOps CI，使程式提交後即在雲端進行編譯與單元測試。',
+                            '建立產品 DockerFile並以 Docker Compose 構建服務。',
+                            '同步接觸軟體測試、產品加密、產品部屬、客戶服務，與作為實習生mentor。',
                             '撰寫系統使用說明文件。',
                             '多人協作開發的版控經驗。',
                         ],
-                        img: '',
+                        img: 'img/AUO-5.jpg',
                         style: 'DeepCocoa',
                     },
                     {
@@ -510,24 +518,45 @@ const App = {
                 contentType: 'paragraphImagesCard',
                 content: [
                     {
-                        title: '2016 11/11 第一屆 全球普台制服日',
+                        title: '2023 AUO友達實習生 Mentor',
                         contentList: [
-                            '&nbsp&nbsp&nbsp&nbsp在大二期間，時不時看到大學身邊同學參與其母校高中的制服日活動，與母校產生連結外，也與畢業的同學們一同懷念過去高中的時光。'
-                            + '當時的我，除了心生羨慕外，也認為這是一個很值得舉辦的活動，便向志同道合的朋友們提議，並主導籌辦這次的制服日。',
-                            '&nbsp&nbsp&nbsp&nbsp我們參考了其他學校的制服日活動後，先是訂定制服日日期、創建了粉專、設計Logo、與同學們討論如何吸引校友參加、粉專要有什麼內容與活動等等，'
-                            + '之後與各校校友代表一同努力宣傳，成功使制服日當日的 Instagram 與 Facebook 充滿校友們穿起制服回憶高中的貼文，'
-                            + '捲起一股懷念風潮，也驚動了母校高中長官們的注意，鼓勵此活動的永續發展。',
+                            `&nbsp&nbsp&nbsp&nbsp2023年初，部門主管委任我為當年度實習生的Mentor，負責帶領實習生認識職場生活、了解單位文化與完成工作項目。讓正式進入職場才不到2年的我，面對第一場帶人的考驗。
+                            因過去也曾為實習生且受當時Mentor的優秀指導與協助，所以當角色對換時，有股使命感希望自己也能成為優秀的Mentor，讓實習生能收穫滿滿的從公司畢業。`,
+                            `&nbsp&nbsp&nbsp&nbsp當時單位正在導入自動化測試，期望降低每次改版皆須人工測試的時間成本與提升產品可靠度。因此安排實習生來協助利用Cypress對現有產品MVIX進行E2E自動化測試。
+                            協助完成實習專案期間，我除了分享相關的知識外，也適時地提供實習生解決問題的方向，透過提問的方式來讓實習生思考怎麼做會更好，此外也定期關心實習生的進度狀況或是有無遭遇到什麼困難，並適時的提供協助。
+                            或是與主管開會期間，當主管無法理解實習生的回答或實習生無法回答主管的問題時，即時的切入進行補充說明。`,
+                            `&nbsp&nbsp&nbsp&nbsp我很幸運，遇到的實習生也相當優秀。除了工作能力一流外，工作上也會主動提出問題。在提供指導時，也常常是一點就通。因此從一開始帶著實習生認識MVIX與Cypress，
+                            到制定測試情境案例、撰寫自動化測試程式到最後的成果發表都讓我相當放心。最後也成功獲得主管肯定，並於實習生成果發表上拿下第2名的佳績且獲得pre-offer的機會。讓我放下心中的重擔，完成心中的使命。`,
                         ],
-                        headShot: 'img/uniformDayProfile.jpg',
+                        headShot: 'img/AUO_Logo.jpg',
                         headShotDirection: 'left',
                         imgList: [
-                            'img/uniform-1.png',
-                            'img/uniform-2.jpg',
-                            'img/uniform-3.jpg',
-                            'img/uniform-4.jpg',
-                            'img/uniform-5.jpg',
-                            'img/uniform-6.png',
-                            'img/uniform-7.jpg',
+                            'img/AUO-3.jpg',
+                            'img/AUO-1.jpg',
+                            'img/AUO-2.jpg',
+                        ],
+                    },
+                    {
+                        title: '高大資管第十六屆系學會 會長',
+                        contentList: [
+                            '&nbsp&nbsp&nbsp&nbsp為了實現過去對自己的期許與有個希望回饋系上的心，在大家的支持下當選了第十六屆系學會會長，更是考驗著政策執行力、部門溝通力與危機處理能力。',
+                            '&nbsp&nbsp&nbsp&nbsp任內首度推動系學會財務透明化、落實系費使用宣導，增加學生對系學會財務使用的信心，成功使系費繳交率超越上屆達到九成。也首創設立課輔部門，定時舉辦讀書會交流課業內容，推動系上讀書會風氣。'
+                            + '也推動與外校單位交流，帶領系學會成員參與台北大學舉辦之台灣互聯網高峰會，不但聽取電商界企業主的經驗分享，也與各校學生自治代表經驗交流。且最後交接給下一屆學弟妹時，完成完整的交接文件並交付，使過去經驗不中斷於離開的我們。',
+                            '&nbsp&nbsp&nbsp&nbsp擔任會長同樣的也有諸多不順遂的地方，例如系服購買制度與活動虧損責任議題。遇到危機便與幹部、師長共同討論如何解決，開會並訂定完整的制度，補足原本的不足，並在第一時間處理， 將錯誤的損失降成最低。在其中學著危機處理與承擔責任。'
+                            + '直到現在，仍非常感謝那年陪伴學生完成系學會任務的幹部與老師們。',
+                        ],
+                        headShot: 'img/IM_Logo.jpg',
+                        headShotDirection: 'right',
+                        imgList: [
+                            'img/DS-1.jpg',
+                            'img/DS-2.jpg',
+                            'img/DS-3.jpg',
+                            'img/DS-4.jpg',
+                            'img/DS-5.jpg',
+                            'img/DS-6.jpg',
+                            'img/DS-7.jpg',
+                            'img/DS-8.jpg',
+                            'img/DS-9.jpg',
                         ],
                     },
                     {
@@ -539,7 +568,7 @@ const App = {
                             + '來推廣產品。此外也在其他平台如蝦皮、Yahoo、Instagram、Dcard 平台推廣，將各平台的使用者導回 Facebook 社群之中。最後在比賽中，榮獲數位行銷優等獎的成績，兩個月創造81條奶凍捲，45,000元的業績。',
                         ],
                         headShot: 'img/ec.jpg',
-                        headShotDirection: 'right',
+                        headShotDirection: 'left',
                         imgList: [
                             'img/ec-11.jpg',
                             'img/ec-7.jpg',
@@ -556,26 +585,24 @@ const App = {
                         ],
                     },
                     {
-                        title: '高大資管第十六屆系學會 會長',
+                        title: '2016 11/11 第一屆 全球普台制服日',
                         contentList: [
-                            '&nbsp&nbsp&nbsp&nbsp為了實現過去對自己的期許與有個希望回饋系上的心，在大家的支持下當選了第十六屆系學會會長，更是考驗著政策執行力、部門溝通力與危機處理能力。',
-                            '內首度推動系學會財務透明化、落實系費使用宣導，增加學生對系學會財務使用的信心，成功使系費繳交率超越上屆達到九成。也首創設立課輔部門，定時舉辦讀書會交流課業內容，推動系上讀書會風氣。'
-                            + '也推動與外校單位交流，帶領系學會成員參與台北大學舉辦之台灣互聯網高峰會，不但聽取電商界企業主的經驗分享，也與各校學生自治代表經驗交流。且最後交接給下一屆學弟妹時，完成完整的交接文件並交付，使過去經驗不中斷於離開的我們。',
-                            '&nbsp&nbsp&nbsp&nbsp擔任會長同樣的也有諸多不順遂的地方，例如系服購買制度與活動虧損責任議題。遇到危機便與幹部、師長共同討論如何解決，開會並訂定完整的制度，補足原本的不足，並在第一時間處理， 將錯誤的損失降成最低。在其中學著危機處理與承擔責任。'
-                            + '直到現在，仍非常感謝那年陪伴學生完成系學會任務的幹部與老師們。',
+                            '&nbsp&nbsp&nbsp&nbsp在大二期間，時不時看到大學身邊同學參與其母校高中的制服日活動，與母校產生連結外，也與畢業的同學們一同懷念過去高中的時光。'
+                            + '當時的我，除了心生羨慕外，也認為這是一個很值得舉辦的活動，便向志同道合的朋友們提議，並主導籌辦這次的制服日。',
+                            '&nbsp&nbsp&nbsp&nbsp我們參考了其他學校的制服日活動後，先是訂定制服日日期、創建了粉專、設計Logo、與同學們討論如何吸引校友參加、粉專要有什麼內容與活動等等，'
+                            + '之後與各校校友代表一同努力宣傳，成功使制服日當日的 Instagram 與 Facebook 充滿校友們穿起制服回憶高中的貼文，'
+                            + '捲起一股懷念風潮，也驚動了母校高中長官們的注意，鼓勵此活動的永續發展。',
                         ],
-                        headShot: 'img/IM_Logo.jpg',
-                        headShotDirection: 'left',
+                        headShot: 'img/uniformDayProfile.jpg',
+                        headShotDirection: 'right',
                         imgList: [
-                            'img/DS-1.jpg',
-                            'img/DS-2.jpg',
-                            'img/DS-3.jpg',
-                            'img/DS-4.jpg',
-                            'img/DS-5.jpg',
-                            'img/DS-6.jpg',
-                            'img/DS-7.jpg',
-                            'img/DS-8.jpg',
-                            'img/DS-9.jpg',
+                            'img/uniform-1.png',
+                            'img/uniform-2.jpg',
+                            'img/uniform-3.jpg',
+                            'img/uniform-4.jpg',
+                            'img/uniform-5.jpg',
+                            'img/uniform-6.png',
+                            'img/uniform-7.jpg',
                         ],
                     },
                 ],
@@ -590,8 +617,59 @@ const App = {
                 contentType: 'colorBoxBlock',
                 content: [
                     {
+                        title: 'Machine VIX',
+                        color: 'paleMouse',
+                        label: '2023',
+                        iconURL: 'img/dashboard.png',
+                        tags: [
+                            'Vue.js',
+                            'ECharts',
+                            'Element UI',
+                            'Cypress',
+                            'Jest',
+                            'Docker',
+                        ],
+                        clickFunction() {
+                            initImgSlideDescModal(
+                                'Machine VIX － No Code 機台參數監控戰情室',
+                                [
+                                    'img/MVIX-1.png',
+                                    'img/MVIX-10.png',
+                                    'img/MVIX-2.png',
+                                    'img/MVIX-3.png',
+                                    'img/MVIX-4.png',
+                                ],
+                                [
+                                    '示範戰情室',
+                                    '透過拖拉縮放快速編輯戰情室',
+                                    '彈性、快速建立圖表',
+                                    '多戰情室管理',
+                                    '超規通報設定',
+                                ],
+                                '機台資料即時視覺化服務',
+                                [
+                                    `&nbsp&nbsp&nbsp&nbsp Machine VIX (簡稱MVIX) 提供使用者能以戰情室圖表的方式即時監控機台的參數資料。並提供參數的規格設定，於超規時送出通報提醒使用者機台異常。
+                                    MVIX強調優化使用者體驗與No Code彈性，因此讓使用者可透過拖拉參數、點選模板與少量的輸入輕鬆地建立所需的圖表，不必讓工程師為其客製，使用者可根據自身需求彈性調整。
+                                    我們也提供多項圖表模板可供選擇，除了簡單的折線圖、長條圖、碼表圖、字卡等，也提供多參數的混合圖表，讓不同的參數可以於同一張圖表進行比較。`,
+                                    `&nbsp&nbsp&nbsp&nbsp 另外，市面上的許多戰情室系統需要工程師來協助建立，且無法快速的調整與修改。MVIX提供易用的UI介面，讓戰情室的各個區塊大小、排版可以用拖拉與縮放的方式快速調整，
+                                    而區塊的內容也透過簡單的輸入定義內容，讓使用者可依自身需求定義其戰情室，不再需要透過IT人員。MVIX的戰情室區塊除了支援前述的圖表之外，也支援即時影像、嵌入第三方系統、圖片影片等，
+                                    讓戰情室的資訊更多元，例：串接機台設備的即時影像、機器視覺等影像讓圖表的資料更能具體呈現機台運作現狀。`,
+                                    `&nbsp&nbsp&nbsp&nbsp當機台資料開始出現異常時，MVIX也能透過Web API或SMTP Email的方式通知相關人士。並提供異常通報結案的功能，達到異常事件的閉環管理。
+                                    期望若有輕度機台狀態管理需求的使用者，透過MVIX即可滿足其需求。`,
+                                    `&nbsp&nbsp&nbsp&nbsp MVIX產品為我在AUO主要負責開發的產品，負責系統的前端程式開發。使用Vue.js、Element UI、Echarts、Vue Grid Layout、Bootstrap等框架或套件來時作此系統。
+                                    程式碼品質方面已ESLint協助控管，並進行單元測試(Jest)與E2E測試(Cypress)的撰寫，並協助部門將相關測試整合至Azure DevOps的CI中。也協助將MVIX打包成 Docker Image，
+                                    並搭配Docker Compose讓產品可以快速部屬在各種環境。`,
+                                    `&nbsp&nbsp&nbsp&nbsp MVIX在團隊的努力下成功成為公司雙軸轉型的主推產品之一，除了在公司的智慧製造展展出外，也成功的向外推廣，已有至少四家客戶採用，
+                                    並為公司創造超過千萬以上的收入。`,
+                                    '&nbsp&nbsp&nbsp&nbsp<a href=\'https://mvix-outside.azurewebsites.net/dashboard/viewdashboard?dashboardId=797&mode=read-only\'>MVIX 公開站台連結</a>',
+                                ],
+                                true,
+                            );
+                        },
+                    },
+                    {
                         title: 'SPEC 文件推薦API',
-                        color: 'blue',
+                        color: 'heliotrope',
                         label: '2020',
                         iconURL: 'img/document.png',
                         tags: [
@@ -637,7 +715,7 @@ const App = {
                     },
                     {
                         title: 'LSTM股價預測',
-                        color: 'tiffanyGreen',
+                        color: 'lightVermilion',
                         label: '2021',
                         iconURL: 'img/stock.png',
                         tags: [
@@ -677,7 +755,7 @@ const App = {
                     },
                     {
                         title: '預測Dcard熱門文章',
-                        color: 'brown',
+                        color: 'plumGray',
                         label: '2020',
                         iconURL: 'img/dcardLogo.png',
                         tags: [
@@ -719,7 +797,7 @@ const App = {
                     },
                     {
                         title: '中央買菜郎',
-                        color: 'pink',
+                        color: 'irisQuartz',
                         label: '2020',
                         iconURL: 'img/vegetable.png',
                         tags: [
@@ -764,7 +842,7 @@ const App = {
                     },
                     {
                         title: 'TimeKeeper 智慧鬧鐘',
-                        color: 'orange',
+                        color: 'paleCloudedGray',
                         label: '2020',
                         iconURL: 'img/alarmclock.png',
                         tags: [
@@ -814,7 +892,7 @@ const App = {
                     },
                     {
                         title: 'Dcard 文章關鍵字熱度爬蟲',
-                        color: 'grey',
+                        color: 'paleSlateGray',
                         label: '2020',
                         iconURL: 'img/web-crawler.png',
                         tags: [
@@ -856,7 +934,7 @@ const App = {
                     },
                     {
                         title: '高雄老司機',
-                        color: 'pinkPurple',
+                        color: 'halfColonialWhite',
                         label: '2020',
                         iconURL: 'img/bus.png',
                         tags: [
@@ -899,7 +977,7 @@ const App = {
                     },
                     {
                         title: '中文數字手寫辨識',
-                        color: 'purple',
+                        color: 'ceruleanBlue',
                         label: '2020',
                         iconURL: 'img/artificial-intelligence.png',
                         tags: [
@@ -942,7 +1020,7 @@ const App = {
                     },
                     {
                         title: 'Timer',
-                        color: 'teal',
+                        color: 'gainsboro',
                         label: '2020',
                         iconURL: 'img/pin.png',
                         tags: [
