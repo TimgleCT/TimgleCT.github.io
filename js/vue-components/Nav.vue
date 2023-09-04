@@ -65,7 +65,7 @@ export default {
                         link: '#aboutMePage',
                         children: [
                             { title: '學歷', link: '#educationPage' },
-                            { title: '能力自評', link: '#skills' },
+                            { title: '技能', link: '#skills' },
                         ],
                     },
                     {

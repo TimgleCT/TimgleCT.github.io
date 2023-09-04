@@ -1,10 +1,13 @@
 <template>
     <div class = "listItem">
-        <div class="listItemImage"><slot name="image"></slot></div>
-        <div class="listItemContext">
+        <div v-if="hasImageSlot" class="listItemImage"><slot name="image"></slot></div>
+        <div class="listItemContext" :style="{'--width': listItemContextWidth}">
             <h4 class="listItemHeader">{{title}}</h4>
             <hr>
-            <div class="content">{{content}}</div>
+            <div class="content">
+                <slot v-if="hasContentSlot" name="content"></slot>
+                <span v-else>{{content}}</span>
+            </div>
         </div>
     </div>
 </template>
@@ -12,12 +15,11 @@
 <script>
 
 const {
-    onMounted, nextTick,
+    computed, useSlots,
 } = Vue;
 
 export default {
     name: 'list-item',
-    emits: ['mounted'],
     props: {
         title: {
             type: String,
@@ -29,12 +31,12 @@ export default {
         },
     },
 
-    setup(props, { emit }) {
-        onMounted(async () => {
-            await nextTick();
-            emit('mounted');
-        });
-        return {};
+    setup() {
+        const hasImageSlot = !!useSlots().image;
+        const hasContentSlot = !!useSlots().content;
+        const listItemContextWidth = computed(() => (hasImageSlot ? '75%' : '100%'));
+
+        return { hasImageSlot, hasContentSlot, listItemContextWidth };
     },
 };
 </script>
@@ -59,7 +61,7 @@ export default {
 
 .listItemContext{
     float: left;
-    width: 75%;
+    width: var(--width);
     padding: 0.5rem 1rem 0.5rem 2rem;
 }
 
@@ -122,7 +124,7 @@ export default {
         height: auto;
         padding: 0.5rem 0rem;
         margin: auto;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
     }
     .listItemContext hr{
         width: 80%;

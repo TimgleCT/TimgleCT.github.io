@@ -101,7 +101,7 @@ export default {
     border-bottom-right-radius: 15px;
 }
 .listItemListColor-red{
-    background-color: rgba(230, 154, 154, 0.815);
+    background-color: #e19a9a;
 }
 .listItemListColor-purple{
     background-color: rgba(158, 82, 145, 0.815);

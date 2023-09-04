@@ -6,15 +6,12 @@
             class="list sixteen wide mobile sixteen wide tablet sixteen wide computer eight wide large screen five wide widescreen column">
             <list-item
                 :title="item.title"
-                :content="item.content"
-                @mounted="fixListItemsHeight()">
-                <template v-slot:image>
-                    <percent-chart
-                        :numerator="item.score"
-                        :denominator="item.maxScore"
-                        :showTooltip="false"
-                        :showLegend="false">
-                    </percent-chart>
+                :content="item.content">
+                <template v-if="isArrayContent(item.contentType)" v-slot:content>
+                    <tag-list
+                        :tag-list="splitContentWithComma(item.content)"
+                        :color-style="item.tagsColor"
+                    ></tag-list>
                 </template>
             </list-item>
         </div>
@@ -31,7 +28,7 @@ export default {
     name: 'list-block-list',
     components: {
         listItem: Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/listItem.vue')),
-        percentChart: Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/percentChart.vue')),
+        tagList: Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/tagList.vue')),
     },
     props: {
         list: {
@@ -40,6 +37,8 @@ export default {
                 return [{
                     title: '',
                     content: '',
+                    contentType: 'string',
+                    tagsColor: 'red',
                 }];
             },
         },
@@ -48,22 +47,16 @@ export default {
     setup() {
         const listItems = ref([]);
 
-        function fixListItemsHeight() {
-            const items = Array.from(listItems.value);
-            let maxHeight = 0;
-            for (let index = 0; index < items.length; index++) {
-                if (items[index].clientHeight === 0) {
-                    return 0;
-                }
-                maxHeight = Math.max(maxHeight, items[index].clientHeight);
-            }
-            for (let index = 0; index < items.length; index++) {
-                items[index].children[0].style.height = `${maxHeight}px`;
-            }
-            return 1;
+        function splitContentWithComma(str) {
+            return str.split('、');
         }
+
+        function isArrayContent(type) {
+            return type === 'array';
+        }
+
         return {
-            listItems, fixListItemsHeight,
+            listItems, splitContentWithComma, isArrayContent,
         };
     },
 };
