@@ -19,6 +19,7 @@ const App = {
         'contact-info-box-list': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/contactInfoBoxList.vue')),
     },
     setup() {
+        const contentType = ref('main');
         const imgSlideDescModal = ref({
             modalHeader: '',
             imgList: [''],
@@ -40,6 +41,25 @@ const App = {
             imgSlideDescModal.value.contentList = contentList;
             imgSlideDescModal.value.show = show;
             imgSlideDescModal.value.imgDescRatioDiff = imgDescRatioDiff || 'large';
+        }
+
+        function initContentType() {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('view') === 'more') {
+                contentType.value = 'more';
+            } else {
+                contentType.value = 'main';
+            }
+        }
+
+        initContentType();
+
+        function switchContentType() {
+            if (contentType.value === 'main') {
+                contentType.value = 'more';
+            } else {
+                contentType.value = 'main';
+            }
         }
 
         const webStructure = ref([
@@ -1243,7 +1263,9 @@ const App = {
             },
         ]);
         // 在這裡撰寫組件的邏輯
-        return { webStructure, imgSlideDescModal, closeImgSlideDescModal };
+        return {
+            webStructure, imgSlideDescModal, closeImgSlideDescModal, contentType, switchContentType,
+        };
     },
 };
 

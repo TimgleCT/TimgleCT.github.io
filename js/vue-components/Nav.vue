@@ -19,6 +19,12 @@
                 </template>
             </template>
         </div>
+        <div class='navFooter'>
+            <SwitchContent
+                :content-type='contentType'
+                @switch-type='switchContentType()'
+            ></SwitchContent>
+        </div>
     </div>
 
     <header class="mobileNav" @click="openNav">
@@ -36,9 +42,11 @@ const { ref } = Vue;
 
 export default {
     name: 'UserNav',
+    emits: ['switchContentType'],
     components: {
         DropDown: Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/DropDown.vue')),
         NavLink: Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/NavLink.vue')),
+        SwitchContent: Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/switchContent.vue')),
     },
     props: {
         user: {
@@ -101,8 +109,12 @@ export default {
                 ];
             },
         },
+        contentType: {
+            type: String,
+            default: 'main',
+        },
     },
-    setup() {
+    setup(props, { emit }) {
         const coverPageState = ref(false);
 
         function hasChildren(rout = {}) {
@@ -129,12 +141,17 @@ export default {
             }
         }
 
+        function switchContentType() {
+            emit('switchContentType');
+        }
+
         return {
             hasChildren,
             coverPageState,
             openNav,
             closeNav,
             closeNavInMobileMode,
+            switchContentType,
         };
     },
 };
@@ -148,6 +165,10 @@ export default {
         background-color: rgba(0,0,0,0.5);
         z-index: 3;
         top: 0;
+    }
+
+    .barBlock{
+        padding: 8px 16px;
     }
 
     .mobileNav{
@@ -180,7 +201,6 @@ export default {
         font-weight: bold;
         color: #fff;
         background-color: #f44336;
-        padding: 8px 16px;
         font-size: 1.0rem;
         top: 0;
         position: fixed;
@@ -205,7 +225,7 @@ export default {
     .navContainer {
         width: 100%;
         margin-bottom: 40px;
-        padding-top: 40px;
+        padding: 48px 16px 8px 16px;
         min-width: calc(min(250px, 20vw, 100%));
     }
 
@@ -228,6 +248,12 @@ export default {
         padding-top: 0px;
         margin: 0px;
         white-space: pre;
+    }
+
+    .navFooter{
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
     }
 
     @media only screen and (max-width: 1440px) {

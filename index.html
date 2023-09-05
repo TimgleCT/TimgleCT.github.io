@@ -34,7 +34,10 @@
 <body>
     <div id="vueApp">
 
-        <user-nav></user-nav>
+        <user-nav
+            :content-type="contentType"
+            @switch-content-type='switchContentType'
+        ></user-nav>
         
         <div class = "mainContent">
             <template v-for="(content, index) in webStructure" :key="index">
