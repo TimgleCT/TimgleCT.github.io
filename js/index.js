@@ -1,4 +1,4 @@
-const { ref } = Vue;
+const { ref, computed } = Vue;
 const App = {
     components: {
         'user-nav': Vue.defineAsyncComponent(() => VueLoader.loadComponent('./js/vue-components/Nav.vue')),
@@ -62,7 +62,44 @@ const App = {
             }
         }
 
-        const webStructure = ref([
+        function removeObjectsWithMoreProperty(arr) {
+            return arr.map((item) => {
+                if (typeof item !== 'object' || item === null) {
+                    return item;
+                }
+
+                if ('TTTmoreTTT' in item) {
+                    return undefined; // 刪除具有'more'屬性的物件
+                }
+
+                // 使用Object.keys()迭代物件的鍵
+                const newItem = { ...item }; // 創建新的物件
+
+                Object.keys(item).forEach((key) => {
+                    if (typeof item[key] === 'object' && item[key] !== null) {
+                        if (!Array.isArray(item[key])) {
+                            // 如果是物件，則遞歸調用此函數
+                            const filtered = removeObjectsWithMoreProperty([item[key]]);
+                            if (!filtered.length) {
+                                delete newItem[key]; // 如果內部物件也被刪除，則刪除該屬性
+                            }
+                        } else {
+                            // 如果是物件陣列，則遞歸調用此函數
+                            const filteredArray = removeObjectsWithMoreProperty(item[key]);
+                            if (!filteredArray.length) {
+                                delete newItem[key]; // 如果內部物件陣列也被刪除，則刪除該屬性
+                            } else {
+                                newItem[key] = filteredArray; // 更新內部物件陣列
+                            }
+                        }
+                    }
+                });
+
+                return newItem;
+            }).filter(Boolean); // 刪除undefined的物件
+        }
+
+        const webContent = [
             {
                 domId: 'aboutMePage',
                 isHeader: true,
@@ -357,6 +394,7 @@ const App = {
                         ],
                         img: 'img/EMBA_enterprise_Teacher.jpg',
                         style: 'CherryBlossom',
+                        TTTmoreTTT: true,
                     },
                     {
                         title: 'Python 學生團隊 組員',
@@ -378,6 +416,7 @@ const App = {
                         ],
                         img: 'img/election.png',
                         style: 'CherryBlossom',
+                        TTTmoreTTT: true,
                     },
                     {
                         title: '高大資管營 副營長',
@@ -410,6 +449,7 @@ const App = {
                         ],
                         img: 'img/internetMeeting.jpg',
                         style: 'CherryBlossom',
+                        TTTmoreTTT: true,
                     },
                     {
                         title: '高大資管營 課務長',
@@ -431,6 +471,7 @@ const App = {
                         ],
                         img: 'img/uniformDay.jpg',
                         style: 'CherryBlossom',
+                        TTTmoreTTT: true,
                     },
                     {
                         title: '迎新宿營 機動長',
@@ -440,6 +481,7 @@ const App = {
                         ],
                         img: '',
                         style: 'CherryBlossom',
+                        TTTmoreTTT: true,
                     },
                 ],
             },
@@ -483,6 +525,7 @@ const App = {
                         ],
                         img: '',
                         style: 'DeepCarmine',
+                        TTTmoreTTT: true,
                     },
                     {
                         title: '2017 ECIC 全國大專院校電子商務競賽 數位行銷 優等獎',
@@ -495,6 +538,7 @@ const App = {
                         ],
                         img: 'img/ecChampain.jpg',
                         style: 'DeepCarmine',
+                        TTTmoreTTT: true,
                     },
                 ],
             },
@@ -518,6 +562,7 @@ const App = {
                         style: 'DeepOrchid',
                     },
                 ],
+                TTTmoreTTT: true,
             },
             {
                 domId: 'importantEvent',
@@ -594,6 +639,7 @@ const App = {
                             'img/ec-5.jpg',
                             'img/ec-10.jpg',
                         ],
+                        TTTmoreTTT: true,
                     },
                     {
                         title: '2016 11/11 第一屆 全球普台制服日',
@@ -615,6 +661,7 @@ const App = {
                             'img/uniform-6.png',
                             'img/uniform-7.jpg',
                         ],
+                        TTTmoreTTT: true,
                     },
                 ],
             },
@@ -764,6 +811,7 @@ const App = {
                                 true,
                             );
                         },
+                        TTTmoreTTT: true,
                     },
                     {
                         title: '預測Dcard熱門文章',
@@ -806,6 +854,7 @@ const App = {
                                 true,
                             );
                         },
+                        TTTmoreTTT: true,
                     },
                     {
                         title: '中央買菜郎',
@@ -1029,6 +1078,7 @@ const App = {
                                 true,
                             );
                         },
+                        TTTmoreTTT: true,
                     },
                     {
                         title: 'Timer',
@@ -1070,6 +1120,7 @@ const App = {
                                 'small',
                             );
                         },
+                        TTTmoreTTT: true,
                     },
                 ],
             },
@@ -1261,7 +1312,14 @@ const App = {
                     ],
                 },
             },
-        ]);
+        ];
+
+        const webStructure = computed(() => {
+            if (contentType.value === 'main') {
+                return removeObjectsWithMoreProperty(webContent);
+            }
+            return webContent;
+        });
         // 在這裡撰寫組件的邏輯
         return {
             webStructure, imgSlideDescModal, closeImgSlideDescModal, contentType, switchContentType,
