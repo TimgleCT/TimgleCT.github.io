@@ -1,8 +1,8 @@
 <template>
     <div class="dropDown" @mouseover="hoverDropDownState(true)" @mouseleave="hoverDropDownState(false)">
-        <a :href="domId" class="pageLink">
+        <div class="pageLink">
             {{ mainTitle }}
-        </a>
+        </div>
         <div :class="{ 'slide': dropDownState }" class="dropDownContent">
             <slot></slot>
         </div>
@@ -16,10 +16,6 @@ const { ref } = Vue;
 export default {
     name: 'DropDown',
     props: {
-        domId: {
-            type: String,
-            default: '#',
-        },
         mainTitle: {
             type: String,
             default: '關於我',
@@ -63,13 +59,13 @@ export default {
         overflow: hidden;
     }
 
-    .dropDownContent ::v-deep a{
+    .dropDownContent ::v-deep div{
         font-size: 0.8rem;
         background-color: rgb(248, 96, 96);
         padding-left: 40px;
     }
 
-    .dropDownContent ::v-deep a:hover{
+    .dropDownContent ::v-deep div:hover{
         display: block;
         background-color: rgba(238, 157, 157, 0.89);
         color:rgb(255, 255, 255);

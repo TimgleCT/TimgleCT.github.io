@@ -99,6 +99,54 @@ const App = {
             }).filter(Boolean); // 刪除undefined的物件
         }
 
+        const webRouter = [
+            {
+                title: '關於我',
+                id: 'aboutMePage',
+                children: [
+                    { title: '學歷', id: 'educationPage' },
+                    { title: '技能', id: 'skills' },
+                ],
+            },
+            {
+                title: '相關經驗',
+                id: 'workExperience',
+                children: [
+                    { title: '工作經驗', id: 'workExperience' },
+                    { title: '社團經驗', id: 'clubExperience' },
+                    { title: '競賽經驗', id: 'competitionExperience' },
+                    { title: '志工服務經驗', id: 'volunteerExperience', TTTmoreTTT: true },
+                ],
+            },
+            {
+                title: '重要事件',
+                id: 'importantEvent',
+                children: [],
+            },
+            {
+                title: '作品集',
+                id: 'portfolio',
+                children: [],
+            },
+            {
+                title: '其他證明文件',
+                id: 'certificate',
+                children: [],
+            },
+            {
+                title: '聯絡資訊',
+                id: 'contact',
+                children: [],
+            },
+        ];
+
+        const webViewRouter = computed(() => {
+            if (contentType.value === 'main') {
+                return removeObjectsWithMoreProperty(webRouter);
+            }
+            return webRouter;
+        });
+
         const webContent = [
             {
                 domId: 'aboutMePage',
@@ -338,7 +386,7 @@ const App = {
                 domId: 'workExperience',
                 isHeader: false,
                 title: {
-                    En: 'Work',
+                    En: 'Career',
                     Zh: '工作經驗',
                 },
                 contentType: 'timeLine',
@@ -1322,7 +1370,7 @@ const App = {
         });
         // 在這裡撰寫組件的邏輯
         return {
-            webStructure, imgSlideDescModal, closeImgSlideDescModal, contentType, switchContentType,
+            webStructure, imgSlideDescModal, closeImgSlideDescModal, contentType, switchContentType, webViewRouter,
         };
     },
 };

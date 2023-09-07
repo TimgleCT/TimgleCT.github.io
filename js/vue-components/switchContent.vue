@@ -45,7 +45,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.75rem;
+    padding: 0.75rem 0.2rem;
     background-color: brown;
 }
 #switchContentType{
@@ -58,5 +58,11 @@ export default {
 }
 #switchContentType.ui.toggle.checkbox input:checked~label:before {
     background-color: #a5382f!important;
+}
+
+@media only screen and (max-width: 820px) {
+   #switchContentType label{
+        font-size: 0.75rem;
+    }
 }
 </style>

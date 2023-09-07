@@ -1,5 +1,5 @@
 <template>
-    <a :href="url" @click="clickAction" class="pageLink">{{title}}</a>
+    <div @click="clickAction" class="pageLink">{{title}}</div>
 </template>
 
 <script>
@@ -8,10 +8,6 @@ export default {
     name: 'DropDown',
     emits: ['clickAction'],
     props: {
-        url: {
-            type: String,
-            default: '#',
-        },
         title: {
             type: String,
             default: '關於我',

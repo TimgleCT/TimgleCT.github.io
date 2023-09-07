@@ -8,14 +8,14 @@
         <div class="barBlock">
             <template v-for="(rout, index) in routers" :key="index">
                 <template v-if="hasChildren(rout)">
-                    <DropDown :mainTitle="rout.title" :domId="rout.link">
+                    <DropDown :mainTitle="rout.title">
                         <template v-for="(child, index) in rout.children" :key="index">
-                            <NavLink :url="child.link" :title="child.title" @clickAction="closeNavInMobileMode"></NavLink>
+                            <NavLink :title="child.title" @clickAction="moveToUnit(child.id)"></NavLink>
                         </template>
                     </DropDown>
                 </template>
                 <template v-else>
-                    <NavLink :url="rout.link" :title="rout.title" @clickAction="closeNavInMobileMode"></NavLink>
+                    <NavLink :title="rout.title" @clickAction="moveToUnit(rout.id)"></NavLink>
                 </template>
             </template>
         </div>
@@ -27,8 +27,8 @@
         </div>
     </div>
 
-    <header class="mobileNav" @click="openNav">
-        <a href="#" class="ui button navBtn">☰</a>
+    <header ref='mobileHeader' class="mobileNav" @click="openNav">
+        <div class="ui button navBtn">☰</div>
         <span>{{user.name.En}}</span>
     </header>
 
@@ -67,46 +67,7 @@ export default {
         routers: {
             type: Array,
             default() {
-                return [
-                    {
-                        title: '關於我',
-                        link: '#aboutMePage',
-                        children: [
-                            { title: '學歷', link: '#educationPage' },
-                            { title: '技能', link: '#skills' },
-                        ],
-                    },
-                    {
-                        title: '相關經驗',
-                        link: '#workExperience',
-                        children: [
-                            { title: '工作經驗', link: '#workExperience' },
-                            { title: '社團經驗', link: '#clubExperience' },
-                            { title: '競賽經驗', link: '#competitionExperience' },
-                            { title: '志工服務經驗', link: '#volunteerExperience' },
-                        ],
-                    },
-                    {
-                        title: '重要事件',
-                        link: '#importantEvent',
-                        children: [],
-                    },
-                    {
-                        title: '作品集',
-                        link: '#portfolio',
-                        children: [],
-                    },
-                    {
-                        title: '其他證明文件',
-                        link: '#certificate',
-                        children: [],
-                    },
-                    {
-                        title: '聯絡資訊',
-                        link: '#contact',
-                        children: [],
-                    },
-                ];
+                return [];
             },
         },
         contentType: {
@@ -116,6 +77,7 @@ export default {
     },
     setup(props, { emit }) {
         const coverPageState = ref(false);
+        const mobileHeader = ref(null);
 
         function hasChildren(rout = {}) {
             if (rout.children === undefined) {
@@ -145,6 +107,22 @@ export default {
             emit('switchContentType');
         }
 
+        function getMobileHeaderHeight() {
+            return mobileHeader.value.offsetHeight;
+        }
+
+        function moveToUnit(id) {
+            closeNavInMobileMode();
+            const targetElementTop = document.getElementById(id).offsetTop;
+            // 計算最終的滾動位置，考慮標頭的高度
+            const scrollPosition = targetElementTop - getMobileHeaderHeight();
+            // 使用 scrollTo() 方法滾動到指定位置
+            window.scrollTo({
+                top: scrollPosition,
+                behavior: 'smooth', // 添加平滑滾動效果
+            });
+        }
+
         return {
             hasChildren,
             coverPageState,
@@ -152,6 +130,8 @@ export default {
             closeNav,
             closeNavInMobileMode,
             switchContentType,
+            mobileHeader,
+            moveToUnit,
         };
     },
 };
@@ -308,8 +288,13 @@ export default {
             min-width: calc(min(250px, 50vw));
         }
 
+        .navFooter,
         .barBlock {
             min-width: calc(min(250px, 50vw));
+        }
+
+        .barBlock{
+            padding: 8px 8px;
         }
 
         .navBtn {
