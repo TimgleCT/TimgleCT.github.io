@@ -9,7 +9,7 @@
                     :media-name='contact.mediaName'
                     :media-icon='contact.mediaIconSrc'
                     :label='contact.label'
-                    :media-url='contact.medialUrl'
+                    :medial-url='contact.medialUrl'
                 ></contact-info-box>
             </div>
         </div>
